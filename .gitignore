@@ -1,0 +1,6 @@
+# Ignoriere alle AppData- und Cache-Ordner
+/AppData/
+/Anwendungsdaten/
+# Ignoriere andere temporäre oder nicht relevante Dateien und Ordner
+*.log
+*.tmp
