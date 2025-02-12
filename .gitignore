@@ -1,6 +1,50 @@
+<<<<<<< HEAD
 # Ignoriere alle AppData- und Cache-Ordner
 /AppData/
 /Anwendungsdaten/
 # Ignoriere andere temporäre oder nicht relevante Dateien und Ordner
 *.log
 *.tmp
+=======
+# .NET Core build output
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.pdb
+
+# Windows Installer files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# JetBrains Rider
+.idea/
+
+# VS Code directories
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Windows Installer files
+Thumbs.db
+ehthumbs.db
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code settings
+.settings/
+>>>>>>> 3df939e (Add .gitignore and remove .vs files)
