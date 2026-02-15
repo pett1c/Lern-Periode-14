@@ -1,0 +1,69 @@
+Was macht mein Programm?
+Das Programm ist eine webbasierte Schach-Implementierung mit folgenden Hauptfunktionen:
+
+Ein visuelles Schachbrett mit Unicode-Schachfiguren
+Einen Timer für beide Spieler (jeweils 10 Minuten)
+Zugvalidierung für alle Schachfiguren
+Hervorhebung gültiger Züge
+Spielerwechsel-System
+Visuelle Rückmeldung durch Farben und Markierungen
+
+Was wurde gelernt?
+
+Code-Organisation:
+
+Die Bedeutung der Trennung von Zuständigkeiten (Separation of Concerns)
+Vorteile der objektorientierten Programmierung in JavaScript
+
+Spiellogik:
+
+Implementierung von Schachregeln
+Koordinatensystem auf einem Schachbrett
+Zugvalidierung für verschiedene Figurentypen
+DOM-Manipulation
+Timer-Implementierung mit setInterval
+
+Was könnte beim nächsten Mal besser laufen?
+
+Code-Qualität:
+
+Implementierung von Unit Tests
+Bessere Fehlerbehandlung
+Konstantendefinitionen für magische Zahlen
+Bessere Dokumentation des Codes
+
+
+Fehlende Funktionen:
+
+Schach/Schachmatt-Erkennung fehlt
+Spezialzüge wie Rochade und En-passant fehlen
+Keine Spielstandspeicherung
+Keine Zughistorie
+
+
+Benutzerfreundlichkeit:
+
+Keine Rückgängig-Funktion
+Keine Spielstandanzeige
+Keine Notation der Züge
+Keine Möglichkeit das Spiel zu pausieren
+
+
+Technische Verbesserungen:
+
+Einsatz eines Build-Systems (z.B. Webpack)
+Verwendung von TypeScript für bessere Typsicherheit
+Implementierung eines State Management Systems
+Responsive Design für mobile Geräte
+
+Ich finde, dass die Website nicht schlecht aussieht, aber auch keinen grossartigen Erfolg hat, da manche Regeln noch nicht komplett funktionieren.
+Ein Grund dafür könnte sein, dass die Implementierung von bestimmten Funktionen noch nicht optimiert ist da ich auch manchmal an die Module gearbeitet habe.
+Vielleicht fehlt es an ausführlichem Testing, was dazu führt, dass einige Features nicht wie erwartet arbeiten. Ein weiterer möglicher Grund könnte auch sein, dass das Design nicht benutzerfreundlich genug ist oder die Performance nicht den Erwartungen entspricht.
+
+
+
+
+
+
+
+

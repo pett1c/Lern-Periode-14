@@ -1,0 +1,686 @@
+/* ==========================================================================
+   Schachspiel – Modernes Design mit dunklem Theme
+   ========================================================================== */
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #1f2b47;
+  --bg-hover: #253554;
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a8b8;
+  --accent: #4fc3f7;
+  --accent-hover: #81d4fa;
+  --danger: #ef5350;
+  --success: #66bb6a;
+  --square-light: #e8d5b5;
+  --square-dark: #b58863;
+  --square-selected: rgba(255, 235, 59, 0.55);
+  --square-valid: rgba(102, 187, 106, 0.45);
+  --square-capture: rgba(239, 83, 80, 0.5);
+  --square-last-move: rgba(255, 235, 59, 0.28);
+  --square-check: rgba(239, 83, 80, 0.55);
+  --clock-active-border: var(--success);
+  --sq-size: clamp(40px, 9vmin, 68px);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px 10px;
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  font-family: var(--font);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+#app {
+  width: 100%;
+  max-width: 900px;
+}
+
+#title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+#main-layout {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#board-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   UHREN
+   ========================================================================== */
+
+#clock-display {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  max-width: calc(var(--sq-size) * 8 + 48px);
+}
+
+.player-clock {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.white-clock {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.black-clock {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+.active-clock {
+  border-color: var(--clock-active-border);
+  box-shadow: 0 0 12px rgba(102, 187, 106, 0.3);
+}
+
+/* ==========================================================================
+   GESCHLAGENE FIGUREN
+   ========================================================================== */
+
+.captured-bar {
+  min-height: 28px;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  width: 100%;
+  max-width: calc(var(--sq-size) * 8 + 48px);
+  padding: 2px 4px;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* ==========================================================================
+   BRETT MIT BESCHRIFTUNG
+   ========================================================================== */
+
+#board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-labels {
+  display: grid;
+  grid-template-columns: repeat(8, var(--sq-size));
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.col-labels span {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  user-select: none;
+}
+
+#board-with-rows {
+  display: flex;
+  align-items: stretch;
+}
+
+.row-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+}
+
+.row-labels span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  height: var(--sq-size);
+  user-select: none;
+}
+
+/* ==========================================================================
+   SPIELFELD (8x8 Grid)
+   ========================================================================== */
+
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(8, var(--sq-size));
+  grid-template-rows: repeat(8, var(--sq-size));
+  border: 3px solid #3a3a5c;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sq-size);
+  height: var(--sq-size);
+  font-size: calc(var(--sq-size) * 0.6);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+  position: relative;
+}
+
+.square:hover {
+  filter: brightness(1.1);
+}
+
+/* Tastatur-Fokus-Ring */
+.square:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+.square:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.square:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+/* Feldfarben */
+.light {
+  background-color: var(--square-light);
+}
+
+.dark {
+  background-color: var(--square-dark);
+}
+
+/* Figurenfarben – Weiss und Schwarz, unabhängig vom Feld */
+.square.piece-white {
+  color: #f5f5f5;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.square.piece-black {
+  color: #2d2d2d;
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.4);
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ausgewaehltes Feld */
+.square.selected {
+  background-color: var(--square-selected) !important;
+  box-shadow: inset 0 0 0 3px rgba(255, 235, 59, 0.7);
+}
+
+/* Gueltiger Zug (leeres Feld) - kleiner Punkt */
+.square.valid-move::after {
+  content: "";
+  position: absolute;
+  width: 26%;
+  height: 26%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* Gueltiger Schlagzug - Ring um das Feld */
+.square.valid-capture {
+  background-color: var(--square-capture) !important;
+  box-shadow: inset 0 0 0 3px rgba(239, 83, 80, 0.6);
+}
+
+/* Letzter Zug */
+.square.last-move {
+  background-color: var(--square-last-move) !important;
+}
+
+/* Feld mit Koenig im Schach */
+.square.check {
+  background-color: var(--square-check) !important;
+  animation: checkPulse 1s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+  0%,
+  100% {
+    box-shadow: inset 0 0 8px rgba(239, 83, 80, 0.4);
+  }
+  50% {
+    box-shadow: inset 0 0 18px rgba(239, 83, 80, 0.8);
+  }
+}
+
+/* Figur-Platzierung Animation */
+@keyframes piecePlace {
+  0% {
+    transform: scale(1.25);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.square.piece-placed {
+  animation: piecePlace 0.25s ease-out;
+}
+
+/* ==========================================================================
+   SPIELINFO & BUTTONS
+   ========================================================================== */
+
+#game-info {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+#game-info p {
+  margin: 3px 0;
+}
+
+#player {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+#info-display {
+  transition: color 0.3s;
+}
+
+#info-display.check-warning {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+#button-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  justify-content: center;
+}
+
+#button-bar button {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#btn-new-game {
+  background-color: var(--accent);
+  color: #1a1a2e;
+}
+
+#btn-new-game:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.3);
+}
+
+#btn-undo {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#btn-undo:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+#btn-flip,
+#btn-mute,
+#btn-pgn,
+#btn-resign {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#btn-flip:hover,
+#btn-mute:hover,
+#btn-pgn:hover,
+#btn-resign:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+#btn-mute.muted {
+  opacity: 0.7;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.modal-buttons button {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-resign-confirm {
+  background-color: var(--danger);
+  color: white;
+}
+
+#btn-resign-cancel {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+.square.dragging {
+  opacity: 0.5;
+}
+
+.moving-piece {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  font-size: calc(var(--sq-size) * 0.6);
+  transition: transform 0.2s ease-out;
+}
+
+.captured-bar .material-adv {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--success);
+  margin-left: 6px;
+}
+
+/* ==========================================================================
+   SEITENLEISTE (Zughistorie)
+   ========================================================================== */
+
+#sidebar {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 180px;
+  max-width: 220px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+#sidebar h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--accent);
+  text-align: center;
+}
+
+#move-list {
+  max-height: calc(var(--sq-size) * 8);
+  overflow-y: auto;
+  font-size: 0.85rem;
+  font-family: "Courier New", monospace;
+}
+
+#move-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+#move-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.move-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 1fr;
+  gap: 4px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.move-row:hover {
+  background-color: var(--bg-hover);
+}
+
+.move-num {
+  color: var(--text-secondary);
+  text-align: right;
+  padding-right: 4px;
+}
+
+.move-white,
+.move-black {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   MODALS
+   ========================================================================== */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.visible {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 28px 36px;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+#promo-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.promo-piece {
+  font-size: 2.8rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.promo-piece:hover {
+  background: rgba(79, 195, 247, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(79, 195, 247, 0.2);
+}
+
+#btn-play-again {
+  margin-top: 16px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font);
+  background-color: var(--accent);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#btn-play-again:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  #main-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sidebar {
+    min-width: unset;
+    max-width: 100%;
+    width: calc(var(--sq-size) * 8 + 48px);
+  }
+
+  #move-list {
+    max-height: 120px;
+  }
+
+  #title {
+    font-size: 1.4rem;
+  }
+
+  .player-clock {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+
+  .promo-piece {
+    font-size: 2.2rem;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --sq-size: 38px;
+  }
+
+  .row-labels {
+    width: 18px;
+  }
+
+  .col-labels {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .col-labels span,
+  .row-labels span {
+    font-size: 0.65rem;
+  }
+
+  #button-bar {
+    flex-direction: column;
+  }
+
+  #button-bar button {
+    width: 100%;
+  }
+}

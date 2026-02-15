@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Schachspiel – Unit Tests</title>
+    <style>
+      body { font-family: monospace; background: #1a1a2e; color: #e8e8e8; padding: 20px; }
+      h1 { color: #4fc3f7; }
+      .pass { color: #66bb6a; }
+      .fail { color: #ef5350; font-weight: bold; }
+      .summary { margin-top: 20px; font-size: 1.2em; padding: 10px; border-top: 1px solid #444; }
+      #results div { padding: 2px 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Schachspiel – Unit Tests</h1>
+    <div id="results"></div>
+    <div id="summary" class="summary"></div>
+
+    <!-- Unsichtbares Spielfeld fuer Tests -->
+    <div style="display:none">
+      <div id="gameboard"></div>
+      <span id="player"></span>
+      <span id="info-display"></span>
+      <div class="player-clock white-clock"></div>
+      <div class="player-clock black-clock"></div>
+      <div id="move-list"></div>
+      <div id="white-captured"></div>
+      <div id="black-captured"></div>
+      <div id="col-labels-top" class="col-labels">
+        <span>a</span><span>b</span><span>c</span><span>d</span>
+        <span>e</span><span>f</span><span>g</span><span>h</span>
+      </div>
+      <div id="col-labels-bottom" class="col-labels">
+        <span>a</span><span>b</span><span>c</span><span>d</span>
+        <span>e</span><span>f</span><span>g</span><span>h</span>
+      </div>
+      <div id="row-labels-left" class="row-labels">
+        <span>8</span><span>7</span><span>6</span><span>5</span>
+        <span>4</span><span>3</span><span>2</span><span>1</span>
+      </div>
+      <div id="row-labels-right" class="row-labels">
+        <span>8</span><span>7</span><span>6</span><span>5</span>
+        <span>4</span><span>3</span><span>2</span><span>1</span>
+      </div>
+      <div id="promotion-modal" class="modal-overlay">
+        <div class="modal-content">
+          <div id="promo-options">
+            <div class="promo-piece"></div>
+            <div class="promo-piece"></div>
+            <div class="promo-piece"></div>
+            <div class="promo-piece"></div>
+          </div>
+        </div>
+      </div>
+      <div id="resign-modal" class="modal-overlay"></div>
+      <div id="game-end-modal" class="modal-overlay">
+        <div class="modal-content"><h3 id="end-message"></h3></div>
+      </div>
+      <button id="btn-new-game"></button>
+      <button id="btn-undo"></button>
+      <button id="btn-flip"></button>
+      <button id="btn-mute">Ton Aus</button>
+      <button id="btn-pgn"></button>
+      <button id="btn-resign"></button>
+      <button id="btn-resign-confirm"></button>
+      <button id="btn-resign-cancel"></button>
+      <button id="btn-play-again"></button>
+    </div>
+
+    <script src="pieces.js"></script>
+    <script src="app.js"></script>
+    <script>
+      // =====================================================================
+      //  Minimales Test-Framework
+      // =====================================================================
+      const results = document.querySelector("#results");
+      let passed = 0;
+      let failed = 0;
+
+      function assert(condition, name) {
+        if (condition) {
+          passed++;
+          results.innerHTML += `<div class="pass">  PASS  ${name}</div>`;
+        } else {
+          failed++;
+          results.innerHTML += `<div class="fail">  FAIL  ${name}</div>`;
+        }
+      }
+
+      function assertEqual(actual, expected, name) {
+        assert(actual === expected, `${name} (erwartet: ${expected}, erhalten: ${actual})`);
+      }
+
+      // =====================================================================
+      //  Hilfsfunktionen (pieces.js)
+      // =====================================================================
+
+      // getPieceType
+      assertEqual(getPieceType(PIECES.pawn.white), "pawn", "getPieceType: weisser Bauer");
+      assertEqual(getPieceType(PIECES.queen.black), "queen", "getPieceType: schwarze Dame");
+      assertEqual(getPieceType(PIECES.king.white), "king", "getPieceType: weisser Koenig");
+      assertEqual(getPieceType(""), null, "getPieceType: leeres Feld");
+      assertEqual(getPieceType(null), null, "getPieceType: null");
+
+      // getPieceColor
+      assertEqual(getPieceColor(PIECES.rook.white), "white", "getPieceColor: weisser Turm");
+      assertEqual(getPieceColor(PIECES.knight.black), "black", "getPieceColor: schwarzer Springer");
+      assertEqual(getPieceColor(""), null, "getPieceColor: leeres Feld");
+
+      // isWhitePiece / isBlackPiece
+      assert(isWhitePiece(PIECES.bishop.white), "isWhitePiece: weisser Laeufer");
+      assert(!isWhitePiece(PIECES.bishop.black), "isWhitePiece: schwarzer Laeufer = false");
+      assert(isBlackPiece(PIECES.king.black), "isBlackPiece: schwarzer Koenig");
+      assert(!isBlackPiece(PIECES.king.white), "isBlackPiece: weisser Koenig = false");
+
+      // indexToAlgebraic
+      assertEqual(indexToAlgebraic(0), "a8", "indexToAlgebraic: 0 = a8");
+      assertEqual(indexToAlgebraic(4), "e8", "indexToAlgebraic: 4 = e8");
+      assertEqual(indexToAlgebraic(63), "h1", "indexToAlgebraic: 63 = h1");
+      assertEqual(indexToAlgebraic(56), "a1", "indexToAlgebraic: 56 = a1");
+      assertEqual(indexToAlgebraic(36), "e4", "indexToAlgebraic: 36 = e4");
+
+      // getAlgebraicNotation
+      assertEqual(
+        getAlgebraicNotation(PIECES.knight.white, 62, 45, false, null, ""),
+        "Se3",
+        "Notation: Springer nach e3"
+      );
+      assertEqual(
+        getAlgebraicNotation(PIECES.pawn.white, 52, 36, false, null, ""),
+        "e4",
+        "Notation: Bauer nach e4"
+      );
+      assertEqual(
+        getAlgebraicNotation(PIECES.pawn.white, 51, 44, true, null, ""),
+        "dxe3",
+        "Notation: Bauer schlaegt auf e3"
+      );
+      assertEqual(
+        getAlgebraicNotation(PIECES.king.white, 60, 62, false, "O-O", ""),
+        "O-O",
+        "Notation: Kurze Rochade"
+      );
+      assertEqual(
+        getAlgebraicNotation(PIECES.king.white, 60, 58, false, "O-O-O", ""),
+        "O-O-O",
+        "Notation: Lange Rochade"
+      );
+
+      // Konstanten
+      assertEqual(BOARD_SIZE, 8, "Konstante BOARD_SIZE = 8");
+      assertEqual(SQUARE_COUNT, 64, "Konstante SQUARE_COUNT = 64");
+      assertEqual(LAST_INDEX, 63, "Konstante LAST_INDEX = 63");
+
+      // =====================================================================
+      //  Spiellogik (app.js) – ChessGame-Instanz
+      // =====================================================================
+
+      const game = new ChessGame();
+
+      // --- findKing ---
+      assertEqual(game.findKing("white"), 60, "findKing: weisser Koenig auf e1 (Index 60)");
+      assertEqual(game.findKing("black"), 4, "findKing: schwarzer Koenig auf e8 (Index 4)");
+
+      // --- isPieceColor ---
+      assert(game.isPieceColor(PIECES.pawn.white, "white"), "isPieceColor: weisser Bauer ist weiss");
+      assert(!game.isPieceColor(PIECES.pawn.white, "black"), "isPieceColor: weisser Bauer ist nicht schwarz");
+      assert(!game.isPieceColor("", "white"), "isPieceColor: leeres Feld ist nicht weiss");
+
+      // --- isPathClear ---
+      // Startposition: Weg zwischen Turm a1 (56) und a8 (0) ist blockiert
+      assert(!game.isPathClear(56, 0), "isPathClear: a1-a8 blockiert (Startposition)");
+      // Weg e2-e4 (52-36) frei (leere Felder dazwischen)
+      assert(game.isPathClear(52, 36), "isPathClear: e2-e4 frei");
+
+      // --- isValidMoveRaw (Bauernzuege) ---
+      // Weisser Bauer e2 (52) -> e4 (36): erlaubt (Doppelzug)
+      assert(game.isValidMoveRaw(52, 36, false), "Bauer e2->e4 erlaubt");
+      // Weisser Bauer e2 (52) -> e3 (44): erlaubt (Einzelzug)
+      assert(game.isValidMoveRaw(52, 44, false), "Bauer e2->e3 erlaubt");
+      // Weisser Bauer e2 (52) -> e5 (28): nicht erlaubt (zu weit)
+      assert(!game.isValidMoveRaw(52, 28, false), "Bauer e2->e5 nicht erlaubt");
+      // Weisser Bauer e2 (52) -> d3 (43): nicht erlaubt (diagonal, kein Gegner)
+      assert(!game.isValidMoveRaw(52, 43, false), "Bauer e2->d3 ohne Gegner nicht erlaubt");
+
+      // --- isValidMoveRaw (Springer) ---
+      // Springer b1 (57) -> c3 (42): erlaubt
+      assert(game.isValidMoveRaw(57, 42, false), "Springer b1->c3 erlaubt");
+      // Springer b1 (57) -> a3 (40): erlaubt
+      assert(game.isValidMoveRaw(57, 40, false), "Springer b1->a3 erlaubt");
+      // Springer b1 (57) -> d2 (51): nicht erlaubt (eigene Figur auf d2)
+      assert(!game.isValidMoveRaw(57, 51, false), "Springer b1->d2 blockiert (eigene Figur)");
+
+      // --- isValidMoveRaw (Turm blockiert in Startposition) ---
+      assert(!game.isValidMoveRaw(56, 48, false), "Turm a1->a2 blockiert (eigener Bauer)");
+
+      // --- isValidMoveRaw (Laeufer blockiert in Startposition) ---
+      assert(!game.isValidMoveRaw(58, 44, false), "Laeufer c1 blockiert in Startposition");
+
+      // --- isLegalMove (inkl. Koenigscheck) ---
+      assert(game.isLegalMove(52, 36), "Legaler Zug: e2-e4");
+      assert(game.isLegalMove(57, 42), "Legaler Zug: Sb1-c3");
+      assert(!game.isLegalMove(60, 52), "Illegaler Zug: Koenig auf eigenen Bauer");
+
+      // --- isInCheck (Startposition: kein Schach) ---
+      assert(!game.isInCheck("white"), "Kein Schach fuer Weiss in Startposition");
+      assert(!game.isInCheck("black"), "Kein Schach fuer Schwarz in Startposition");
+
+      // --- hasLegalMoves ---
+      assert(game.hasLegalMoves("white"), "Weiss hat legale Zuege in Startposition");
+      assert(game.hasLegalMoves("black"), "Schwarz hat legale Zuege in Startposition");
+
+      // --- Zug ausfuehren und pruefen ---
+      game.makeMove(52, 36); // e2-e4
+      // Nach e4: Board[36] sollte weisser Bauer sein, Board[52] leer
+      setTimeout(() => {
+        assertEqual(game.board[36], PIECES.pawn.white, "Nach e2-e4: Bauer auf e4");
+        assertEqual(game.board[52], "", "Nach e2-e4: e2 leer");
+        assertEqual(game.currentPlayer, "black", "Nach e2-e4: Schwarz am Zug");
+
+        // En Passant Zielfeld gesetzt
+        assertEqual(game.enPassantTarget, 44, "En Passant Zielfeld nach e2-e4 auf e3 (44)");
+
+        // --- Undo testen ---
+        game.undoMove();
+        assertEqual(game.board[52], PIECES.pawn.white, "Undo: Bauer zurueck auf e2");
+        assertEqual(game.board[36], "", "Undo: e4 wieder leer");
+        assertEqual(game.currentPlayer, "white", "Undo: Weiss wieder am Zug");
+
+        // --- isInsufficientMaterial ---
+        // Nur zwei Koenige
+        const savedBoard = [...game.board];
+        game.board = Array(SQUARE_COUNT).fill("");
+        game.board[0] = PIECES.king.black;
+        game.board[63] = PIECES.king.white;
+        assert(game.isInsufficientMaterial(), "K vs K: ungenuegendes Material");
+
+        // Koenig + Laeufer vs Koenig
+        game.board[1] = PIECES.bishop.white;
+        assert(game.isInsufficientMaterial(), "K+L vs K: ungenuegendes Material");
+
+        // Koenig + Turm vs Koenig: genuegend Material
+        game.board[1] = PIECES.rook.white;
+        assert(!game.isInsufficientMaterial(), "K+T vs K: genuegendes Material");
+
+        game.board = savedBoard;
+
+        // --- isThreefoldRepetition ---
+        // Reset und dreimal gleiche Stellung erzeugen
+        game.resetGame();
+        const startHash = game.getBoardHash();
+        game.positionHistory = [startHash, "other", startHash, "other2", startHash];
+        assert(game.isThreefoldRepetition(), "Dreifache Stellungswiederholung erkannt");
+        game.positionHistory = [startHash, "other"];
+        assert(!game.isThreefoldRepetition(), "Keine dreifache Wiederholung");
+
+        // --- isSquareAttacked ---
+        game.resetGame();
+        // In Startposition: e7 (12) wird von schwarzem Koenig angegriffen
+        // Felder vor weissem Koenig (52 = e2) werden vom Bauer angegriffen? Nein. Let's check d2 attacked by c1 bishop? No, blocked.
+        // a3 (40) wird von keinem schwarzen Stueck angegriffen
+        assert(!game.isSquareAttacked(40, "black"), "a3 nicht von Schwarz angegriffen");
+        // e7 (12) wird von schwarzem Koenig auf e8 (4) angegriffen
+        assert(game.isSquareAttacked(12, "black"), "e7 wird von schwarzem Koenig angegriffen");
+
+        // --- Rochade (canCastle) ---
+        game.resetGame();
+        // In Startposition: Rochade nicht moeglich (Weg blockiert)
+        assert(!game.canCastle(60, 62), "Kurze Rochade blockiert in Startposition");
+        assert(!game.canCastle(60, 58), "Lange Rochade blockiert in Startposition");
+
+        // Weg freiraeumen fuer kurze Rochade
+        game.board[61] = ""; // f1 frei
+        game.board[62] = ""; // g1 frei
+        assert(game.canCastle(60, 62), "Kurze Rochade moeglich nach Freiraeumen");
+
+        // =====================================================================
+        //  Zusammenfassung
+        // =====================================================================
+        const summaryEl = document.querySelector("#summary");
+        const total = passed + failed;
+        if (failed === 0) {
+          summaryEl.innerHTML = `<span class="pass">Alle ${total} Tests bestanden!</span>`;
+        } else {
+          summaryEl.innerHTML = `<span class="fail">${failed} von ${total} Tests fehlgeschlagen.</span>`;
+        }
+      }, 500); // Warten auf animateMove-Callback
+    </script>
+  </body>
+</html>

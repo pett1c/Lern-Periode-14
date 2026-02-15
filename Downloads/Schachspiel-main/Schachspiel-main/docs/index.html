@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♔</text></svg>"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schachspiel</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="title">Schachspiel</h1>
+
+      <div id="main-layout">
+        <!-- Brett-Bereich -->
+        <div id="board-section">
+          <!-- Geschlagene weisse Figuren (von Schwarz geschlagen) -->
+          <div id="black-captured" class="captured-bar"></div>
+
+          <!-- Uhren -->
+          <div id="clock-display">
+            <div class="player-clock black-clock">Schwarz: 10:00</div>
+            <div class="player-clock white-clock">Weiss: 10:00</div>
+          </div>
+
+          <!-- Brett mit Beschriftung -->
+          <div id="board-wrapper">
+            <div id="col-labels-top" class="col-labels">
+              <span>a</span><span>b</span><span>c</span><span>d</span>
+              <span>e</span><span>f</span><span>g</span><span>h</span>
+            </div>
+            <div id="board-with-rows">
+              <div id="row-labels-left" class="row-labels">
+                <span>8</span><span>7</span><span>6</span><span>5</span>
+                <span>4</span><span>3</span><span>2</span><span>1</span>
+              </div>
+              <div id="gameboard" role="grid" aria-label="Schachbrett"></div>
+              <div id="row-labels-right" class="row-labels">
+                <span>8</span><span>7</span><span>6</span><span>5</span>
+                <span>4</span><span>3</span><span>2</span><span>1</span>
+              </div>
+            </div>
+            <div id="col-labels-bottom" class="col-labels">
+              <span>a</span><span>b</span><span>c</span><span>d</span>
+              <span>e</span><span>f</span><span>g</span><span>h</span>
+            </div>
+          </div>
+
+          <!-- Geschlagene schwarze Figuren (von Weiss geschlagen) -->
+          <div id="white-captured" class="captured-bar"></div>
+
+          <!-- Spielinfo -->
+          <div id="game-info">
+            <p>Am Zug: <span id="player"></span></p>
+            <p id="info-display" aria-live="polite" role="status"></p>
+          </div>
+
+          <!-- Buttons -->
+          <div id="button-bar" role="toolbar" aria-label="Spielsteuerung">
+            <button id="btn-new-game" aria-label="Neues Spiel starten">Neues Spiel</button>
+            <button id="btn-undo" aria-label="Letzten Zug zuruecknehmen">Zug zur&uuml;cknehmen</button>
+            <button id="btn-flip" aria-label="Brett drehen">Brett drehen</button>
+            <button id="btn-mute" aria-label="Ton ein- oder ausschalten">Ton Aus</button>
+            <button id="btn-pgn" aria-label="Partie als PGN in Zwischenablage kopieren">PGN kopieren</button>
+            <button id="btn-resign" aria-label="Partie aufgeben">Aufgeben</button>
+          </div>
+        </div>
+
+        <!-- Seitenleiste: Zughistorie -->
+        <div id="sidebar">
+          <h2>Z&uuml;ge</h2>
+          <div id="move-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bauernumwandlung Modal -->
+    <div id="promotion-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3>Bauernumwandlung</h3>
+        <p class="modal-subtitle">W&auml;hle eine Figur:</p>
+        <div id="promo-options">
+          <div class="promo-piece"></div>
+          <div class="promo-piece"></div>
+          <div class="promo-piece"></div>
+          <div class="promo-piece"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aufgeben-Bestaetigung -->
+    <div id="resign-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3>Aufgeben?</h3>
+        <p class="modal-subtitle">M&ouml;chtest du wirklich aufgeben?</p>
+        <div class="modal-buttons">
+          <button id="btn-resign-confirm">Ja, aufgeben</button>
+          <button id="btn-resign-cancel">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spielende Modal -->
+    <div id="game-end-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 id="end-message"></h3>
+        <button id="btn-play-again">Nochmal spielen</button>
+      </div>
+    </div>
+
+    <script src="pieces.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
