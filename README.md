@@ -97,9 +97,9 @@ The project combines **CRUD operations**, **Vector Search & Embeddings**, **LLM 
 
 # Lern-Periode 14
 
-Arvin - Backend
-Kenan - Frontend
-Ihor - KI-Integrierung
+- Arvin - Backend
+- Kenan - Frontend
+- Ihor - KI-Integrierung
 
 
 ## 27.02
