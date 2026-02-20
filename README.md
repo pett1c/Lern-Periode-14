@@ -21,9 +21,9 @@ The project combines **CRUD operations**, **Vector Search & Embeddings**, **LLM 
 - JWT Authentication + Role-based access control (Admin, Organizer, User)
 - REST API for events, tickets, and AI chat processing
 - MongoDB with Mongoose for persistent data storage
-- Vector Database (e.g., MongoDB Atlas Vector Search / Pinecone) for semantic event search
+- Vector Database (MongoDB Atlas Vector Search) for semantic event search
 - AI Integration Layer: RAG pipeline, LLM service API integration, and automatic vector embedding generation on event CRUD operations
-- QR-Code for tickets (optional expansion)
+- QR-Code for tickets (nice-to-have feature)
 
 ### Frontend
 
@@ -33,44 +33,82 @@ The project combines **CRUD operations**, **Vector Search & Embeddings**, **LLM 
 - Dashboard with event overview, ticket status, and analytics
 - Responsive design for Desktop & Mobile
 
+---
+
+## Structure
+
+```
+/eventify
+|-- /backend
+|   |-- /config
+|   |   |-- db.js                   # Datenbankverbindung (MongoDB)
+|   |   |-- vectorDb.js             # Konfiguration der Vektordatenbank
+|   |-- /controllers
+|   |   |-- authController.js       # Authentifizierungslogik
+|   |   |-- eventController.js      # Event-Logik (inkl. Vektorisierung)
+|   |   |-- ticketController.js     # Ticket-Verwaltungslogik
+|   |   |-- chatController.js       # Verarbeitung von Chat-HTTP-Anfragen
+|   |-- /services
+|   |   |-- llmService.js           # Externe LLM-API-Integration
+|   |   |-- embeddingService.js     # Generierung von Vektor-Embeddings
+|   |   |-- ragService.js           # Semantische Suche und RAG-Logik
+|   |-- /models
+|   |   |-- User.js                 # Datenbankmodell für Benutzer
+|   |   |-- Event.js                # Datenbankmodell für Events
+|   |   |-- Ticket.js               # Datenbankmodell für Tickets
+|   |   |-- Message.js              # Datenbankmodell für Chat-Nachrichten
+|   |-- /routes
+|   |   |-- auth.js                 # API-Routen für Authentifizierung
+|   |   |-- events.js               # API-Routen für Events
+|   |   |-- tickets.js              # API-Routen für Tickets
+|   |   |-- chat.js                 # API-Routen für Chat
+|   |-- /middleware
+|   |   |-- auth.js                 # Middleware zur Überprüfung von Tokens
+|   |   |-- role.js                 # Middleware für rollenbasierte Zugriffe
+|   |-- /utils                      # Hilfsfunktionen
+|   |-- app.js                      # Express-App-Konfiguration
+|   |-- server.js                   # Servereinstiegspunkt und Start
+|-- /frontend
+|   |-- /src
+|   |   |-- /pages
+|   |   |   |-- Login.jsx           # Anmeldeseite
+|   |   |   |-- Register.jsx        # Registrierungsseite
+|   |   |   |-- Dashboard.jsx       # Haupt-Dashboard
+|   |   |   |-- EventDetail.jsx     # Event-Detailansicht
+|   |   |   |-- CreateEvent.jsx     # Seite zur Event-Erstellung
+|   |   |   |-- MyTickets.jsx       # Übersicht gekaufter Tickets
+|   |   |-- /components
+|   |   |   |-- Navbar.jsx          # Navigationsleiste
+|   |   |   |-- EventCard.jsx       # UI-Komponente für Event-Vorschau
+|   |   |   |-- TicketCard.jsx      # UI-Komponente für Ticket-Details
+|   |   |   |-- /chat
+|   |   |   |   |-- ChatWindow.jsx  # Hauptfenster für die Chat-UI
+|   |   |   |   |-- MessageBubble.jsx # UI-Komponente für einzelne Nachrichten
+|   |   |-- /context                # React Context (z.B. Auth-Status)
+|   |   |-- /api
+|   |   |   |-- authApi.js          # API-Aufrufe für Authentifizierung
+|   |   |   |-- eventApi.js         # API-Aufrufe für Events
+|   |   |   |-- ticketApi.js        # API-Aufrufe für Tickets
+|   |   |   |-- chatApi.js          # API-Aufrufe für Chat-Funktionen
+|   |   |-- index.js                # React-Anwendungseinstiegspunkt
+```
+
+---
 
 # Lern-Periode 14
 
-
-## 20.02
-
-### Ihor
-
-- [] ...
-- [] ...
-- [] ...
-
-*Heute habe ich...*
-
-### Arvin
-
-- [] ...
-- [] ...
-- [] ...
-
-*Heute habe ich...*
-
-### Kenan
-
-- [] ...
-- [] ...
-- [] ...
-
-*Heute habe ich...*
+Arvin - Backend
+Kenan - Frontend
+Ihor - KI-Integrierung
 
 
 ## 27.02
 
 ### Ihor
 
-- [] ...
-- [] ...
-- [] ...
+- [] LLM und Typ (lokal/API-Schlüssel) auswählen und eine feste Systemprompt schreiben + Ausgabe erstellen
+- [] Mock-Daten mit fiktiven Events erstellen und ein Vektorisierungsskript schreiben (das Skript liest JSON mit Daten, generiert Vektoren und schreibt sie in die Vektordatenbank)
+- [] Ein RAG-Skript schreiben, das eine Testtextanfrage entgegennimmt, in einen Vektor konvertiert, die Vektordatenbank durchsucht, einen Kontext generiert und die Daten sendet.
 
 *Heute habe ich...*
 
