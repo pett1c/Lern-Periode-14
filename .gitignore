@@ -1,50 +1,32 @@
-<<<<<<< HEAD
-# Ignoriere alle AppData- und Cache-Ordner
-/AppData/
-/Anwendungsdaten/
-# Ignoriere andere temporäre oder nicht relevante Dateien und Ordner
-*.log
-*.tmp
-=======
-# .NET Core build output
-bin/
-obj/
+# Keep personal/home directories out of this repository
+Downloads/
+OneDrive - BBBaden/
+OneDrive/
 
-# User-specific files
+# Environment files
+backend/.env
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+build/
+
+# IDE/editor files
 .vs/
 .vscode/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows Installer files
-*.pdb
-
-# Windows Installer files
-*.user
-*.userosscache
-*.suo
-*.userprefs
-
-# JetBrains Rider
 .idea/
+.settings/
 
-# VS Code directories
-.vscode/
-
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# Windows Installer files
+# OS/system files
 Thumbs.db
 ehthumbs.db
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
+desktop.ini
 
-# VS Code settings
-.settings/
->>>>>>> 3df939e (Add .gitignore and remove .vs files)
+# Logs and temporary files
+*.log
+*.tmp
