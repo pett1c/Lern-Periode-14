@@ -1,0 +1,32 @@
+# Keep personal/home directories out of this repository
+Downloads/
+OneDrive - BBBaden/
+OneDrive/
+
+# Environment files
+backend/.env
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+build/
+
+# IDE/editor files
+.vs/
+.vscode/
+.idea/
+.settings/
+
+# OS/system files
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
