@@ -113,10 +113,71 @@ The project combines **CRUD operations**, **Vector Search & Embeddings**, **LLM 
 *Heute habe ich...*
 
 ### Arvin
+# Arbeitspaket 1 (45 Min)
+## Express Server & Grundstruktur
 
-- [] ...
-- [] ...
-- [] ...
+### Ziel
+Backend initialisieren und lauffähigen Server erstellen.
+
+### Aufgaben
+- Express Projekt initialisieren
+- `server.js` und `app.js` erstellen
+- Basis-Middleware einbauen:
+  - express.json()
+  - cors
+- Ordnerstruktur anlegen:
+  - config
+  - controllers
+  - models
+  - routes
+  - middleware
+- Test-Route erstellen:
+  - GET `/api/health`
+ 
+### Ergebnis
+Server läuft lokal auf Port 5000.
+--- 
+# Arbeitspaket 2 (45 Min)
+## MongoDB Verbindung & Environment Setup
+
+### Ziel
+Datenbankanbindung vorbereiten.
+
+### Aufgaben
+- MongoDB Atlas Cluster erstellen
+- `.env` Datei einrichten
+- `config/db.js` implementieren
+- Verbindung in `server.js` einbinden
+- Erfolgs- / Fehler-Logging einbauen
+
+### Ergebnis
+Backend verbindet sich erfolgreich mit MongoDB.
+
+---
+
+# Arbeitspaket 3 (45 Min)
+## User Model & Registrierung
+
+### Ziel
+Basis-Authentifizierung implementieren.
+
+### Aufgaben
+- `User.js` Schema erstellen:
+  - name
+  - email (unique)
+  - password
+  - role (user | organizer | admin)
+- bcrypt installieren
+- Register-Funktion implementieren
+- Passwort vor Speicherung hashen
+- POST `/api/auth/register` Route
+
+### Ergebnis
+User kann sich registrieren, Passwort wird sicher gespeichert.
+
+---
+
+
 
 *Heute habe ich...*
 
