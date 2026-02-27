@@ -177,17 +177,64 @@ User kann sich registrieren, Passwort wird sicher gespeichert.
 
 ---
 
-
-
-*Heute habe ich...*
-
 ### Kenan
+# Arbeitspaket 1 (45 Min)
+## Low-Fidelity Mockup erstellen
 
-- [] ...
-- [] ...
-- [] ...
+### Ziel
+Grundlegende UI-Struktur aller Hauptseiten visuell planen, bevor implementiert wird.
 
-*Heute habe ich...*
+### Aufgaben
+- Folgende Elemente als Mockup planen:
+  - Login
+  - Register
+  - Dashboard
+  - Event Detail
+  - Create Event
+  - My Tickets
+- Für jede Seite eine einfache Wireframe-Skizze erstellen
+- Design-Entscheidungen festlegen wie Farbpalette, Schriftart, Card Stil usw.
+
+### Ergebnis
+Klare UI-Struktur vor der Implementierung und Design-Basis definiert (Farben, Layout, Komponenten-Stil etc.).
+
+# Arbeitspaket 2 (45 Min)
+## React Projekt initialisieren
+
+### Ziel 
+Frontend-Grundprojekt erstellen und lauffähig starten.
+
+### Aufgaben
+- React Projekt mit Vite erstellen
+- Projektordner /frontend strukturieren
+- Unnötige Standard-Dateien entfernen
+- Server starten
+- Prüfen, ob App im Browser läuft
+
+### Ergebnis
+React-App läuft lokal und ist bereit für Strukturierung.
+
+# Arbeitspaket 3 (45 Min)
+## Grundordner & leere Seiten anlegen
+
+### Ziel 
+Saubere Projektstruktur vorbereiten.
+
+### Aufgaben
+- Ordner anlegen:
+  - /src/pages
+  - /src/components
+  - /src/components/chat
+  - /src/context
+  - /src/api
+- Leere Seiten erstellen:
+  - Login.jsx
+  - Register.jsx
+  - Dashboard.jsx
+- Jede Seite mit einfachem <h1> Testinhalt versehen
+
+### Ergebnis
+Projektstruktur steht, erste Seiten existieren als Platzhalter.
 
 
 ## 06.03
