@@ -29,9 +29,9 @@
 ---
 
 ### Kenan
-- [] Low-Fidelity Mockup erstellen: grundlegende UI-Struktur aller Hauptseiten visuell planen, bevor implementiert wird.
-- [] React Projekt initialisieren: Frontend-Grundprojekt erstellen und lauffähig starten.
-- [] Grundordner & leere Seiten anlegen: Saubere Projektstruktur vorbereiten.
+- [x] Low-Fidelity Mockup erstellen: grundlegende UI-Struktur aller Hauptseiten visuell planen, bevor implementiert wird.
+- [x] React Projekt initialisieren: Frontend-Grundprojekt erstellen und lauffähig starten.
+- [x] Grundordner & leere Seiten anlegen: Saubere Projektstruktur vorbereiten.
 
 ---
 
