@@ -121,67 +121,14 @@ The project combines **CRUD operations**, **Vector Search & Embeddings**, **LLM 
 - [] User-Modell mit Passwort-Hashing implementieren und eine sichere Registrierungsfunktion erstellen.
 - [] Login-Funktion mit JWT-Token sowie Auth- und Rollen-Middleware für geschützte Routen entwickeln.
 
-
 ---
 
 ### Kenan
-# Arbeitspaket 1 (45 Min)
-## Low-Fidelity Mockup erstellen
+- [] Low-Fidelity Mockup erstellen: grundlegende UI-Struktur aller Hauptseiten visuell planen, bevor implementiert wird.
+- [] React Projekt initialisieren: Frontend-Grundprojekt erstellen und lauffähig starten.
+- [] Grundordner & leere Seiten anlegen: Saubere Projektstruktur vorbereiten.
 
-### Ziel
-Grundlegende UI-Struktur aller Hauptseiten visuell planen, bevor implementiert wird.
-
-### Aufgaben
-- Folgende Elemente als Mockup planen:
-  - Login
-  - Register
-  - Dashboard
-  - Event Detail
-  - Create Event
-  - My Tickets
-- Für jede Seite eine einfache Wireframe-Skizze erstellen
-- Design-Entscheidungen festlegen wie Farbpalette, Schriftart, Card Stil usw.
-
-### Ergebnis
-Klare UI-Struktur vor der Implementierung und Design-Basis definiert (Farben, Layout, Komponenten-Stil etc.).
-
-# Arbeitspaket 2 (45 Min)
-## React Projekt initialisieren
-
-### Ziel 
-Frontend-Grundprojekt erstellen und lauffähig starten.
-
-### Aufgaben
-- React Projekt mit Vite erstellen
-- Projektordner /frontend strukturieren
-- Unnötige Standard-Dateien entfernen
-- Server starten
-- Prüfen, ob App im Browser läuft
-
-### Ergebnis
-React-App läuft lokal und ist bereit für Strukturierung.
-
-# Arbeitspaket 3 (45 Min)
-## Grundordner & leere Seiten anlegen
-
-### Ziel 
-Saubere Projektstruktur vorbereiten.
-
-### Aufgaben
-- Ordner anlegen:
-  - /src/pages
-  - /src/components
-  - /src/components/chat
-  - /src/context
-  - /src/api
-- Leere Seiten erstellen:
-  - Login.jsx
-  - Register.jsx
-  - Dashboard.jsx
-- Jede Seite mit einfachem <h1> Testinhalt versehen
-
-### Ergebnis
-Projektstruktur steht, erste Seiten existieren als Platzhalter.
+---
 
 
 ## 06.03
