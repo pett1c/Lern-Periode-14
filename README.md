@@ -21,10 +21,10 @@
 
 ### Arvin
 
-- [] Express-Server mit Grundstruktur, Middleware und einer funktionierenden Test-Route aufsetzen.
-- [] MongoDB Atlas anbinden, Environment-Variablen konfigurieren und eine stabile Datenbankverbindung herstellen.
-- [] User-Modell mit Passwort-Hashing implementieren und eine sichere Registrierungsfunktion erstellen.
-- [] Login-Funktion mit JWT-Token sowie Auth- und Rollen-Middleware für geschützte Routen entwickeln.
+- [x] Express-Server mit Grundstruktur, Middleware und einer funktionierenden Test-Route aufsetzen.
+- [x] MongoDB Atlas anbinden, Environment-Variablen konfigurieren und eine stabile Datenbankverbindung herstellen.
+- [x] User-Modell mit Passwort-Hashing implementieren und eine sichere Registrierungsfunktion erstellen.
+- [x] Login-Funktion mit JWT-Token sowie Auth- und Rollen-Middleware für geschützte Routen entwickeln.
 
 ---
 
@@ -48,9 +48,10 @@
 
 ### Arvin
 
-- [] ...
-- [] ...
-- [] ...
+- [] Event- und Ticket-Modelle + CRUD-Endpunkte.
+- [] Rollenregeln: Organizer darf Events verwalten; User darf buchen; Admin sieht globale Endpunkte.
+- []Input-Validierung und konsistente API-Responses.
+
 
 *Heute habe ich...*
 
