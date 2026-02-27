@@ -1,0 +1,16 @@
+[
+  {
+    "id": "event_1",
+    "title": "Winter Rock Fest",
+    "description": "A large-scale rock concert this winter. Live music and energy.",
+    "date": "2026-12-15",
+    "genre": "rock"
+  },
+  {
+    "id": "event_2",
+    "title": "Summer Jazz",
+    "description": "A peaceful evening of jazz in the open air.",
+    "date": "2026-07-20",
+    "genre": "jazz"
+  }
+]
