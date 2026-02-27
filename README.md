@@ -1,4 +1,5 @@
-# Lern-Periode 14: Eventify – Fullstack AI-Powered Event Management Platform
+# Lern-Periode 14
+# Eventify – Fullstack AI-Powered Event Management Platform
 
 ---
 
