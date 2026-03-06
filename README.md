@@ -58,9 +58,10 @@
 
 ### Kenan
 
-- [] Mockup-Design umsetzen und verbessern
+- [x] Mockup-Design umsetzen und verbessern
+- [x] Seiten anzeigen & erstellen: Event-Funktionalität im Frontend umsetzen. 
 - [] Authentifizierung (UI + API Anbindung): Registrierung- und Login-Seite funktional machen.
-- [] Events anzeigen & erstellen: Event-Funktionalität im Frontend umsetzen. 
+
 
 ## 13.03
 
