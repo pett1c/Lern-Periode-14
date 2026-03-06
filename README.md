@@ -49,19 +49,56 @@
 
 ### Arvin
 
-- [] Event- und Ticket-Modelle + CRUD-Endpunkte.
-- [] Rollenregeln: Organizer darf Events verwalten; User darf buchen; Admin sieht globale Endpunkte.
-- []Input-Validierung und konsistente API-Responses.
+- [x] Event- und Ticket-Modelle + CRUD-Endpunkte.
+- [x] Rollenregeln: Organizer darf Events verwalten; User darf buchen; Admin sieht globale Endpunkte.
+- [x] Input-Validierung und konsistente API-Responses.
 
 
 *Heute habe ich...*
+
+#### API-Status 06.03 (Backend)
+
+- **Auth:** `POST /api/auth/register`, `POST /api/auth/login`, `GET /api/auth/me`
+- **Events CRUD:** `POST /api/events`, `GET /api/events`, `GET /api/events/:id`, `PATCH /api/events/:id`, `DELETE /api/events/:id`
+- **Tickets:** `POST /api/tickets/book`, `GET /api/tickets/me`, `GET /api/tickets/:id`, `PATCH /api/tickets/:id/cancel`
+- **Admin global:** `GET /api/admin/events`, `GET /api/admin/tickets`
+
+#### Rollenmatrix
+
+- **Organizer:** darf Events erstellen, bearbeiten und loeschen (nur eigene Events)
+- **User:** darf Tickets buchen und eigene Tickets sehen/stornieren
+- **Admin:** sieht globale Endpunkte fuer Events und Tickets
+
+#### API-Response-Format
+
+```json
+{
+  "success": true,
+  "message": "Human readable message",
+  "data": {},
+  "meta": {}
+}
+```
+
+Fehler:
+
+```json
+{
+  "success": false,
+  "message": "Validation failed.",
+  "data": null,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "details": []
+  }
+}
+```
 
 ### Kenan
 
 - [x] Mockup-Design umsetzen und verbessern
 - [x] Seiten anzeigen & erstellen: Event-Funktionalität im Frontend umsetzen. 
 - [] Authentifizierung (UI + API Anbindung): Registrierung- und Login-Seite funktional machen.
-
 
 ## 13.03
 
