@@ -1,32 +1,83 @@
-# Keep personal/home directories out of this repository
-Downloads/
-OneDrive - BBBaden/
-OneDrive/
+# ==============================================================================
+# Node.js & Dependencies
+# ==============================================================================
+node_modules/
+**/node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment files
-backend/.env
+# ==============================================================================
+# Build outputs & generated files
+# ==============================================================================
+dist/
+dist-ssr/
+build/
+coverage/
+.nyc_output/
+out/
+.eslintcache
+*.tsbuildinfo
+
+# ==============================================================================
+# Environment Variables
+# ==============================================================================
 .env
 .env.*
 !.env.example
+*.local
 
-# Dependencies and build output
-node_modules/
-**/node_modules/
-dist/
-build/
-
-# IDE/editor files
-.vs/
-.vscode/
-.idea/
-.settings/
-
-# OS/system files
-Thumbs.db
-ehthumbs.db
-$RECYCLE.BIN/
-desktop.ini
-
+# ==============================================================================
 # Logs and temporary files
+# ==============================================================================
+logs/
 *.log
 *.tmp
+*.temp
+
+# ==============================================================================
+# Database & Storage files
+# ==============================================================================
+*.sqlite
+*.sqlite3
+
+# ==============================================================================
+# IDEs and Editors
+# ==============================================================================
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.vs/
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ==============================================================================
+# OS / System Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ==============================================================================
+# Keep personal/home directories out of repository
+# ==============================================================================
+Downloads/
+OneDrive/
+OneDrive - BBBaden/
