@@ -2,6 +2,7 @@ const Event = require('../models/Event');
 const { ApiError } = require('../utils/apiError');
 const { sendSuccess } = require('../utils/apiResponse');
 const { asyncHandler } = require('../utils/asyncHandler');
+const { upsertEventVector, deleteEventVector } = require('../services/pineconeService');
 
 function ensureOrganizerOwnership(reqUser, event) {
   if (reqUser.role === 'admin') {
@@ -49,6 +50,9 @@ const createEvent = asyncHandler(async (req, res) => {
       bookedCount: 0,
     })),
   });
+
+  // Sync vector database
+  await upsertEventVector(event);
 
   return sendSuccess(res, {
     statusCode: 201,
@@ -139,6 +143,9 @@ const updateEvent = asyncHandler(async (req, res) => {
 
   await event.save();
 
+  // Sync vector database with updated event details
+  await upsertEventVector(event);
+
   return sendSuccess(res, {
     message: 'Event updated successfully.',
     data: { event },
@@ -155,6 +162,9 @@ const deleteEvent = asyncHandler(async (req, res) => {
 
   ensureOrganizerOwnership(req.user, event);
   await event.deleteOne();
+
+  // Remove corresponding vector from Pinecone
+  await deleteEventVector(id);
 
   return sendSuccess(res, {
     message: 'Event deleted successfully.',

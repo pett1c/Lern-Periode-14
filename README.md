@@ -98,9 +98,11 @@ Fehler:
 
 ### Ihor
 
-- [ ] Reale Embedding-API integrieren: Dummy-Funktion durch API-Aufruf für reale Text-Vektorisierung ersetzen.
-- [ ] Vektorisierung mit MongoDB koppeln: Backend-Logik anpassen, damit bei der Event-Erstellung (CRUD) automatisch ein Vektor in Pinecone gespeichert wird.
-- [ ] Chat-Controller & Route erstellen: REST-Endpunkt (POST /api/chat) im Express-Backend für zukünftige Frontend-Anfragen implementieren.
+- [x] Reale Embedding-API integrieren: Dummy-Funktion durch API-Aufruf für reale Text-Vektorisierung ersetzen.
+- [x] Vektorisierung mit MongoDB koppeln: Backend-Logik anpassen, damit bei der Event-Erstellung (CRUD) automatisch ein Vektor in Pinecone gespeichert wird.
+- [x] Chat-Controller & Route erstellen: REST-Endpunkt (POST /api/chat) im Express-Backend für zukünftige Frontend-Anfragen implementieren.
+
+Der Code ist fertig, aber die Tests finden erst in der nächsten Sitzung statt.
 
 ### Arvin
 
@@ -115,7 +117,7 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] ...
+- [ ] Testen der Änderungen vom 13.03.
 - [ ] ...
 - [ ] ...
 

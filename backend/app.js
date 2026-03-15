@@ -5,6 +5,7 @@ const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
 const ticketRoutes = require('./routes/tickets');
 const adminRoutes = require('./routes/admin');
+const chatRoutes = require('./routes/chat');
 const { ApiError } = require('./utils/apiError');
 const { errorHandler } = require('./middleware/errorHandler');
 
@@ -25,6 +26,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/chat', chatRoutes);
 
 app.use((_req, _res, next) => {
   next(new ApiError(404, 'NOT_FOUND', 'Route not found.'));
