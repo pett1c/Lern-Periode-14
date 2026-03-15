@@ -1,28 +1,73 @@
-require('dotenv').config({ path: '../.env' });
-const fs = require('fs');
+require('dotenv').config();
+const { generateEmbedding } = require('../services/llmService');
 const { Pinecone } = require('@pinecone-database/pinecone');
+const fs = require('fs');
+const path = require('path');
 
-const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
-const index = pc.index(process.env.PINECONE_INDEX);
+// Initialize Pinecone Client
+const pinecone = new Pinecone({
+  apiKey: process.env.PINECONE_API_KEY,
+});
 
-// Plugin for generating embeddings (replace with API call for embeddings)
-function generateDummyEmbedding(text) {
-  return Array.from({ length: 1536 }, () => Math.random() * 0.1);
+async function vectorizeData() {
+  try {
+    console.log('Starting vectorization process...');
+
+    // 1. Read mock data
+    const dataPath = path.join(__dirname, '../data/mockEvents.json');
+    const rawData = fs.readFileSync(dataPath, 'utf8');
+    const events = JSON.parse(rawData);
+
+    // 2. Access the target index
+    const indexName = process.env.PINECONE_INDEX || 'eventify-indexed';
+    const index = pinecone.index(indexName);
+
+    console.log(`Processing ${events.length} events for index: ${indexName}`);
+
+    // 3. Prepare vectors for Pinecone
+    const vectorsToUpsert = [];
+
+    for (const event of events) {
+      // Construct a string combining relevant fields for semantic search
+      const textToEmbed = `Title: ${event.title}. Genre: ${event.genre}. Date: ${event.date}. Description: ${event.description}`;
+      
+      console.log(`Generating embedding for event: ${event.title}`);
+      
+      // Generate the 1536-dimensional array
+      const embedding = await generateEmbedding(textToEmbed);
+      if (!Array.isArray(embedding) || embedding.length === 0) {
+        console.error(`❌ Invalid embedding for ${event.title}. Skipping...`);
+        continue; // Пропускаем битую запись
+      }
+
+      console.log(embedding)
+
+      vectorsToUpsert.push({
+        id: String(event.id),
+        values: embedding,
+        metadata: {
+          title: String(event.title),
+          genre: String(event.genre),
+          date: String(event.date),
+          description: String(event.description),
+          text: textToEmbed 
+        }
+      });
+    }
+
+    // 4. Upsert vectors to Pinecone
+    // Note: In production with many records, batch these upserts!
+    console.log(`Upserting ${vectorsToUpsert.length} vectors to Pinecone...`);
+    await index.upsert({
+      records: vectorsToUpsert
+    });
+
+    console.log('✅ Vectorization complete! Data is ready for RAG.');
+
+  } catch (error) {
+    console.error('❌ Error during vectorization:', error);
+  }
 }
 
-async function runVectorization() {
-  const data = JSON.parse(fs.readFileSync('../data/mockEvents.json', 'utf8'));
-  const vectors = data.map(event => {
-    const textToEmbed = `${event.title}. ${event.description} Жанр: ${event.genre}`;
-    return {
-      id: event.id,
-      values: generateDummyEmbedding(textToEmbed),
-      metadata: { title: event.title, genre: event.genre, date: event.date, description: event.description }
-    };
-  });
-
-  await index.upsert(vectors);
-  console.log('Vectorisation is complete. Data has been loaded into Pinecone.');
-}
-
-runVectorization().catch(console.error);
+// Run the script
+vectorizeData();
