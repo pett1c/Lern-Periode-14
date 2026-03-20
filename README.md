@@ -117,17 +117,15 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
+
+### Arvin
+
 - [x] `git pull origin main` + `npm install` (backend & frontend) + `.env` check + Smoke-Test
 - [x] Backend Postman-Tests (3 Rollen: Auth, Events CRUD, Tickets, Admin)
 - [ ] Frontend: API-Client, Register/Login, Token, Fehleranzeige nach API-Format
 - [ ] Frontend: Events (Liste/Detail/Erstellen), Tickets (buchen + Meine Tickets + ggf. Storno)
 - [ ] thor: KI-ID ↔ DB-ID Abgleich planen + README-Notizen + kurze Scrum-Doku
 
-### Arvin
-
-- [ ] ...
-- [ ] ...
-- [ ] ...
 
 ### Kenan
 
