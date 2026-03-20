@@ -117,15 +117,15 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] Testen der Änderungen vom 13.03. und Erstellung eines Basis-Frontends für Event-CRUD.
-- [ ] Anpassung der /api/chat-Antworten an das von Arvin definierte globale Response-Format (success, data, message, error).
-- [ ] Entwicklung der Frontend-Komponenten (ChatWindow.jsx, MessageBubble.jsx) und Verknüpfung mit dem Chat-Endpunkt.
 
 ### Arvin
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [x] `git pull origin main` + `npm install` (backend & frontend) + `.env` check + Smoke-Test
+- [x] Backend Postman-Tests (3 Rollen: Auth, Events CRUD, Tickets, Admin)
+- [ ] Frontend: API-Client, Register/Login, Token, Fehleranzeige nach API-Format
+- [ ] Frontend: Events (Liste/Detail/Erstellen), Tickets (buchen + Meine Tickets + ggf. Storno)
+- [ ] thor: KI-ID ↔ DB-ID Abgleich planen + README-Notizen + kurze Scrum-Doku
+
 
 ### Kenan
 
