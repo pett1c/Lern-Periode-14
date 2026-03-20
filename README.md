@@ -117,7 +117,7 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] Testen der Änderungen vom 13.03. und Erstellung eines Basis-Frontends für Event-CRUD.
+- [ ] Postman-Tests für automatische Vektor-Erstellung bei Event-Erstellung (CRUD), Erstellung eines Basis-Frontends für Events-CRUD.
 - [ ] Anpassung der /api/chat-Antworten an das von Arvin definierte globale Response-Format (success, data, message, error).
 - [ ] Entwicklung der Frontend-Komponenten (ChatWindow.jsx, MessageBubble.jsx) und Verknüpfung mit dem Chat-Endpunkt.
 
