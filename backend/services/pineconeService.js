@@ -33,17 +33,19 @@ async function upsertEventVector(event) {
 
     const index = getPineconeIndex();
 
-    await index.upsert([{
-      id: event._id.toString(),
-      values: embedding,
-      metadata: {
-        title: event.title,
-        location: event.location,
-        date: event.date.toISOString(),
-        description: event.description,
-        text: textToEmbed,
-      }
-    }]);
+    await index.upsert({
+      records: [{
+        id: event._id.toString(),
+        values: embedding,
+        metadata: {
+          title: event.title,
+          location: event.location,
+          date: event.date.toISOString(),
+          description: event.description,
+          text: textToEmbed,
+        }
+      }]
+    });
 
     console.log(`[Pinecone] Successfully upserted vector for event ${event._id}`);
   } catch (error) {
