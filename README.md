@@ -117,9 +117,9 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] Testen der Änderungen vom 13.03.
-- [ ] ...
-- [ ] ...
+- [ ] Testen der Änderungen vom 13.03. und Erstellung eines Basis-Frontends für Event-CRUD.
+- [ ] Anpassung der /api/chat-Antworten an das von Arvin definierte globale Response-Format (success, data, message, error).
+- [ ] Entwicklung der Frontend-Komponenten (ChatWindow.jsx, MessageBubble.jsx) und Verknüpfung mit dem Chat-Endpunkt.
 
 ### Arvin
 
