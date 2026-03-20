@@ -117,15 +117,8 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [x] KI-Stand geprüft: Chat-/Embedding-Flow aus 13.03 analysiert und mit Backend-Routen abgeglichen.
-- [x] DB-ID-Abgleich geplant: Event-IDs aus MongoDB mit Vektor-IDs synchronisieren.
-- [x] Nächster Schritt definiert: Embedding-Pipeline direkt nach Event-CRUD triggern.
-
-*Heute habe ich...*
-
-- Done: Analyse von `backend/scripts/testRag.js` und `backend/data/mockEvents.json`.
-- Next: Chat-Response auf echte Mongo-Event-IDs umstellen.
-- Blocker: Ohne gültige API-Keys/DB-Zugriff nur eingeschränkte Laufzeittests möglich.
+- [x] Postman-Tests für automatische Vektor-Erstellung bei Event-Erstellung (CRUD), Erstellung eines Basis-Frontends für Events-CRUD.
+- [x] Erstellung den MongoDB Atlas und für alle dies einrichten.
 
 ### Arvin
 
@@ -133,32 +126,24 @@ Absenz wegen CAE-Prüfung.
 - [x] Backend-Installationen und Smoke-Checks durchgeführt; fehlende `.env`-Konfiguration identifiziert.
 - [x] Postman-Smoke-Checkliste für Rollen-/CRUD-/Ticket-Flows dokumentiert.
 
-*Heute habe ich...*
-
 - Done: Sync + Dependency-Setup + Backend-Testplan.
 - Next: Sobald `.env` gesetzt ist, End-to-End-API-Tests mit `user/organizer/admin` durchlaufen.
 - Blocker: `backend/.env` fehlt aktuell (mind. `MONGODB_URI`, `JWT_SECRET`, `OPENROUTER_API_KEY`).
 
 ### Kenan
 
-- [x] Frontend-Auth (Register/Login/Logout) mit Token-Persistenz und API-Error-Anzeige integriert.
-- [x] Event-Flow umgesetzt: Events laden + Event erstellen (Organizer/Admin).
-- [x] Ticket-Flow umgesetzt: Buchen, „My Tickets“ laden, optionales Storno.
-
-*Heute habe ich...*
-
-- Done: Vite-Template in API-UI umgebaut (`frontend/src/App.jsx`).
-- Next: UI in Seiten/Router-Komponenten aufteilen und Design verbessern.
-- Blocker: Vollständige E2E-Tests erst nach laufendem Backend mit gültiger `.env`.
+- [ ] ...
+- [ ] ...
+- [ ] ...
 
 
 ## 27.03
 
 ### Ihor
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Entwicklung der Frontend für Chat und Verknüpfung mit dem Chat-Endpunkt.
+- [ ] Erstellung einer Vielzahl unterschiedlicher bestehender und origineller Events, um die Datenbank zu füllen.
+- [ ] Testen des LLM anhand verschiedener Abfragen zu den Events.
 
 ### Arvin
 
