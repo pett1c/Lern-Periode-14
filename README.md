@@ -117,24 +117,39 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] Testen der Änderungen vom 13.03. und Erstellung eines Basis-Frontends für Event-CRUD.
-- [ ] Anpassung der /api/chat-Antworten an das von Arvin definierte globale Response-Format (success, data, message, error).
-- [ ] Entwicklung der Frontend-Komponenten (ChatWindow.jsx, MessageBubble.jsx) und Verknüpfung mit dem Chat-Endpunkt.
+- [x] KI-Stand geprüft: Chat-/Embedding-Flow aus 13.03 analysiert und mit Backend-Routen abgeglichen.
+- [x] DB-ID-Abgleich geplant: Event-IDs aus MongoDB mit Vektor-IDs synchronisieren.
+- [x] Nächster Schritt definiert: Embedding-Pipeline direkt nach Event-CRUD triggern.
+
+*Heute habe ich...*
+
+- Done: Analyse von `backend/scripts/testRag.js` und `backend/data/mockEvents.json`.
+- Next: Chat-Response auf echte Mongo-Event-IDs umstellen.
+- Blocker: Ohne gültige API-Keys/DB-Zugriff nur eingeschränkte Laufzeittests möglich.
 
 ### Arvin
 
-- [x] `git pull origin main` + `npm install` (backend & frontend) + `.env` check + Smoke-Test
-- [x] Backend Postman-Tests (3 Rollen: Auth, Events CRUD, Tickets, Admin)
-- [ ] Frontend: API-Client, Register/Login, Token, Fehleranzeige nach API-Format
-- [ ] Frontend: Events (Liste/Detail/Erstellen), Tickets (buchen + Meine Tickets + ggf. Storno)
-- [ ] thor: KI-ID ↔ DB-ID Abgleich planen + README-Notizen + kurze Scrum-Doku
+- [x] Aktuellen GitHub-Stand (`origin/main`) lokal synchronisiert und Arbeitsstand ersetzt.
+- [x] Backend-Installationen und Smoke-Checks durchgeführt; fehlende `.env`-Konfiguration identifiziert.
+- [x] Postman-Smoke-Checkliste für Rollen-/CRUD-/Ticket-Flows dokumentiert.
 
+*Heute habe ich...*
+
+- Done: Sync + Dependency-Setup + Backend-Testplan.
+- Next: Sobald `.env` gesetzt ist, End-to-End-API-Tests mit `user/organizer/admin` durchlaufen.
+- Blocker: `backend/.env` fehlt aktuell (mind. `MONGODB_URI`, `JWT_SECRET`, `OPENROUTER_API_KEY`).
 
 ### Kenan
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [x] Frontend-Auth (Register/Login/Logout) mit Token-Persistenz und API-Error-Anzeige integriert.
+- [x] Event-Flow umgesetzt: Events laden + Event erstellen (Organizer/Admin).
+- [x] Ticket-Flow umgesetzt: Buchen, „My Tickets“ laden, optionales Storno.
+
+*Heute habe ich...*
+
+- Done: Vite-Template in API-UI umgebaut (`frontend/src/App.jsx`).
+- Next: UI in Seiten/Router-Komponenten aufteilen und Design verbessern.
+- Blocker: Vollständige E2E-Tests erst nach laufendem Backend mit gültiger `.env`.
 
 
 ## 27.03

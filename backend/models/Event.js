@@ -74,13 +74,12 @@ const eventSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-eventSchema.pre('validate', function preValidate(next) {
+eventSchema.pre('validate', function preValidate() {
   for (const type of this.ticketTypes) {
     if (type.bookedCount > type.capacity) {
-      return next(new Error(`Booked count for ticket type ${type.name} exceeds capacity.`));
+      throw new Error(`Booked count for ticket type ${type.name} exceeds capacity.`);
     }
   }
-  return next();
 });
 
 eventSchema.index({ organizer: 1, date: -1 });
