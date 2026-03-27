@@ -1,16 +1,162 @@
 [
   {
     "id": "event_1",
-    "title": "Winter Rock Fest",
-    "description": "A large-scale rock concert this winter. Live music and energy.",
-    "date": "2026-12-15",
-    "genre": "rock"
+    "title": "2026 Winter Olympics",
+    "description": "The 2026 Winter Olympics, an upcoming international multi-sport event scheduled to take place in Milan and Cortina d'Ampezzo, Italy.",
+    "date": "2026-02-06",
+    "genre": "sports",
+    "location": "Milan, Italy"
   },
   {
     "id": "event_2",
-    "title": "Summer Jazz",
-    "description": "A peaceful evening of jazz in the open air.",
-    "date": "2026-07-20",
-    "genre": "jazz"
+    "title": "FIFA World Cup 2026 Opening Match",
+    "description": "The opening match of the 23rd FIFA World Cup, hosted across three North American countries. A massive global celebration of football.",
+    "date": "2026-06-11",
+    "genre": "sports",
+    "location": "Mexico City, Mexico"
+  },
+  {
+    "id": "event_3",
+    "title": "2026 UEFA Champions League Final",
+    "description": "The final match of the 2025–26 UEFA Champions League, the premier club football tournament in Europe.",
+    "date": "2026-05-30",
+    "genre": "sports",
+    "location": "Budapest, Hungary"
+  },
+  {
+    "id": "event_4",
+    "title": "Super Bowl LX",
+    "description": "The monumental 60th Super Bowl championship game of the National Football League (NFL) at Levi's Stadium.",
+    "date": "2026-02-08",
+    "genre": "sports",
+    "location": "Santa Clara, California, USA"
+  },
+  {
+    "id": "event_5",
+    "title": "68th Annual Grammy Awards",
+    "description": "The 68th installment of the Grammy Awards, recognizing the best recordings, compositions, and artists of the eligibility year.",
+    "date": "2026-02-01",
+    "genre": "entertainment",
+    "location": "Los Angeles, California, USA"
+  },
+  {
+    "id": "event_6",
+    "title": "Cyberpunk Tech Expo 2026",
+    "description": "Experience the latest advancements in cybernetics, AI, and futuristic consumer tech. Dive deep into neon-lit exhibitions and next-gen panels.",
+    "date": "2026-08-15",
+    "genre": "technology",
+    "location": "Tokyo, Japan"
+  },
+  {
+    "id": "event_7",
+    "title": "Martian Colony Fundraiser Gala",
+    "description": "An exclusive black-tie event aiming to gather funds and mindshare for the upcoming first manned settlement mission to Mars.",
+    "date": "2026-10-10",
+    "genre": "networking",
+    "location": "New York, USA"
+  },
+  {
+    "id": "event_8",
+    "title": "Global AI Hackathon Finals",
+    "description": "The final stage of the world's largest Artificial Intelligence hackathon, where 50 teams compete over 48 hours for the grand prize.",
+    "date": "2026-09-05",
+    "genre": "technology",
+    "location": "Berlin, Germany"
+  },
+  {
+    "id": "event_9",
+    "title": "Retro Synthwave Festival",
+    "description": "A throwback to the 80s reimagined format. Three days of synthwave, outrun music, and retro-futuristic arcade games outdoors.",
+    "date": "2026-07-22",
+    "genre": "music",
+    "location": "Miami, USA"
+  },
+  {
+    "id": "event_10",
+    "title": "Lunar Eclipse Viewing Party",
+    "description": "Gather under the stars with provided telescopes and expert astronomers to witness the spectacular total lunar eclipse.",
+    "date": "2026-03-03",
+    "genre": "education",
+    "location": "Atacama Desert, Chile"
+  },
+  {
+    "id": "event_11",
+    "title": "Underwater Music Experience",
+    "description": "An experimental underwater concert inside a massive customized aquatic dome. Prepare for a unique sensory journey.",
+    "date": "2026-11-12",
+    "genre": "music",
+    "location": "Dubai, UAE"
+  },
+  {
+    "id": "event_12",
+    "title": "Quantum Computing Summit",
+    "description": "Industry leaders from the tech world discuss the immediate future of quantum computing and its impact on cybersecurity.",
+    "date": "2026-04-18",
+    "genre": "technology",
+    "location": "Geneva, Switzerland"
+  },
+  {
+    "id": "event_13",
+    "title": "Organic Food & Wine Fest",
+    "description": "A celebration of sustainable farming, organic produce, and natural wines directly from local and international vineyards.",
+    "date": "2026-09-20",
+    "genre": "food",
+    "location": "Bordeaux, France"
+  },
+  {
+    "id": "event_14",
+    "title": "VR E-Sports Championship",
+    "description": "The first fully immersive Virtual Reality E-Sports tournament finals. Teams compete in a custom-built 3D haptic arena.",
+    "date": "2026-12-01",
+    "genre": "gaming",
+    "location": "Seoul, South Korea"
+  },
+  {
+    "id": "event_15",
+    "title": "Galactic Startup Pitch Day",
+    "description": "New space-industry startups pitch their revolutionary concepts involving satellite networks and asteroid mining to venture capitalists.",
+    "date": "2026-06-25",
+    "genre": "business",
+    "location": "London, UK"
+  },
+  {
+    "id": "event_16",
+    "title": "Neo-Tokyo Anime Convention",
+    "description": "The largest anime convention in the world, featuring exclusive sneak peeks, cosplay contests, and legendary creator panels.",
+    "date": "2026-07-10",
+    "genre": "entertainment",
+    "location": "Tokyo, Japan"
+  },
+  {
+    "id": "event_17",
+    "title": "Holographic Fashion Week",
+    "description": "High fashion meets cutting edge visual technology as designers showcase impossible garments using pure photonic holograms.",
+    "date": "2026-05-14",
+    "genre": "fashion",
+    "location": "Paris, France"
+  },
+  {
+    "id": "event_18",
+    "title": "Hoverboard Racing League",
+    "description": "The exhilarating opening race of the world's premier anti-gravity hoverboard racing league through a custom neon track.",
+    "date": "2026-08-30",
+    "genre": "sports",
+    "location": "Sydney, Australia"
+  },
+  {
+    "id": "event_19",
+    "title": "Deep Sea Exploration Seminar",
+    "description": "Marine biologists share stunning footage and newly discovered species from recent deepest-ocean submersible expeditions.",
+    "date": "2026-10-28",
+    "genre": "science",
+    "location": "Monterey, USA"
+  },
+  {
+    "id": "event_20",
+    "title": "Mindful Meditation Retreat",
+    "description": "Escape the bustle of 2026 living. Three days in the mountains dedicated to mental wellness, guided meditation, and yoga.",
+    "date": "2026-01-15",
+    "genre": "health",
+    "location": "Kyoto, Japan"
   }
 ]
