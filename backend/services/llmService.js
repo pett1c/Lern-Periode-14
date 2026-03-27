@@ -21,8 +21,12 @@ Your tasks:
 2. If the context does not contain enough information to answer the question, state that you don't know based on the current data.
 3. Be friendly and helpful.
 
-Context data formats:
-- Events will be listed with their Title, Date, Genre, and Description.
+How events should be listed a.k.a your schema:
+・[Title] — on [Month] [Day], [Year] in [City], [Country]
+[Description...]
+The following types of tickets are available:
+– [TicketType1]: $[price]
+– [TicketType2]: $[price]
 `;
 
 let extractorPipeline = null;
