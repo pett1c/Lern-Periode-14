@@ -5,7 +5,11 @@
     "description": "The 2026 Winter Olympics, an upcoming international multi-sport event scheduled to take place in Milan and Cortina d'Ampezzo, Italy.",
     "date": "2026-02-06",
     "genre": "sports",
-    "location": "Milan, Italy"
+    "location": "Milan, Italy",
+    "ticketTypes": [
+      { "name": "closing ceremony", "price": 400.00, "capacity": 50000, "bookedCount": 0 },
+      { "name": "standard day pass", "price": 80.00, "capacity": 20000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_2",
@@ -13,7 +17,12 @@
     "description": "The opening match of the 23rd FIFA World Cup, hosted across three North American countries. A massive global celebration of football.",
     "date": "2026-06-11",
     "genre": "sports",
-    "location": "Mexico City, Mexico"
+    "location": "Mexico City, Mexico",
+    "ticketTypes": [
+      { "name": "category 1", "price": 250.00, "capacity": 10000, "bookedCount": 0 },
+      { "name": "category 2", "price": 150.00, "capacity": 15000, "bookedCount": 0 },
+      { "name": "category 3", "price": 80.00, "capacity": 30000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_3",
@@ -21,7 +30,11 @@
     "description": "The final match of the 2025–26 UEFA Champions League, the premier club football tournament in Europe.",
     "date": "2026-05-30",
     "genre": "sports",
-    "location": "Budapest, Hungary"
+    "location": "Budapest, Hungary",
+    "ticketTypes": [
+      { "name": "general admission", "price": 120.00, "capacity": 45000, "bookedCount": 0 },
+      { "name": "vip hospitality", "price": 850.00, "capacity": 2000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_4",
@@ -29,7 +42,11 @@
     "description": "The monumental 60th Super Bowl championship game of the National Football League (NFL) at Levi's Stadium.",
     "date": "2026-02-08",
     "genre": "sports",
-    "location": "Santa Clara, California, USA"
+    "location": "Santa Clara, California, USA",
+    "ticketTypes": [
+      { "name": "upper deck", "price": 3000.00, "capacity": 30000, "bookedCount": 0 },
+      { "name": "lower bowl", "price": 6500.00, "capacity": 20000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_5",
@@ -37,7 +54,11 @@
     "description": "The 68th installment of the Grammy Awards, recognizing the best recordings, compositions, and artists of the eligibility year.",
     "date": "2026-02-01",
     "genre": "entertainment",
-    "location": "Los Angeles, California, USA"
+    "location": "Los Angeles, California, USA",
+    "ticketTypes": [
+      { "name": "industry pass", "price": 1500.00, "capacity": 500, "bookedCount": 0 },
+      { "name": "balcony seating", "price": 350.00, "capacity": 1000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_6",
@@ -45,7 +66,12 @@
     "description": "Experience the latest advancements in cybernetics, AI, and futuristic consumer tech. Dive deep into neon-lit exhibitions and next-gen panels.",
     "date": "2026-08-15",
     "genre": "technology",
-    "location": "Tokyo, Japan"
+    "location": "Tokyo, Japan",
+    "ticketTypes": [
+      { "name": "standard access", "price": 45.00, "capacity": 10000, "bookedCount": 0 },
+      { "name": "all-access pass", "price": 120.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "student discount", "price": 25.00, "capacity": 3000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_7",
@@ -53,7 +79,11 @@
     "description": "An exclusive black-tie event aiming to gather funds and mindshare for the upcoming first manned settlement mission to Mars.",
     "date": "2026-10-10",
     "genre": "networking",
-    "location": "New York, USA"
+    "location": "New York, USA",
+    "ticketTypes": [
+      { "name": "gala dinner", "price": 5000.00, "capacity": 300, "bookedCount": 0 },
+      { "name": "afterparty only", "price": 500.00, "capacity": 200, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_8",
@@ -61,7 +91,11 @@
     "description": "The final stage of the world's largest Artificial Intelligence hackathon, where 50 teams compete over 48 hours for the grand prize.",
     "date": "2026-09-05",
     "genre": "technology",
-    "location": "Berlin, Germany"
+    "location": "Berlin, Germany",
+    "ticketTypes": [
+      { "name": "participant entry", "price": 15.00, "capacity": 500, "bookedCount": 0 },
+      { "name": "spectator", "price": 5.00, "capacity": 1500, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_9",
@@ -69,7 +103,11 @@
     "description": "A throwback to the 80s reimagined format. Three days of synthwave, outrun music, and retro-futuristic arcade games outdoors.",
     "date": "2026-07-22",
     "genre": "music",
-    "location": "Miami, USA"
+    "location": "Miami, USA",
+    "ticketTypes": [
+      { "name": "3-day wristband", "price": 199.90, "capacity": 5000, "bookedCount": 0 },
+      { "name": "single day", "price": 79.90, "capacity": 8000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_10",
@@ -77,7 +115,11 @@
     "description": "Gather under the stars with provided telescopes and expert astronomers to witness the spectacular total lunar eclipse.",
     "date": "2026-03-03",
     "genre": "education",
-    "location": "Atacama Desert, Chile"
+    "location": "Atacama Desert, Chile",
+    "ticketTypes": [
+      { "name": "telescope spot", "price": 120.00, "capacity": 200, "bookedCount": 0 },
+      { "name": "basic entry", "price": 30.00, "capacity": 800, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_11",
@@ -85,7 +127,10 @@
     "description": "An experimental underwater concert inside a massive customized aquatic dome. Prepare for a unique sensory journey.",
     "date": "2026-11-12",
     "genre": "music",
-    "location": "Dubai, UAE"
+    "location": "Dubai, UAE",
+    "ticketTypes": [
+      { "name": "dome entry", "price": 450.00, "capacity": 800, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_12",
@@ -93,7 +138,11 @@
     "description": "Industry leaders from the tech world discuss the immediate future of quantum computing and its impact on cybersecurity.",
     "date": "2026-04-18",
     "genre": "technology",
-    "location": "Geneva, Switzerland"
+    "location": "Geneva, Switzerland",
+    "ticketTypes": [
+      { "name": "professional pass", "price": 600.00, "capacity": 1500, "bookedCount": 0 },
+      { "name": "academic pass", "price": 250.00, "capacity": 500, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_13",
@@ -101,7 +150,11 @@
     "description": "A celebration of sustainable farming, organic produce, and natural wines directly from local and international vineyards.",
     "date": "2026-09-20",
     "genre": "food",
-    "location": "Bordeaux, France"
+    "location": "Bordeaux, France",
+    "ticketTypes": [
+      { "name": "tasting pass", "price": 65.00, "capacity": 3000, "bookedCount": 0 },
+      { "name": "vip sommelier tour", "price": 220.00, "capacity": 150, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_14",
@@ -109,7 +162,11 @@
     "description": "The first fully immersive Virtual Reality E-Sports tournament finals. Teams compete in a custom-built 3D haptic arena.",
     "date": "2026-12-01",
     "genre": "gaming",
-    "location": "Seoul, South Korea"
+    "location": "Seoul, South Korea",
+    "ticketTypes": [
+      { "name": "arena admission", "price": 35.00, "capacity": 12000, "bookedCount": 0 },
+      { "name": "premium viewing suite", "price": 150.00, "capacity": 1000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_15",
@@ -117,7 +174,11 @@
     "description": "New space-industry startups pitch their revolutionary concepts involving satellite networks and asteroid mining to venture capitalists.",
     "date": "2026-06-25",
     "genre": "business",
-    "location": "London, UK"
+    "location": "London, UK",
+    "ticketTypes": [
+      { "name": "investor pass", "price": 1000.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "founder spectator", "price": 150.00, "capacity": 600, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_16",
@@ -125,7 +186,11 @@
     "description": "The largest anime convention in the world, featuring exclusive sneak peeks, cosplay contests, and legendary creator panels.",
     "date": "2026-07-10",
     "genre": "entertainment",
-    "location": "Tokyo, Japan"
+    "location": "Tokyo, Japan",
+    "ticketTypes": [
+      { "name": "weekend pass", "price": 110.00, "capacity": 20000, "bookedCount": 0 },
+      { "name": "saturday only", "price": 55.00, "capacity": 15000, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_17",
@@ -133,7 +198,11 @@
     "description": "High fashion meets cutting edge visual technology as designers showcase impossible garments using pure photonic holograms.",
     "date": "2026-05-14",
     "genre": "fashion",
-    "location": "Paris, France"
+    "location": "Paris, France",
+    "ticketTypes": [
+      { "name": "front row", "price": 1200.00, "capacity": 200, "bookedCount": 0 },
+      { "name": "general seating", "price": 300.00, "capacity": 1200, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_18",
@@ -141,7 +210,11 @@
     "description": "The exhilarating opening race of the world's premier anti-gravity hoverboard racing league through a custom neon track.",
     "date": "2026-08-30",
     "genre": "sports",
-    "location": "Sydney, Australia"
+    "location": "Sydney, Australia",
+    "ticketTypes": [
+      { "name": "grandstand", "price": 60.00, "capacity": 15000, "bookedCount": 0 },
+      { "name": "trackside luxury", "price": 350.00, "capacity": 800, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_19",
@@ -149,7 +222,11 @@
     "description": "Marine biologists share stunning footage and newly discovered species from recent deepest-ocean submersible expeditions.",
     "date": "2026-10-28",
     "genre": "science",
-    "location": "Monterey, USA"
+    "location": "Monterey, USA",
+    "ticketTypes": [
+      { "name": "general admission", "price": 40.00, "capacity": 1000, "bookedCount": 0 },
+      { "name": "student ticket", "price": 15.00, "capacity": 300, "bookedCount": 0 }
+    ]
   },
   {
     "id": "event_20",
@@ -157,6 +234,10 @@
     "description": "Escape the bustle of 2026 living. Three days in the mountains dedicated to mental wellness, guided meditation, and yoga.",
     "date": "2026-01-15",
     "genre": "health",
-    "location": "Kyoto, Japan"
+    "location": "Kyoto, Japan",
+    "ticketTypes": [
+      { "name": "full retreat package", "price": 850.00, "capacity": 80, "bookedCount": 0 },
+      { "name": "day pass", "price": 120.00, "capacity": 40, "bookedCount": 0 }
+    ]
   }
 ]
