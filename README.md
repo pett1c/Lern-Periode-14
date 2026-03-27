@@ -151,7 +151,7 @@ Absenz wegen CAE-Prüfung.
 
 - [x] Entwicklung der Frontend für Chat und Verknüpfung mit dem Chat-Endpunkt.
 - [x] Erstellung einer Vielzahl unterschiedlicher bestehender und origineller Events, um die Datenbank zu füllen.
-- [ ] Testen des LLM anhand verschiedener Abfragen zu den Events.
+- [x] Testen des LLM anhand verschiedener Abfragen zu den Events.
 
 ### Arvin
 
@@ -171,9 +171,10 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Verbesserung des Chat-Frontends: Umsetzung einer ansprechenden Darstellung von Events, Animationen und weiteren Design
+- [ ] Erweiterung der Anzahl verschiedener Events
+- [ ] Suche und Erstellung aller erforderlichen Bilder für die Ereignisse
+- [ ] Weiter LLM testen und Systemprompt verbessern
 
 ### Arvin
 

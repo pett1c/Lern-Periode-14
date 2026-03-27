@@ -28,8 +28,13 @@ async function vectorizeData() {
     const vectorsToUpsert = [];
 
     for (const event of events) {
+      // Build string of ticket types
+      const ticketsInfo = event.ticketTypes
+        ? event.ticketTypes.map(t => `${t.name} ($${t.price})`).join(', ')
+        : 'N/A';
+
       // Construct a string combining relevant fields for semantic search
-      const textToEmbed = `Title: ${event.title}. Genre: ${event.genre}. Date: ${event.date}. Description: ${event.description}`;
+      const textToEmbed = `Title: ${event.title}. Genre: ${event.genre}. Location: ${event.location || 'Unknown'}. Date: ${event.date}. Description: ${event.description}. Tickets available: ${ticketsInfo}.`;
       
       console.log(`Generating embedding for event: ${event.title}`);
       
@@ -40,16 +45,16 @@ async function vectorizeData() {
         continue; // Пропускаем битую запись
       }
 
-      console.log(embedding)
-
       vectorsToUpsert.push({
         id: String(event.id),
         values: embedding,
         metadata: {
           title: String(event.title),
           genre: String(event.genre),
+          location: String(event.location || 'Unknown'),
           date: String(event.date),
           description: String(event.description),
+          tickets: String(ticketsInfo),
           text: textToEmbed 
         }
       });
