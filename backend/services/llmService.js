@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const { OpenAI } = require('openai');
 
 // Initialize OpenRouter Client for Gemma-3

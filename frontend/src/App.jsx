@@ -51,6 +51,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('auth');
 
+  const [chatQuery, setChatQuery] = useState('');
+  const [chatHistory, setChatHistory] = useState([]);
+  const [chatLoading, setChatLoading] = useState(false);
+
   const [registerForm, setRegisterForm] = useState({
     name: '',
     email: '',
@@ -269,6 +273,34 @@ function App() {
     }
   }
 
+  async function onChatSubmit(event) {
+    event.preventDefault();
+    if (!chatQuery.trim()) return;
+
+    const queryText = chatQuery;
+    const newHistory = [...chatHistory, { role: 'user', content: queryText }];
+    setChatHistory(newHistory);
+    setChatQuery('');
+    setChatLoading(true);
+    setErrorMessage('');
+
+    try {
+      const payload = await apiRequest('/chat', {
+        method: 'POST',
+        token, // token is optional based on current backend, but good to include
+        body: { query: queryText },
+      });
+
+      const answer = payload?.data?.answer || 'No response from AI.';
+      setChatHistory([...newHistory, { role: 'ai', content: answer }]);
+    } catch (error) {
+      setErrorMessage(error.message);
+      setChatHistory([...newHistory, { role: 'ai', content: `Error: ${error.message}` }]);
+    } finally {
+      setChatLoading(false);
+    }
+  }
+
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -280,6 +312,7 @@ function App() {
         <button type="button" onClick={() => setActiveTab('auth')}>Auth</button>
         <button type="button" onClick={() => setActiveTab('events')}>Events</button>
         <button type="button" onClick={() => setActiveTab('tickets')}>Tickets</button>
+        <button type="button" onClick={() => setActiveTab('chat')}>AI Chat</button>
       </nav>
 
       <section className="status-line">
@@ -487,6 +520,87 @@ function App() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'chat' && (
+        <div className="grid">
+          <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <h2>AI Assistant</h2>
+            <div 
+              style={{
+                height: '400px',
+                overflowY: 'auto',
+                marginBottom: '1rem',
+                padding: '1rem',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                backgroundColor: '#fafafa',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px'
+              }}
+            >
+              {chatHistory.length === 0 ? (
+                <p style={{ color: '#888', textAlign: 'center', margin: 'auto' }}>
+                  Ask me anything about the upcoming events!
+                </p>
+              ) : (
+                chatHistory.map((msg, idx) => (
+                  <div key={idx} style={{ textAlign: msg.role === 'user' ? 'right' : 'left' }}>
+                    <div 
+                      style={{
+                        display: 'inline-block',
+                        padding: '10px 14px',
+                        borderRadius: '18px',
+                        textAlign: 'left',
+                        whiteSpace: 'pre-wrap',
+                        wordWrap: 'break-word',
+                        maxWidth: '85%',
+                        backgroundColor: msg.role === 'user' ? '#007bff' : '#ffffff',
+                        color: msg.role === 'user' ? '#fff' : '#333',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                      }}
+                    >
+                      {msg.content}
+                    </div>
+                  </div>
+                ))
+              )}
+              {chatLoading && (
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{
+                    display: 'inline-block',
+                    padding: '8px 14px',
+                    borderRadius: '18px',
+                    backgroundColor: '#ffffff',
+                    color: '#888',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                  }}>
+                    <i>Typing...</i>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <form onSubmit={onChatSubmit} style={{ display: 'flex', gap: '8px' }}>
+              <input
+                style={{ flex: 1, margin: 0, padding: '12px' }}
+                placeholder="Where is the next Web3 hackathon?"
+                value={chatQuery}
+                onChange={(e) => setChatQuery(e.target.value)}
+                disabled={chatLoading}
+                required
+              />
+              <button 
+                type="submit" 
+                disabled={chatLoading || !chatQuery.trim()} 
+                style={{ margin: 0, padding: '12px 24px', whiteSpace: 'nowrap' }}
+              >
+                Send
+              </button>
+            </form>
           </div>
         </div>
       )}

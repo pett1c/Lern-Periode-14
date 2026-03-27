@@ -149,7 +149,7 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [ ] Entwicklung der Frontend für Chat und Verknüpfung mit dem Chat-Endpunkt.
+- [x] Entwicklung der Frontend für Chat und Verknüpfung mit dem Chat-Endpunkt.
 - [x] Erstellung einer Vielzahl unterschiedlicher bestehender und origineller Events, um die Datenbank zu füllen.
 - [ ] Testen des LLM anhand verschiedener Abfragen zu den Events.
 
