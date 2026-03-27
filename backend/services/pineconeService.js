@@ -40,12 +40,11 @@ function getPineconeIndex() {
  */
 async function upsertEventVector(event) {
   try {
-    const index = getPineconeIndex();
-    if (!index) {
-      return;
-    }
+    const ticketsInfo = (event.ticketTypes && event.ticketTypes.length > 0)
+      ? event.ticketTypes.map(t => `${t.name} ($${t.price})`).join(', ')
+      : 'N/A';
 
-    const textToEmbed = `Title: ${event.title}. Location: ${event.location}. Date: ${event.date.toISOString()}. Description: ${event.description}`;
+    const textToEmbed = `Title: ${event.title}. Location: ${event.location}. Date: ${event.date.toISOString()}. Description: ${event.description}. Tickets available: ${ticketsInfo}.`;
 
     // Using @xenova transformer -> returns 1536 zero-padded float array
     const embedding = await generateEmbedding(textToEmbed);
