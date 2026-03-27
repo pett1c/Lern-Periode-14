@@ -16,6 +16,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Welcome to the Eventify API.',
+    data: null
+  });
+});
+
 app.get('/api/health', (_req, res) => {
   const features = getFeatureFlags();
   const dbReady = mongoose.connection.readyState === 1;

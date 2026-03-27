@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EventApp — Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:        #C8102E;
+  --red-light:  #F5E5E8;
+  --red-mid:    #E8C0C8;
+  --red-dark:   #8B0A1F;
+  --red-soft:   rgba(200,16,46,0.08);
+
+  --white:      #FFFFFF;
+  --off-white:  #F9F7F5;
+  --light:      #F2F0ED;
+  --light2:     #E8E5E0;
+  --light3:     #D8D4CE;
+
+  --ink:        #1A1714;
+  --ink-mid:    #4A4540;
+  --ink-light:  #8C8580;
+  --ink-faint:  #B8B4AF;
+
+  --border:     #E0DDD8;
+  --border-hi:  #C8C4BF;
+
+  --f-display:  'Playfair Display', serif;
+  --f-ui:       'Plus Jakarta Sans', sans-serif;
+  --f-mono:     'Courier Prime', monospace;
+
+  --shadow-sm:  0 1px 4px rgba(26,23,20,0.06);
+  --shadow-md:  0 4px 16px rgba(26,23,20,0.08);
+  --shadow-lg:  0 12px 40px rgba(26,23,20,0.10);
+}
+
+html { background: var(--light); }
+
+body {
+  font-family: var(--f-ui);
+  background: var(--light);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+.wrap { padding: 52px 32px; max-width: 1040px; margin: 0 auto; }
+
+/* ══════════ DOC HEADER ══════════ */
+.doc-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding-bottom: 36px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 52px;
+}
+.doc-title {
+  font-family: var(--f-display);
+  font-size: 68px; line-height: 1;
+  font-weight: 900; color: var(--ink);
+  letter-spacing: -2px;
+}
+.doc-title em {
+  font-style: italic; color: var(--red);
+}
+.doc-byline {
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: 10px;
+}
+.doc-pills {
+  display: flex; flex-direction: column; gap: 6px; align-items: flex-end;
+}
+.doc-pill {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 5px 12px; border: 1px solid var(--border-hi);
+  background: var(--white); color: var(--ink-mid);
+  border-radius: 2px;
+}
+
+/* ══════════ PAGE TABS ══════════ */
+.page-tabs {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 60px;
+}
+.tab {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 8px 16px; border: 1px solid var(--border);
+  background: var(--white); color: var(--ink-light);
+  cursor: pointer; border-radius: 2px; transition: all 0.15s;
+}
+.tab:hover { border-color: var(--red); color: var(--red); }
+.tab.active {
+  background: var(--red); border-color: var(--red);
+  color: var(--white); font-weight: 700;
+}
+
+/* ══════════ SCREEN ══════════ */
+.screen-wrap { margin-bottom: 88px; }
+.screen-meta {
+  display: flex; align-items: baseline; gap: 16px; margin-bottom: 10px;
+}
+.s-num {
+  font-family: var(--f-display); font-style: italic;
+  font-size: 64px; line-height: 1; color: var(--red-mid);
+  font-weight: 400;
+}
+.s-title {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 30px; color: var(--ink); letter-spacing: -0.5px;
+}
+.s-file {
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 9px; border: 1px solid var(--red);
+  background: var(--red-light); color: var(--red-dark);
+  border-radius: 2px;
+}
+.s-desc {
+  font-family: var(--f-mono); font-size: 11px;
+  color: var(--ink-light); letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+/* ══════════ BROWSER CHROME ══════════ */
+.browser {
+  border: 1px solid var(--border-hi);
+  border-radius: 8px; overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+.browser-bar {
+  background: var(--light2);
+  border-bottom: 1px solid var(--border);
+  padding: 9px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.bdots { display: flex; gap: 5px; }
+.bdot {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+.bdot:nth-child(1) { background: #FF5F57; }
+.bdot:nth-child(2) { background: #FFBD2E; }
+.bdot:nth-child(3) { background: #28CA42; }
+.burl {
+  flex: 1; background: var(--white); border: 1px solid var(--border);
+  border-radius: 4px; padding: 4px 12px;
+  font-family: var(--f-mono); font-size: 10px;
+  color: var(--ink-light);
+}
+.burl strong { color: var(--ink-mid); font-weight: 400; }
+
+/* ══════════ ANNOTATION ══════════ */
+.ann {
+  margin-top: 10px; padding: 9px 16px;
+  border-left: 3px solid var(--red);
+  background: var(--red-light);
+  font-family: var(--f-mono); font-size: 10px;
+  color: var(--red-dark); border-radius: 0 3px 3px 0;
+}
+.ann::before { content: '→  '; font-weight: 700; }
+
+/* ══════════ DIVIDER ══════════ */
+hr.sep {
+  border: none; border-top: 1px solid var(--border);
+  margin: 0 0 80px;
+}
+
+/* ══════════ PRIMITIVES ══════════ */
+
+/* Navbar */
+.wf-nav {
+  height: 54px; display: flex; align-items: center; gap: 24px;
+  padding: 0 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.wf-logo {
+  font-family: var(--f-display); font-weight: 900;
+  font-size: 20px; color: var(--ink); letter-spacing: -0.5px;
+}
+.wf-logo em { color: var(--red); font-style: italic; }
+.nav-links { display: flex; gap: 4px; margin-left: auto; }
+
+/* Pills */
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 5px 14px; border-radius: 2px;
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 1px; text-transform: uppercase;
+  border: 1px solid;
+}
+.p-ghost  { border-color: var(--border); color: var(--ink-light); background: transparent; }
+.p-red    { border-color: var(--red); color: var(--red); background: var(--red-light); }
+.p-fill   { border-color: var(--red); background: var(--red); color: var(--white); }
+.p-ink    { border-color: var(--ink); background: var(--ink); color: var(--white); }
+.p-warm   { border-color: var(--border-hi); background: var(--off-white); color: var(--ink-mid); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 38px; padding: 0 20px; border-radius: 3px;
+  font-family: var(--f-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.3px; border: 1px solid; cursor: pointer;
+  white-space: nowrap; transition: all 0.15s;
+}
+.btn-red   { background: var(--red); border-color: var(--red); color: var(--white); }
+.btn-ink   { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.btn-ghost { background: var(--white); border-color: var(--border-hi); color: var(--ink-mid); }
+.btn-outline-red { background: var(--white); border-color: var(--red); color: var(--red); }
+.btn-full  { width: 100%; }
+.btn-sm    { height: 30px; padding: 0 14px; font-size: 11px; }
+.btn-lg    { height: 46px; padding: 0 28px; font-size: 13px; }
+
+/* Form */
+.fg { margin-bottom: 16px; }
+.fl {
+  display: block; font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ink-light); margin-bottom: 5px;
+}
+.fi {
+  width: 100%; height: 40px; border-radius: 3px;
+  background: var(--white); border: 1px solid var(--border);
+  padding: 0 14px; font-family: var(--f-ui); font-size: 12px;
+  color: var(--ink-mid); box-shadow: var(--shadow-sm);
+}
+.fi.focused { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-light); }
+.fi.ta { height: 80px; padding-top: 10px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fhint { font-size: 10px; color: var(--ink-faint); margin-top: 5px; font-family: var(--f-mono); }
+
+/* Image placeholder */
+.img-ph {
+  background: var(--light); border: 1px solid var(--border);
+  border-radius: 4px; position: relative; overflow: hidden;
+}
+.img-ph::before, .img-ph::after {
+  content: ''; position: absolute;
+}
+.img-ph::before {
+  inset: 0;
+  background: linear-gradient(to bottom right,
+    transparent calc(50% - 0.5px), var(--border) calc(50% - 0.5px),
+    var(--border) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+.img-ph::after {
+  inset: 0;
+  background: linear-gradient(to top right,
+    transparent calc(50% - 0.5px), var(--border) calc(50% - 0.5px),
+    var(--border) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+.img-label {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 9px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--ink-faint); text-align: center;
+}
+
+/* Lines */
+.ln { border-radius: 2px; margin-bottom: 8px; }
+.lh1 { height: 22px; background: var(--light2); }
+.lh2 { height: 15px; background: var(--light2); }
+.lsm { height: 9px; background: var(--light3); }
+.lxs { height: 7px; background: var(--light3); opacity: .7; }
+.w10{width:10%} .w20{width:20%} .w30{width:30%} .w40{width:40%}
+.w50{width:50%} .w60{width:60%} .w70{width:70%} .w80{width:80%}
+.w90{width:90%} .w100{width:100%}
+
+/* Cards */
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 6px; overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.card-head {
+  padding: 14px 18px; border-bottom: 1px solid var(--border);
+  background: var(--off-white);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.card-title {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 14px; color: var(--ink);
+}
+.card-body { padding: 18px; }
+
+/* Sidebar */
+.sidebar {
+  width: 196px; flex-shrink: 0;
+  background: var(--off-white);
+  border-right: 1px solid var(--border);
+  padding: 20px 12px;
+}
+.sb-label {
+  font-family: var(--f-mono); font-size: 8px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); padding: 0 8px; margin: 14px 0 6px;
+}
+.sb-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 10px; border-radius: 3px; margin-bottom: 1px;
+  font-family: var(--f-ui); font-size: 12px;
+  font-weight: 500; color: var(--ink-light); cursor: pointer;
+}
+.sb-item.active {
+  background: var(--red-light); color: var(--red);
+  border-left: 3px solid var(--red); padding-left: 7px;
+}
+.sb-icon {
+  width: 15px; height: 15px; border-radius: 2px; flex-shrink: 0;
+  background: var(--light2); border: 1px solid var(--border);
+}
+.sb-badge {
+  margin-left: auto; background: var(--red); color: white;
+  font-size: 8px; font-family: var(--f-mono);
+  padding: 1px 6px; border-radius: 10px;
+}
+
+/* Stats */
+.stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.stat-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 6px; padding: 18px;
+  box-shadow: var(--shadow-sm); position: relative;
+}
+.stat-top { width: 32px; height: 3px; border-radius: 0 0 2px 2px; position: absolute; top: 0; left: 18px; }
+.stat-label {
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--ink-light); margin-bottom: 8px; margin-top: 8px;
+}
+.stat-val {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 36px; line-height: 1; color: var(--ink);
+}
+.stat-ch {
+  font-family: var(--f-mono); font-size: 9px;
+  color: var(--ink-light); margin-top: 5px;
+}
+.stat-ch.up { color: #2E7D32; }
+
+/* Bar chart */
+.bar-ch { height: 100px; display: flex; align-items: flex-end; gap: 5px; }
+.bar { flex: 1; border-radius: 2px 2px 0 0; background: var(--light2); }
+.bar.hi { background: var(--red); }
+.bar-labs {
+  display: flex; justify-content: space-between; margin-top: 6px;
+  font-family: var(--f-mono); font-size: 8px; color: var(--ink-faint);
+}
+
+/* Progress */
+.prog { height: 4px; background: var(--light2); border-radius: 2px; margin-top: 6px; }
+.prog-fill { height: 100%; border-radius: 2px; background: var(--red); }
+
+/* Event card */
+.ev-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 6px; overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.ev-tag {
+  position: absolute; top: 10px; left: 10px;
+  font-family: var(--f-mono); font-size: 8px;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; background: rgba(255,255,255,0.92);
+  border: 1px solid var(--border); border-radius: 2px; color: var(--ink-mid);
+}
+.ev-date {
+  position: absolute; top: 10px; right: 10px;
+  background: var(--red); color: white;
+  font-family: var(--f-mono); font-size: 9px;
+  padding: 3px 8px; border-radius: 2px;
+}
+
+/* Role chips */
+.role-chips { display: flex; gap: 10px; margin-bottom: 18px; }
+.role-chip {
+  flex: 1; border: 1px solid var(--border); border-radius: 5px;
+  padding: 14px 8px; text-align: center;
+  background: var(--white); cursor: pointer; box-shadow: var(--shadow-sm);
+}
+.role-chip.sel { border-color: var(--red); background: var(--red-light); }
+.chip-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--light); border: 1px solid var(--border);
+  margin: 0 auto 8px; display: flex; align-items: center;
+  justify-content: center; font-size: 13px;
+}
+.role-chip.sel .chip-icon { border-color: var(--red); background: var(--red-mid); }
+.chip-name {
+  font-family: var(--f-mono); font-size: 9px;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--ink-light);
+}
+.role-chip.sel .chip-name { color: var(--red-dark); }
+
+/* Steps */
+.steps { display: flex; align-items: center; }
+.step-dot {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 11px; color: var(--ink-faint);
+  box-shadow: var(--shadow-sm);
+}
+.step-dot.act {
+  background: var(--red); border-color: var(--red); color: white;
+  box-shadow: 0 0 0 3px var(--red-light);
+}
+.step-dot.done { background: var(--red-light); border-color: var(--red-mid); color: var(--red); }
+.step-line { flex: 1; height: 1px; background: var(--border); margin: 0 4px; }
+.step-names {
+  display: flex; justify-content: space-around;
+  font-family: var(--f-mono); font-size: 9px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--ink-faint); margin: 8px 0 24px;
+}
+.step-names span:first-child { color: var(--red); font-weight: 700; }
+
+/* Ticket */
+.ticket {
+  display: flex; border: 1px solid var(--border); border-radius: 6px;
+  overflow: hidden; background: var(--white); margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.t-stripe { width: 4px; flex-shrink: 0; }
+.t-main { flex: 1; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+.t-sep {
+  width: 1px; flex-shrink: 0; margin: 12px 0;
+  background: repeating-linear-gradient(to bottom, var(--border) 0, var(--border) 4px, transparent 4px, transparent 8px);
+}
+.t-qr { padding: 14px 16px; display: flex; align-items: center; }
+.qr-box {
+  width: 52px; height: 52px; background: var(--light);
+  border: 1px solid var(--border); border-radius: 3px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 5px;
+}
+.qr-sq { background: var(--ink); border-radius: 1px; }
+
+/* Chat */
+.bubble {
+  padding: 10px 14px; border-radius: 8px; max-width: 68%;
+  box-shadow: var(--shadow-sm);
+}
+.bubble-ai {
+  background: var(--white); border: 1px solid var(--border);
+  border-bottom-left-radius: 2px;
+}
+.bubble-user {
+  background: var(--red); border: 1px solid var(--red);
+  border-bottom-right-radius: 2px;
+}
+.msg-r { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
+.msg-r.u { flex-direction: row-reverse; }
+.av-ai {
+  width: 30px; height: 30px; border-radius: 6px; flex-shrink: 0;
+  background: var(--red); display: flex; align-items: center;
+  justify-content: center; color: white; font-size: 14px;
+}
+.av-u {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: var(--light2); border: 1px solid var(--border);
+}
+.suggest-chip {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 20px; padding: 5px 12px;
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  color: var(--ink-mid); cursor: pointer; box-shadow: var(--shadow-sm);
+}
+
+/* Table */
+.table-head { background: var(--off-white); }
+.th {
+  text-align: left; padding: 9px 14px;
+  font-family: var(--f-mono); font-size: 8px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ink-light); border-bottom: 1px solid var(--border);
+}
+.td { padding: 10px 14px; border-bottom: 1px solid var(--light); font-size: 12px; color: var(--ink-mid); }
+
+/* Helpers */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-1 { flex: 1; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.p12 { padding: 12px; }
+.p16 { padding: 16px; }
+.p20 { padding: 20px; }
+.p24 { padding: 24px; }
+.sec-title {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 14px; color: var(--ink);
+  margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Upload area */
+.upload {
+  border: 1px dashed var(--border-hi); border-radius: 5px;
+  padding: 28px; text-align: center; background: var(--off-white);
+}
+.upload-icon {
+  width: 40px; height: 40px; border: 1px solid var(--border);
+  border-radius: 6px; background: var(--white); margin: 0 auto 12px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Red accent section */
+.red-band {
+  background: var(--red); color: white; padding: 4px 10px;
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 1px; text-transform: uppercase;
+  border-radius: 2px; display: inline-block;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══════════ HEADER ══════════ -->
+<div class="doc-header">
+  <div>
+    <div class="doc-title">Event<em>App</em></div>
+    <div class="doc-byline">Lo-Fi Wireframes · UI/UX Dokumentation · 8 Screens</div>
+  </div>
+  <div class="doc-pills">
+    <div class="doc-pill">Desktop 960px</div>
+    <div class="doc-pill">React / JSX</div>
+    <div class="doc-pill">Lo-Fidelity</div>
+  </div>
+</div>
+
+<!-- ══════════ TABS ══════════ -->
+<div class="page-tabs">
+  <button class="tab active" onclick="show('all',this)">Alle</button>
+  <button class="tab" onclick="show('login',this)">01 Login</button>
+  <button class="tab" onclick="show('register',this)">02 Register</button>
+  <button class="tab" onclick="show('dashboard',this)">03 Dashboard</button>
+  <button class="tab" onclick="show('detail',this)">04 Event Detail</button>
+  <button class="tab" onclick="show('create',this)">05 Create Event</button>
+  <button class="tab" onclick="show('tickets',this)">06 My Tickets</button>
+  <button class="tab" onclick="show('chat',this)">07 AI Chat</button>
+  <button class="tab" onclick="show('admin',this)">08 Admin</button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     01  LOGIN
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-login">
+  <div class="screen-meta">
+    <span class="s-num">01</span>
+    <span class="s-title">Login</span>
+    <span class="s-file">Login.jsx</span>
+  </div>
+  <div class="s-desc">Zwei-Spalten-Layout · Branding links · Formular rechts · Responsive</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/login</strong></div>
+    </div>
+    <div class="flex" style="min-height:510px;">
+      <!-- Left: Brand panel — red accent -->
+      <div class="flex-col p24"
+        style="flex:1; background:var(--red); gap:20px; justify-content:space-between; position:relative; overflow:hidden;">
+        <!-- faint diagonal lines texture -->
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.03) 0px,rgba(255,255,255,0.03) 1px,transparent 1px,transparent 28px);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-family:var(--f-display);font-weight:900;font-size:36px;color:white;letter-spacing:-1px;">Event<em style="font-style:italic;opacity:.7;">App</em></div>
+          <div style="font-family:var(--f-mono);font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-top:6px;">Your universe of live experiences</div>
+        </div>
+        <div style="position:relative;z-index:1;">
+          <div class="img-ph" style="height:200px;border-color:rgba(255,255,255,0.15);background:rgba(0,0,0,0.15);">
+            <div class="img-label" style="color:rgba(255,255,255,0.3);">Hero Illustration<br>1200 × 900px</div>
+          </div>
+        </div>
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:10px;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);flex-shrink:0;"></div>
+            <div style="flex:1;"><div class="ln lsm w70" style="background:rgba(255,255,255,0.2);margin-bottom:4px;"></div><div class="ln lxs w50" style="background:rgba(255,255,255,0.12);"></div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;opacity:.6;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);flex-shrink:0;"></div>
+            <div style="flex:1;"><div class="ln lsm w60" style="background:rgba(255,255,255,0.15);margin-bottom:4px;"></div><div class="ln lxs w40" style="background:rgba(255,255,255,0.1);"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Form — white -->
+      <div class="flex-col p24" style="flex:1; background:var(--white); justify-content:center; gap:4px;">
+        <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);margin-bottom:4px;letter-spacing:-0.5px;">Willkommen zurück</div>
+        <div style="font-family:var(--f-mono);font-size:10px;color:var(--ink-light);letter-spacing:0.5px;margin-bottom:24px;">Kein Konto? <span style="color:var(--red);text-decoration:underline;cursor:pointer;">Registrieren</span></div>
+        <div class="fg"><label class="fl">E-Mail-Adresse</label><div class="fi focused">user@example.com</div></div>
+        <div class="fg">
+          <label class="fl">Passwort</label>
+          <div class="fi">••••••••••</div>
+          <div class="fhint" style="text-align:right;color:var(--red);cursor:pointer;">Passwort vergessen?</div>
+        </div>
+        <div class="btn btn-red btn-full btn-lg" style="margin:10px 0 16px;justify-content:center;">Anmelden →</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+          <span style="font-family:var(--f-mono);font-size:9px;color:var(--ink-faint);">ODER</span>
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <div class="btn btn-ghost" style="flex:1;font-size:11px;">Google</div>
+          <div class="btn btn-ghost" style="flex:1;font-size:11px;">GitHub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">authApi.js → POST /auth/login · JWT Token → localStorage · Redirect → /dashboard</div>
+</div>
+
+<hr class="sep" id="sep-login">
+
+<!-- ══════════════════════════════════════════════════════
+     02  REGISTER
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-register">
+  <div class="screen-meta">
+    <span class="s-num">02</span>
+    <span class="s-title">Registrierung</span>
+    <span class="s-file">Register.jsx</span>
+  </div>
+  <div class="s-desc">Rollenauswahl (Besucher / Veranstalter / Admin) · Konditionale Felder · Zentriertes Layout</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/register</strong></div>
+    </div>
+    <!-- Thin red top bar -->
+    <div style="height:4px;background:var(--red);"></div>
+    <div style="background:var(--white);padding:32px;max-width:560px;margin:0 auto;min-height:620px;">
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="font-family:var(--f-display);font-weight:900;font-size:28px;color:var(--ink);letter-spacing:-0.5px;margin-bottom:4px;">Konto erstellen</div>
+        <div style="font-family:var(--f-mono);font-size:10px;color:var(--ink-light);">Bereits registriert? <span style="color:var(--red);text-decoration:underline;">Anmelden</span></div>
+      </div>
+      <div style="font-family:var(--f-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">Ich bin …</div>
+      <div class="role-chips">
+        <div class="role-chip"><div class="chip-icon">🎵</div><div class="chip-name">Besucher</div></div>
+        <div class="role-chip sel"><div class="chip-icon" style="border-color:var(--red);">🎤</div><div class="chip-name" style="color:var(--red);">Veranstalter</div></div>
+        <div class="role-chip"><div class="chip-icon">🛡</div><div class="chip-name">Admin</div></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="fl">Vorname</label><div class="fi">Alex</div></div>
+        <div class="fg"><label class="fl">Nachname</label><div class="fi">Müller</div></div>
+      </div>
+      <div class="fg"><label class="fl">E-Mail-Adresse</label><div class="fi focused">alex@example.com</div></div>
+      <!-- Conditional field — amber tint for organizer -->
+      <div style="border:1px dashed var(--red-mid);border-radius:5px;padding:14px;margin-bottom:16px;background:var(--red-light);">
+        <div style="font-family:var(--f-mono);font-size:9px;color:var(--red);letter-spacing:1px;margin-bottom:10px;">⤷ NUR BEI ROLLE »VERANSTALTER«</div>
+        <div class="fg" style="margin-bottom:0;"><label class="fl">Organisation / Künstlername</label><div class="fi">Soundwave Events GmbH</div></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="fl">Passwort</label><div class="fi">••••••••</div></div>
+        <div class="fg"><label class="fl">Bestätigung</label><div class="fi">••••••••</div></div>
+      </div>
+      <div class="flex gap-8" style="align-items:flex-start;margin-bottom:22px;">
+        <div style="width:16px;height:16px;border:1px solid var(--border);border-radius:2px;background:var(--white);flex-shrink:0;margin-top:2px;box-shadow:var(--shadow-sm);"></div>
+        <div style="font-family:var(--f-mono);font-size:10px;color:var(--ink-light);line-height:1.6;">Ich akzeptiere die <span style="color:var(--red);text-decoration:underline;">Nutzungsbedingungen</span> und <span style="color:var(--red);text-decoration:underline;">Datenschutzrichtlinie</span></div>
+      </div>
+      <div class="btn btn-red btn-full btn-lg" style="justify-content:center;">Konto erstellen →</div>
+    </div>
+  </div>
+  <div class="ann">authApi.js → POST /auth/register · Role-based routing nach Login · AuthContext aktualisieren</div>
+</div>
+
+<hr class="sep" id="sep-register">
+
+<!-- ══════════════════════════════════════════════════════
+     03  DASHBOARD
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-dashboard">
+  <div class="screen-meta">
+    <span class="s-num">03</span>
+    <span class="s-title">Dashboard</span>
+    <span class="s-file">Dashboard.jsx</span>
+  </div>
+  <div class="s-desc">Sidebar-Layout · Stats · Chart · EventCard Grid</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/dashboard</strong></div>
+    </div>
+    <div class="wf-nav">
+      <div class="wf-logo">Event<em>App</em></div>
+      <div class="nav-links">
+        <div class="pill p-ghost">Events</div>
+        <div class="pill p-ghost">Tickets</div>
+        <div class="pill p-red">✦ AI Assistent</div>
+        <div class="pill p-fill" style="margin-left:8px;">User ▾</div>
+      </div>
+    </div>
+    <div class="flex" style="min-height:600px; background:var(--off-white);">
+      <div class="sidebar">
+        <div class="sb-label">Übersicht</div>
+        <div class="sb-item active"><div class="sb-icon"></div>Dashboard</div>
+        <div class="sb-item"><div class="sb-icon"></div>Events</div>
+        <div class="sb-item"><div class="sb-icon"></div>AI Assistent<div class="sb-badge">!</div></div>
+        <div class="sb-label">Mein Bereich</div>
+        <div class="sb-item"><div class="sb-icon"></div>Meine Tickets<div class="sb-badge">3</div></div>
+        <div class="sb-item"><div class="sb-icon"></div>Gespeichert</div>
+        <div class="sb-label">Veranstalter</div>
+        <div class="sb-item"><div class="sb-icon"></div>+ Erstellen</div>
+        <div class="sb-item"><div class="sb-icon"></div>Meine Events</div>
+        <div class="sb-item"><div class="sb-icon"></div>Statistiken</div>
+      </div>
+      <div class="flex-col flex-1 p20 gap-16">
+        <!-- Header -->
+        <div class="flex" style="justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:var(--f-display);font-weight:700;font-size:28px;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Dashboard</div>
+            <div class="ln lsm w60" style="margin:6px 0 0;"></div>
+          </div>
+          <div class="flex gap-8">
+            <div class="btn btn-ghost btn-sm">+ Event erstellen</div>
+            <div class="btn btn-red btn-sm">✦ AI Assistent</div>
+          </div>
+        </div>
+        <!-- Stats -->
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-top" style="background:var(--red);"></div><div class="stat-label">Events Live</div><div class="stat-val">24</div><div class="stat-ch up">↑ 3 neue diese Woche</div></div>
+          <div class="stat-card"><div class="stat-top" style="background:#D4A017;"></div><div class="stat-label">Tickets verkauft</div><div class="stat-val">8.2K</div><div class="stat-ch up">↑ 12% Vormonat</div></div>
+          <div class="stat-card"><div class="stat-top" style="background:#8B0A1F;"></div><div class="stat-label">Umsatz</div><div class="stat-val">€142K</div><div class="stat-ch up">↑ 8% Vormonat</div></div>
+          <div class="stat-card"><div class="stat-top" style="background:var(--ink);"></div><div class="stat-label">Besucher</div><div class="stat-val">5.9K</div><div class="stat-ch up">↑ 23% Quartal</div></div>
+        </div>
+        <!-- Charts row -->
+        <div class="g2">
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Ticketverkäufe — 7 Tage</div>
+              <div class="red-band">Live</div>
+            </div>
+            <div class="card-body">
+              <div class="bar-ch">
+                <div class="bar" style="height:44%;"></div>
+                <div class="bar" style="height:66%;"></div>
+                <div class="bar" style="height:50%;"></div>
+                <div class="bar" style="height:80%;"></div>
+                <div class="bar" style="height:57%;"></div>
+                <div class="bar hi" style="height:92%;"></div>
+                <div class="bar" style="height:70%;opacity:.5;"></div>
+              </div>
+              <div class="bar-labs">
+                <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span style="color:var(--red);">Sa</span><span>So</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head"><div class="card-title">Top-Kategorien</div></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:12px;">
+              <div><div class="flex" style="justify-content:space-between;font-family:var(--f-mono);font-size:10px;margin-bottom:4px;"><span>Musik</span><span style="color:var(--red);">42%</span></div><div class="prog"><div class="prog-fill" style="width:42%;"></div></div></div>
+              <div><div class="flex" style="justify-content:space-between;font-family:var(--f-mono);font-size:10px;margin-bottom:4px;"><span>Tech</span><span style="color:var(--ink-mid);">28%</span></div><div class="prog"><div class="prog-fill" style="width:28%;background:var(--ink-mid);"></div></div></div>
+              <div><div class="flex" style="justify-content:space-between;font-family:var(--f-mono);font-size:10px;margin-bottom:4px;"><span>Kunst</span><span style="color:var(--ink-light);">18%</span></div><div class="prog"><div class="prog-fill" style="width:18%;background:var(--ink-light);"></div></div></div>
+              <div><div class="flex" style="justify-content:space-between;font-family:var(--f-mono);font-size:10px;margin-bottom:4px;"><span>Food</span><span style="color:var(--ink-faint);">12%</span></div><div class="prog"><div class="prog-fill" style="width:12%;background:var(--ink-faint);"></div></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Event cards -->
+        <div style="font-family:var(--f-display);font-weight:700;font-size:18px;color:var(--ink);">Bevorstehende Events</div>
+        <div class="g3">
+          <div class="ev-card">
+            <div style="position:relative;">
+              <div class="img-ph" style="height:110px;border-radius:0;border:none;border-bottom:1px solid var(--border);">
+                <div class="img-label">Event Bild</div>
+                <div class="ev-tag">Rock</div>
+                <div class="ev-date">28 FEB</div>
+              </div>
+            </div>
+            <div style="padding:12px 14px;">
+              <div class="ln lh2 w80" style="margin-bottom:6px;"></div>
+              <div class="ln lsm w55" style="margin-bottom:10px;"></div>
+              <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <div class="ln lsm w30" style="margin:0;background:var(--red-light);border:1px solid var(--red-mid);border-radius:2px;height:14px;"></div>
+                <div class="btn btn-red btn-sm">Buchen</div>
+              </div>
+              <div class="prog"><div class="prog-fill" style="width:72%;"></div></div>
+              <div style="font-family:var(--f-mono);font-size:8px;color:var(--ink-faint);margin-top:4px;">72% verkauft</div>
+            </div>
+          </div>
+          <div class="ev-card">
+            <div style="position:relative;">
+              <div class="img-ph" style="height:110px;border-radius:0;border:none;border-bottom:1px solid var(--border);">
+                <div class="img-label">Event Bild</div>
+                <div class="ev-tag">Tech</div>
+                <div class="ev-date">05 MAR</div>
+              </div>
+            </div>
+            <div style="padding:12px 14px;">
+              <div class="ln lh2 w90" style="margin-bottom:6px;"></div>
+              <div class="ln lsm w50" style="margin-bottom:10px;"></div>
+              <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <div class="ln lsm w30" style="margin:0;background:var(--light2);border-radius:2px;height:14px;"></div>
+                <div class="btn btn-ink btn-sm">Buchen</div>
+              </div>
+              <div class="prog"><div class="prog-fill" style="width:89%;"></div></div>
+              <div style="font-family:var(--f-mono);font-size:8px;color:var(--red);margin-top:4px;">89% — Fast voll!</div>
+            </div>
+          </div>
+          <div class="ev-card">
+            <div style="position:relative;">
+              <div class="img-ph" style="height:110px;border-radius:0;border:none;border-bottom:1px solid var(--border);">
+                <div class="img-label">Event Bild</div>
+                <div class="ev-tag">Jazz</div>
+                <div class="ev-date" style="background:var(--ink);">12 MAR</div>
+              </div>
+            </div>
+            <div style="padding:12px 14px;">
+              <div class="ln lh2 w70" style="margin-bottom:6px;"></div>
+              <div class="ln lsm w45" style="margin-bottom:10px;"></div>
+              <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <div class="ln lsm w30" style="margin:0;background:var(--light2);border-radius:2px;height:14px;"></div>
+                <div class="btn btn-ghost btn-sm">Buchen</div>
+              </div>
+              <div class="prog"><div class="prog-fill" style="width:45%;background:var(--ink-light);"></div></div>
+              <div style="font-family:var(--f-mono);font-size:8px;color:var(--ink-faint);margin-top:4px;">45% verkauft</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">eventApi.js: GET /events?upcoming · ticketApi.js: GET /stats · Navbar.jsx + EventCard.jsx</div>
+</div>
+
+<hr class="sep" id="sep-dashboard">
+
+<!-- ══════════════════════════════════════════════════════
+     04  EVENT DETAIL
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-detail">
+  <div class="screen-meta">
+    <span class="s-num">04</span>
+    <span class="s-title">Event Detail</span>
+    <span class="s-file">EventDetail.jsx</span>
+  </div>
+  <div class="s-desc">Hero Banner · Beschreibung + Lineup · Sticky Ticket-Box · 2-Spalten</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/events/noise-fest-2025</strong></div>
+    </div>
+    <div style="position:relative;">
+      <div class="img-ph" style="height:200px;border-radius:0;border:none;border-bottom:1px solid var(--border);background:var(--light);">
+        <div class="img-label" style="flex-direction:column;gap:10px;z-index:3;position:relative;">
+          <div class="ln lh1" style="width:280px;margin:0;"></div>
+          <div class="flex gap-8">
+            <div class="ln lsm" style="width:90px;margin:0;"></div>
+            <div class="ln lsm" style="width:70px;margin:0;"></div>
+            <div class="ln lsm" style="width:110px;margin:0;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="position:absolute;top:16px;left:20px;z-index:5;">
+        <div class="pill p-warm">Rock / Metal</div>
+      </div>
+      <div style="position:absolute;top:16px;right:20px;z-index:5;">
+        <div class="pill p-fill">28 FEB 2025</div>
+      </div>
+    </div>
+    <div class="flex p20 gap-16" style="background:var(--off-white);min-height:500px;">
+      <!-- Left -->
+      <div class="flex-col flex-1 gap-12">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Über dieses Event</div></div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:6px;">
+            <div class="ln lsm w100"></div><div class="ln lsm w90"></div>
+            <div class="ln lsm w100"></div><div class="ln lsm w70"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Lineup</div></div>
+          <div class="card-body">
+            <div class="g3" style="gap:8px;">
+              <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:10px;align-items:center;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--light2);border:1px solid var(--border);flex-shrink:0;"></div>
+                <div><div class="ln lh2" style="width:70px;margin-bottom:4px;"></div><div class="ln lsm" style="width:55px;margin:0;"></div></div>
+              </div>
+              <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:10px;align-items:center;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--light2);border:1px solid var(--border);flex-shrink:0;"></div>
+                <div><div class="ln lh2" style="width:60px;margin-bottom:4px;"></div><div class="ln lsm" style="width:48px;margin:0;"></div></div>
+              </div>
+              <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:10px;align-items:center;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--light2);border:1px solid var(--border);flex-shrink:0;"></div>
+                <div><div class="ln lh2" style="width:65px;margin-bottom:4px;"></div><div class="ln lsm" style="width:52px;margin:0;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Veranstaltungsinfos</div></div>
+          <div class="card-body">
+            <div class="g2" style="gap:8px;">
+              <div style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;display:flex;gap:10px;align-items:center;">
+                <div style="width:22px;height:22px;background:var(--red-light);border:1px solid var(--red-mid);border-radius:3px;flex-shrink:0;"></div>
+                <div><div class="ln lsm" style="width:55px;margin-bottom:4px;"></div><div class="ln lh2" style="width:75px;margin:0;"></div></div>
+              </div>
+              <div style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;display:flex;gap:10px;align-items:center;">
+                <div style="width:22px;height:22px;background:var(--light2);border:1px solid var(--border);border-radius:3px;flex-shrink:0;"></div>
+                <div><div class="ln lsm" style="width:50px;margin-bottom:4px;"></div><div class="ln lh2" style="width:80px;margin:0;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Ticket Box -->
+      <div style="width:280px;flex-shrink:0;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);position:sticky;top:80px;">
+          <div style="height:3px;background:var(--red);"></div>
+          <div style="padding:16px 20px;border-bottom:1px solid var(--border);background:var(--off-white);">
+            <div class="ln lh2 w70" style="margin-bottom:6px;"></div>
+            <div class="ln lsm w50" style="margin:0;"></div>
+          </div>
+          <div style="padding:18px;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+              <div><div class="ln lh2" style="width:100px;margin-bottom:4px;"></div><div class="ln lsm" style="width:75px;margin:0;"></div></div>
+              <div class="ln lsm" style="width:38px;height:14px;margin:0;background:var(--light2);border-radius:2px;"></div>
+            </div>
+            <!-- selected -->
+            <div style="background:var(--red-light);border:1px solid var(--red);border-radius:4px;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+              <div><div class="ln lh2" style="width:85px;margin-bottom:4px;background:var(--red-mid);"></div><div class="ln lsm" style="width:70px;margin:0;background:var(--red-mid);opacity:.6;"></div></div>
+              <div class="ln lsm" style="width:38px;height:14px;margin:0;background:var(--red);border-radius:2px;"></div>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+              <div><div class="ln lh2" style="width:90px;margin-bottom:4px;"></div><div class="ln lsm" style="width:65px;margin:0;"></div></div>
+              <div class="ln lsm" style="width:38px;height:14px;margin:0;background:var(--light2);border-radius:2px;"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:6px 14px;width:fit-content;margin-top:4px;">
+              <span style="font-size:18px;color:var(--ink-faint);cursor:pointer;font-family:var(--f-display);">−</span>
+              <span style="font-family:var(--f-mono);font-size:16px;font-weight:700;color:var(--ink);">2</span>
+              <span style="font-size:18px;color:var(--ink-faint);cursor:pointer;font-family:var(--f-display);">+</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+              <span style="font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-light);">Gesamt</span>
+              <div class="ln" style="width:64px;height:20px;margin:0;background:var(--light2);border-radius:2px;"></div>
+            </div>
+            <div class="btn btn-red btn-full btn-lg" style="justify-content:center;margin-top:4px;">Jetzt buchen →</div>
+            <div class="btn btn-ghost btn-full" style="font-size:11px;justify-content:center;">♡ Speichern</div>
+            <div style="font-family:var(--f-mono);font-size:8px;color:var(--ink-faint);text-align:center;line-height:1.7;margin-top:4px;">🔒 Sichere Zahlung · Kostenlose Stornierung 48h vorher</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">eventApi.js: GET /events/:id · ticketApi.js: POST /tickets/book · TicketCard.jsx für Ticket-Typen</div>
+</div>
+
+<hr class="sep" id="sep-detail">
+
+<!-- ══════════════════════════════════════════════════════
+     05  CREATE EVENT
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-create">
+  <div class="screen-meta">
+    <span class="s-num">05</span>
+    <span class="s-title">Event erstellen</span>
+    <span class="s-file">CreateEvent.jsx</span>
+  </div>
+  <div class="s-desc">4-Schritt Wizard · Basics → Datum/Ort → Tickets → Veröffentlichen</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/events/create</strong></div>
+    </div>
+    <div style="background:var(--off-white);padding:28px;min-height:600px;">
+      <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:28px;">
+        <div style="font-family:var(--f-display);font-weight:700;font-size:24px;color:var(--ink);">Event erstellen</div>
+        <div class="btn btn-ghost btn-sm">← Zurück</div>
+      </div>
+      <div class="steps" style="margin-bottom:6px;">
+        <div class="step-dot act">1</div>
+        <div class="step-line"></div>
+        <div class="step-dot">2</div>
+        <div class="step-line"></div>
+        <div class="step-dot">3</div>
+        <div class="step-line"></div>
+        <div class="step-dot">4</div>
+      </div>
+      <div class="step-names">
+        <span>Basics</span><span>Datum &amp; Ort</span><span>Tickets</span><span>Publish</span>
+      </div>
+      <div class="g2" style="gap:20px;align-items:start;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="card">
+            <div class="card-head"><div class="card-title">🎪 Grundinformationen</div></div>
+            <div class="card-body">
+              <div class="fg"><label class="fl">Titel *</label><div class="fi focused">Noise Fest 2025</div></div>
+              <div class="frow">
+                <div class="fg"><label class="fl">Kategorie</label><div class="fi">Musik &amp; Konzerte ▾</div></div>
+                <div class="fg"><label class="fl">Sub-Genre</label><div class="fi">Metal / Rock</div></div>
+              </div>
+              <div class="fg"><label class="fl">Kurzbeschreibung</label><div class="fi">Ein Satz, der zum Klicken einlädt …</div></div>
+              <div class="fg" style="margin-bottom:0;"><label class="fl">Vollständige Beschreibung</label><div class="fi ta">Ausführliche Beschreibung des Events …</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="card">
+            <div class="card-head"><div class="card-title">🖼 Event-Bild</div></div>
+            <div class="card-body">
+              <div class="upload">
+                <div class="upload-icon">📁</div>
+                <div class="ln lsm w50" style="margin:0 auto 6px;"></div>
+                <div class="ln lxs w35" style="margin:0 auto 14px;"></div>
+                <div class="btn btn-ghost btn-sm" style="margin:0 auto;display:inline-flex;">Datei wählen</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head"><div class="card-title">Vorschau</div><div class="red-band">Live</div></div>
+            <div class="card-body" style="padding:10px;">
+              <div class="ev-card">
+                <div class="img-ph" style="height:70px;border-radius:5px 5px 0 0;border:none;border-bottom:1px solid var(--border);">
+                  <div class="img-label" style="font-size:8px;">Preview Image</div>
+                </div>
+                <div style="padding:8px 10px;">
+                  <div class="ln lh2 w80" style="margin-bottom:5px;"></div>
+                  <div class="ln lsm w50" style="margin:0;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex" style="justify-content:space-between;margin-top:20px;">
+        <div class="btn btn-ghost" style="opacity:.4;">← Zurück</div>
+        <div class="btn btn-red">Weiter →</div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">eventApi.js: POST /events (multipart/form-data) · Steps 2–4: Datum, Tickets, Publikation</div>
+</div>
+
+<hr class="sep" id="sep-create">
+
+<!-- ══════════════════════════════════════════════════════
+     06  MY TICKETS
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-tickets">
+  <div class="screen-meta">
+    <span class="s-num">06</span>
+    <span class="s-title">Meine Tickets</span>
+    <span class="s-file">MyTickets.jsx</span>
+  </div>
+  <div class="s-desc">Ticketübersicht · Tabs: Bevorstehend / Vergangen · QR-Code sichtbar · TicketCard.jsx</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/tickets</strong></div>
+    </div>
+    <div class="wf-nav">
+      <div class="wf-logo">Event<em>App</em></div>
+      <div class="nav-links">
+        <div class="pill p-ghost">Dashboard</div>
+        <div class="pill p-fill">Meine Tickets</div>
+        <div class="pill p-red" style="margin-left:4px;">AI Assistent</div>
+      </div>
+    </div>
+    <div style="background:var(--off-white);padding:24px;min-height:500px;">
+      <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:22px;">
+        <div style="font-family:var(--f-display);font-weight:700;font-size:24px;color:var(--ink);">Meine Tickets</div>
+        <div class="pill p-red">3 Tickets</div>
+      </div>
+      <div class="flex gap-4" style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:3px;width:fit-content;margin-bottom:22px;box-shadow:var(--shadow-sm);">
+        <div class="btn btn-red btn-sm">Bevorstehend</div>
+        <div class="btn btn-ghost btn-sm" style="border-color:transparent;">Vergangen</div>
+      </div>
+      <div class="ticket">
+        <div class="t-stripe" style="background:var(--red);"></div>
+        <div class="t-main">
+          <div>
+            <div class="ln lh2" style="width:230px;margin-bottom:8px;"></div>
+            <div class="flex gap-12">
+              <div class="ln lsm" style="width:100px;margin:0;"></div>
+              <div class="ln lsm" style="width:80px;margin:0;"></div>
+              <div class="ln lsm" style="width:90px;margin:0;"></div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div class="ln lsm" style="width:80px;margin:0 0 8px auto;"></div>
+            <div class="ln lh2" style="width:110px;margin:0 0 10px auto;"></div>
+            <div class="pill p-red" style="font-size:8px;">Bevorstehend</div>
+          </div>
+        </div>
+        <div class="t-sep"></div>
+        <div class="t-qr"><div class="qr-box"><div class="qr-sq"></div><div></div><div></div><div class="qr-sq"></div></div></div>
+      </div>
+      <div class="ticket">
+        <div class="t-stripe" style="background:var(--red);"></div>
+        <div class="t-main">
+          <div>
+            <div class="ln lh2" style="width:260px;margin-bottom:8px;"></div>
+            <div class="flex gap-12">
+              <div class="ln lsm" style="width:110px;margin:0;"></div>
+              <div class="ln lsm" style="width:70px;margin:0;"></div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div class="ln lsm" style="width:80px;margin:0 0 8px auto;"></div>
+            <div class="ln lh2" style="width:100px;margin:0 0 10px auto;"></div>
+            <div class="pill p-ink" style="font-size:8px;">VIP</div>
+          </div>
+        </div>
+        <div class="t-sep"></div>
+        <div class="t-qr"><div class="qr-box"><div class="qr-sq"></div><div></div><div></div><div class="qr-sq"></div></div></div>
+      </div>
+      <div class="ticket" style="opacity:.4;">
+        <div class="t-stripe" style="background:var(--light3);"></div>
+        <div class="t-main">
+          <div>
+            <div class="ln lh2" style="width:200px;margin-bottom:8px;"></div>
+            <div class="flex gap-12">
+              <div class="ln lsm" style="width:90px;margin:0;"></div>
+              <div class="ln lsm" style="width:75px;margin:0;"></div>
+            </div>
+          </div>
+          <div style="text-align:right;"><div class="pill p-ghost" style="font-size:8px;">Vergangen</div></div>
+        </div>
+        <div class="t-sep"></div>
+        <div class="t-qr"><div class="qr-box" style="opacity:.4;"><div class="qr-sq"></div><div></div><div></div><div class="qr-sq"></div></div></div>
+      </div>
+      <div style="font-family:var(--f-mono);font-size:10px;color:var(--ink-faint);margin-top:10px;">⤷ TicketCard.jsx · Tap → QR-Code Modal</div>
+    </div>
+  </div>
+  <div class="ann">ticketApi.js: GET /tickets/me · QR: GET /tickets/:id/qr · Tab-Filter: upcoming / past</div>
+</div>
+
+<hr class="sep" id="sep-tickets">
+
+<!-- ══════════════════════════════════════════════════════
+     07  AI CHAT
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-chat">
+  <div class="screen-meta">
+    <span class="s-num">07</span>
+    <span class="s-title">AI Chat Assistent</span>
+    <span class="s-file">ChatWindow.jsx · MessageBubble.jsx</span>
+  </div>
+  <div class="s-desc">Natural Language Event Discovery · Verlauf-Sidebar · Event-Karten in Antworten</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/chat</strong></div>
+    </div>
+    <div class="flex" style="min-height:580px;">
+      <!-- Sidebar -->
+      <div style="width:210px;flex-shrink:0;background:var(--off-white);border-right:1px solid var(--border);padding:16px;">
+        <div style="font-family:var(--f-mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Verlauf</div>
+        <div class="btn btn-red btn-full btn-sm" style="justify-content:center;margin-bottom:14px;">+ Neue Unterhaltung</div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:10px;margin-bottom:5px;box-shadow:var(--shadow-sm);">
+          <div class="ln lh2 w90" style="margin-bottom:5px;"></div>
+          <div class="ln lsm w65" style="margin:0;"></div>
+        </div>
+        <div style="padding:10px;margin-bottom:4px;">
+          <div class="ln lsm w80" style="margin-bottom:5px;"></div>
+          <div class="ln lsm w55" style="margin:0;"></div>
+        </div>
+        <div style="padding:10px;margin-bottom:4px;opacity:.6;">
+          <div class="ln lsm w70" style="margin-bottom:5px;"></div>
+          <div class="ln lsm w50" style="margin:0;"></div>
+        </div>
+      </div>
+      <!-- Main -->
+      <div class="flex-col flex-1" style="background:var(--white);">
+        <!-- Chat header -->
+        <div class="flex p16" style="border-bottom:1px solid var(--border);align-items:center;gap:12px;background:var(--white);">
+          <div class="av-ai">✦</div>
+          <div>
+            <div class="ln lh2" style="width:130px;margin-bottom:4px;"></div>
+            <div style="font-family:var(--f-mono);font-size:8px;color:#2E7D32;letter-spacing:1px;">● ONLINE — KI-GESTÜTZT</div>
+          </div>
+          <div class="pill p-warm" style="margin-left:auto;font-size:8px;">GPT-powered</div>
+        </div>
+        <!-- Messages -->
+        <div style="flex:1;padding:20px;display:flex;flex-direction:column;background:var(--white);">
+          <div class="msg-r">
+            <div class="av-ai">✦</div>
+            <div class="bubble bubble-ai">
+              <div class="ln lsm w90" style="margin-bottom:5px;"></div>
+              <div class="ln lsm w70" style="margin-bottom:12px;"></div>
+              <!-- Event result cards -->
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:8px;align-items:center;">
+                  <div class="img-ph" style="width:36px;height:36px;border-radius:3px;border-color:var(--border);flex-shrink:0;"><div class="img-label"></div></div>
+                  <div style="flex:1;"><div class="ln lh2" style="width:120px;margin-bottom:4px;"></div><div class="ln lsm" style="width:80px;margin:0;"></div></div>
+                  <div class="ln lsm" style="width:40px;height:14px;margin:0;background:var(--red-light);border:1px solid var(--red-mid);border-radius:2px;flex-shrink:0;"></div>
+                </div>
+                <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:8px;align-items:center;">
+                  <div class="img-ph" style="width:36px;height:36px;border-radius:3px;border-color:var(--border);flex-shrink:0;"><div class="img-label"></div></div>
+                  <div style="flex:1;"><div class="ln lh2" style="width:100px;margin-bottom:4px;"></div><div class="ln lsm" style="width:70px;margin:0;"></div></div>
+                  <div class="ln lsm" style="width:40px;height:14px;margin:0;background:var(--light2);border-radius:2px;flex-shrink:0;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg-r u" style="margin-top:8px;">
+            <div class="av-u"></div>
+            <div class="bubble bubble-user">
+              <div class="ln lsm w80" style="margin-bottom:5px;background:rgba(255,255,255,0.3);"></div>
+              <div class="ln lsm w60" style="margin:0;background:rgba(255,255,255,0.2);"></div>
+            </div>
+          </div>
+          <div class="msg-r" style="margin-top:8px;">
+            <div class="av-ai">✦</div>
+            <div class="bubble bubble-ai" style="display:flex;gap:5px;align-items:center;padding:14px 16px;">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--red);"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--light3);"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--light3);"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Suggestions -->
+        <div style="display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-top:1px solid var(--border);background:var(--off-white);">
+          <div class="suggest-chip">Rock-Konzert diesen Winter</div>
+          <div class="suggest-chip">Events in Berlin</div>
+          <div class="suggest-chip">Techno-Festival</div>
+          <div class="suggest-chip">Kostenlose Events</div>
+        </div>
+        <!-- Input -->
+        <div style="padding:12px 16px;border-top:1px solid var(--border);background:var(--white);">
+          <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:5px;padding:6px 6px 6px 14px;align-items:center;box-shadow:var(--shadow-sm);">
+            <div style="flex:1;font-family:var(--f-mono);font-size:10px;color:var(--ink-faint);">z.B. „Ich suche ein Rock-Konzert diesen Winter in Berlin …"</div>
+            <div class="btn btn-red btn-sm">Senden →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">chatApi.js: POST /chat/message · Streaming Response · Event-Karten via eventApi.js · ChatWindow.jsx + MessageBubble.jsx</div>
+</div>
+
+<hr class="sep" id="sep-chat">
+
+<!-- ══════════════════════════════════════════════════════
+     08  ADMIN
+══════════════════════════════════════════════════════ -->
+<div class="screen-wrap" id="s-admin">
+  <div class="screen-meta">
+    <span class="s-num">08</span>
+    <span class="s-title">Admin Panel</span>
+    <span class="s-file">Dashboard.jsx (Admin-Rolle)</span>
+  </div>
+  <div class="s-desc">Plattform-Monitoring · Nutzerverwaltung · Globale Statistiken · Route Guard</div>
+  <div class="browser">
+    <div class="browser-bar">
+      <div class="bdots"><div class="bdot"></div><div class="bdot"></div><div class="bdot"></div></div>
+      <div class="burl">app.eventapp.io<strong>/admin</strong></div>
+    </div>
+    <div class="wf-nav" style="background:var(--ink);">
+      <div class="wf-logo" style="color:white;">Event<em style="color:var(--red);font-style:italic;">App</em></div>
+      <div class="pill" style="border-color:var(--red);background:var(--red);color:white;font-size:8px;margin-left:8px;">ADMIN MODE</div>
+      <div class="nav-links">
+        <div class="pill" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);">Nutzer</div>
+        <div class="pill" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);">Events</div>
+        <div class="pill" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);">Tickets</div>
+        <div class="pill p-fill" style="margin-left:8px;">⚙ Admin ▾</div>
+      </div>
+    </div>
+    <div style="background:var(--off-white);padding:20px;min-height:540px;">
+      <!-- Admin banner -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:18px 22px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;border-left:4px solid var(--red);box-shadow:var(--shadow-sm);">
+        <div>
+          <div style="font-family:var(--f-display);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:-0.3px;">Plattform-Übersicht</div>
+          <div class="ln lsm w60" style="margin-top:8px;"></div>
+        </div>
+        <div class="flex gap-8">
+          <div class="btn btn-ghost btn-sm">Export CSV</div>
+          <div class="btn btn-ink btn-sm">Bericht erstellen</div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="stat-grid" style="margin-bottom:18px;">
+        <div class="stat-card"><div class="stat-top" style="background:var(--red);"></div><div class="stat-label">Nutzer gesamt</div><div class="stat-val">12.4K</div><div class="stat-ch up">↑ 8% diesen Monat</div></div>
+        <div class="stat-card"><div class="stat-top" style="background:#D4A017;"></div><div class="stat-label">Aktive Events</div><div class="stat-val">247</div><div class="stat-ch up">↑ 14 neue Events</div></div>
+        <div class="stat-card"><div class="stat-top" style="background:var(--ink);"></div><div class="stat-label">Umsatz (Monat)</div><div class="stat-val">€98K</div><div class="stat-ch up">↑ 22% Vormonat</div></div>
+        <div class="stat-card"><div class="stat-top" style="background:var(--red-dark);"></div><div class="stat-label">Gemeldete Inhalte</div><div class="stat-val">7</div><div class="stat-ch" style="color:var(--red);">⚠ Prüfung nötig</div></div>
+      </div>
+      <!-- Table + Chart -->
+      <div class="g2 gap-20">
+        <div class="card" style="overflow:hidden;">
+          <div class="card-head">
+            <div class="card-title">Nutzerverwaltung</div>
+            <div class="fi" style="width:130px;height:28px;font-size:9px;padding:0 10px;">Suchen …</div>
+          </div>
+          <table style="width:100%;border-collapse:collapse;">
+            <thead class="table-head">
+              <tr><th class="th">Name</th><th class="th">Rolle</th><th class="th">Status</th><th class="th">Aktion</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td"><div class="ln lsm w80" style="margin:0;"></div></td>
+                <td class="td"><div class="pill p-ghost" style="font-size:8px;">User</div></td>
+                <td class="td"><div class="pill" style="border-color:#2E7D32;color:#2E7D32;background:#E8F5E9;font-size:8px;">Aktiv</div></td>
+                <td class="td"><div class="btn btn-ghost btn-sm" style="height:22px;font-size:8px;">···</div></td>
+              </tr>
+              <tr>
+                <td class="td"><div class="ln lsm w90" style="margin:0;"></div></td>
+                <td class="td"><div class="pill p-warm" style="font-size:8px;">Veranst.</div></td>
+                <td class="td"><div class="pill" style="border-color:#2E7D32;color:#2E7D32;background:#E8F5E9;font-size:8px;">Aktiv</div></td>
+                <td class="td"><div class="btn btn-ghost btn-sm" style="height:22px;font-size:8px;">···</div></td>
+              </tr>
+              <tr>
+                <td class="td"><div class="ln lsm w70" style="margin:0;"></div></td>
+                <td class="td"><div class="pill p-ghost" style="font-size:8px;">User</div></td>
+                <td class="td"><div class="pill p-red" style="font-size:8px;">Gesperrt</div></td>
+                <td class="td"><div class="btn btn-ghost btn-sm" style="height:22px;font-size:8px;">···</div></td>
+              </tr>
+              <tr>
+                <td class="td"><div class="ln lsm w60" style="margin:0;"></div></td>
+                <td class="td"><div class="pill p-warm" style="font-size:8px;">Veranst.</div></td>
+                <td class="td"><div class="pill" style="border-color:#E65100;color:#E65100;background:#FFF3E0;font-size:8px;">Ausstehend</div></td>
+                <td class="td"><div class="btn btn-ghost btn-sm" style="height:22px;font-size:8px;">···</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Plattform-Aktivität</div></div>
+            <div class="card-body">
+              <div class="bar-ch">
+                <div class="bar" style="height:50%;"></div>
+                <div class="bar" style="height:72%;"></div>
+                <div class="bar" style="height:55%;"></div>
+                <div class="bar" style="height:85%;"></div>
+                <div class="bar" style="height:62%;"></div>
+                <div class="bar hi" style="height:94%;"></div>
+                <div class="bar" style="height:78%;opacity:.5;"></div>
+              </div>
+              <div class="bar-labs"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span style="color:var(--red);">Sa</span><span>So</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head"><div class="card-title">Gemeldete Events</div><div class="pill p-red" style="font-size:8px;">7 offen</div></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
+              <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;align-items:center;">
+                <div style="flex:1;"><div class="ln lsm w80" style="margin-bottom:4px;"></div><div class="ln lsm w50" style="margin:0;"></div></div>
+                <div class="pill p-red" style="font-size:8px;">Meldung</div>
+                <div class="btn btn-ghost btn-sm" style="height:24px;font-size:8px;">Prüfen</div>
+              </div>
+              <div class="flex gap-8" style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:10px;align-items:center;">
+                <div style="flex:1;"><div class="ln lsm w70" style="margin-bottom:4px;"></div><div class="ln lsm w45" style="margin:0;"></div></div>
+                <div class="pill" style="border-color:#E65100;color:#E65100;background:#FFF3E0;font-size:8px;">Ausstehend</div>
+                <div class="btn btn-ghost btn-sm" style="height:24px;font-size:8px;">Prüfen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ann">Route Guard: Admin-Rolle · GET /admin/stats · GET /admin/users · PUT /admin/users/:id · Protected via AuthContext</div>
+</div>
+
+<!-- Footer -->
+<div style="display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-top:2px solid var(--ink);margin-top:20px;">
+  <div style="font-family:var(--f-display);font-weight:900;font-size:24px;color:var(--ink);">Event<em style="color:var(--red);font-style:italic;">App</em></div>
+  <div class="flex gap-8">
+    <div class="doc-pill">8 Screens</div>
+    <div class="doc-pill" style="background:var(--red);border-color:var(--red);color:white;">Lo-Fi Wireframes</div>
+    <div class="doc-pill">React / JSX</div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const all=['login','register','dashboard','detail','create','tickets','chat','admin'];
+function show(id,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  if(id==='all'){
+    all.forEach(s=>{
+      const el=document.getElementById('s-'+s);
+      const sep=document.getElementById('sep-'+s);
+      if(el)el.style.display='';
+      if(sep)sep.style.display='';
+    });
+  } else {
+    all.forEach(s=>{
+      const el=document.getElementById('s-'+s);
+      const sep=document.getElementById('sep-'+s);
+      if(el)el.style.display=s===id?'':'none';
+      if(sep)sep.style.display='none';
+    });
+  }
+}
+</script>
+</body>
+</html>
