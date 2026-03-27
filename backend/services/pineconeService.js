@@ -1,16 +1,35 @@
 const { Pinecone } = require('@pinecone-database/pinecone');
 const { generateEmbedding } = require('./llmService');
 
-const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY,
-});
+let pinecone = null;
+let pineconeDisabledLogged = false;
+
+function getPineconeClient() {
+  const apiKey = process.env.PINECONE_API_KEY;
+  if (!apiKey) {
+    if (!pineconeDisabledLogged) {
+      console.warn('[Pinecone] PINECONE_API_KEY missing. Vector sync is disabled.');
+      pineconeDisabledLogged = true;
+    }
+    return null;
+  }
+
+  if (!pinecone) {
+    pinecone = new Pinecone({ apiKey });
+  }
+  return pinecone;
+}
 
 /**
  * Helper function to retrieve the Pinecone index.
  */
 function getPineconeIndex() {
+  const client = getPineconeClient();
+  if (!client) {
+    return null;
+  }
   const indexName = process.env.PINECONE_INDEX || 'eventify-indexed';
-  return pinecone.index(indexName);
+  return client.index(indexName);
 }
 
 /**
@@ -21,12 +40,13 @@ function getPineconeIndex() {
  */
 async function upsertEventVector(event) {
   try {
-    const ticketsInfo = (event.ticketTypes && event.ticketTypes.length > 0)
-      ? event.ticketTypes.map(t => `${t.name} ($${t.price})`).join(', ')
-      : 'N/A';
+    const index = getPineconeIndex();
+    if (!index) {
+      return;
+    }
 
-    const textToEmbed = `Title: ${event.title}. Location: ${event.location}. Date: ${event.date.toISOString()}. Description: ${event.description}. Tickets available: ${ticketsInfo}.`;
-    
+    const textToEmbed = `Title: ${event.title}. Location: ${event.location}. Date: ${event.date.toISOString()}. Description: ${event.description}`;
+
     // Using @xenova transformer -> returns 1536 zero-padded float array
     const embedding = await generateEmbedding(textToEmbed);
 
@@ -34,8 +54,6 @@ async function upsertEventVector(event) {
       console.warn(`[Pinecone] Skipping vector upsert for event ${event._id}: invalid embedding generated.`);
       return;
     }
-
-    const index = getPineconeIndex();
 
     await index.upsert({
       records: [{
@@ -66,6 +84,9 @@ async function upsertEventVector(event) {
 async function deleteEventVector(eventId) {
   try {
     const index = getPineconeIndex();
+    if (!index) {
+      return;
+    }
     await index.deleteOne(eventId.toString());
     console.log(`[Pinecone] Successfully deleted vector for event ${eventId}`);
   } catch (error) {

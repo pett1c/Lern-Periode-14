@@ -4,9 +4,13 @@ const { ApiError } = require('../utils/apiError');
 const { generateEmbedding, generateRagResponse } = require('../services/llmService');
 const { Pinecone } = require('@pinecone-database/pinecone');
 
-const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY,
-});
+function getPineconeClient() {
+  const apiKey = process.env.PINECONE_API_KEY;
+  if (!apiKey) {
+    throw new ApiError(503, 'CHAT_UNAVAILABLE', 'Chat is temporarily unavailable (missing Pinecone configuration).');
+  }
+  return new Pinecone({ apiKey });
+}
 
 const handleChatQuery = asyncHandler(async (req, res) => {
   const { query } = req.body;
@@ -24,7 +28,7 @@ const handleChatQuery = asyncHandler(async (req, res) => {
 
   // 2. Query Pinecone vector database for relevant events
   const indexName = process.env.PINECONE_INDEX || 'eventify-indexed';
-  const index = pinecone.index(indexName);
+  const index = getPineconeClient().index(indexName);
 
   const searchResults = await index.query({
     vector: queryEmbedding,
@@ -38,11 +42,19 @@ const handleChatQuery = asyncHandler(async (req, res) => {
 
   if (searchResults.matches && searchResults.matches.length > 0) {
     searchResults.matches.forEach((match) => {
-      sources.push(match.metadata.title);
-      contextString += `---\nEvent Details:\n${match.metadata.text}\n`;
+      const title = match.metadata?.title || 'Unknown event';
+      const text = match.metadata?.text || null;
+      if (text) {
+        sources.push(title);
+        contextString += `---\nEvent Details:\n${text}\n`;
+      }
     });
   } else {
     contextString = 'No events found that match the user query.';
+  }
+
+  if (!contextString.trim()) {
+    contextString = 'No event metadata available for this query.';
   }
 
   // 4. Generate AI response using Gemma-3

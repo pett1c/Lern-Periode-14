@@ -65,7 +65,7 @@ function errorHandler(error, _req, res, _next) {
     data: null,
     error: {
       code: 'INTERNAL_SERVER_ERROR',
-      details: null,
+      details: [{ path: 'server', message: error.message || 'Unknown error.' }],
     },
   });
 }

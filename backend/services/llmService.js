@@ -1,16 +1,29 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const { OpenAI } = require('openai');
+const { ApiError } = require('../utils/apiError');
 
-// Initialize OpenRouter Client for Gemma-3
-const openRouterClient = new OpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.OPENROUTER_API_KEY,
-  defaultHeaders: {
-    'HTTP-Referer': 'http://localhost:3000',
-    'X-Title': 'Eventify',
-  },
-});
+let openRouterClient = null;
+
+function getOpenRouterClient() {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) {
+    throw new ApiError(503, 'CHAT_UNAVAILABLE', 'Chat is temporarily unavailable (missing OpenRouter configuration).');
+  }
+
+  if (!openRouterClient) {
+    openRouterClient = new OpenAI({
+      baseURL: 'https://openrouter.ai/api/v1',
+      apiKey,
+      defaultHeaders: {
+        'HTTP-Referer': 'http://localhost:3000',
+        'X-Title': 'Eventify',
+      },
+    });
+  }
+
+  return openRouterClient;
+}
 
 const SYSTEM_PROMPT = `
 You are Eventify Assistant, a helpful AI that helps users find and understand events.
@@ -70,9 +83,10 @@ async function generateEmbedding(text) {
 
 async function generateRagResponse(context, userQuery) {
   try {
+    const client = getOpenRouterClient();
     const prompt = `Context:\n${context}\n\nUser Question: ${userQuery}`;
 
-    const completion = await openRouterClient.chat.completions.create({
+    const completion = await client.chat.completions.create({
       model: 'arcee-ai/trinity-large-preview:free',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
@@ -82,8 +96,11 @@ async function generateRagResponse(context, userQuery) {
 
     return completion.choices[0].message.content;
   } catch (error) {
+    if (error instanceof ApiError) {
+      throw error;
+    }
     console.error('Error generating RAG response with Gemma-3 via OpenRouter:', error);
-    throw error;
+    throw new ApiError(503, 'CHAT_UNAVAILABLE', 'Chat is temporarily unavailable right now.');
   }
 }
 
