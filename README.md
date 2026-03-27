@@ -117,15 +117,8 @@ Absenz wegen CAE-Prüfung.
 
 ### Ihor
 
-- [x] KI-Stand geprüft: Chat-/Embedding-Flow aus 13.03 analysiert und mit Backend-Routen abgeglichen.
-- [x] DB-ID-Abgleich geplant: Event-IDs aus MongoDB mit Vektor-IDs synchronisieren.
-- [x] Nächster Schritt definiert: Embedding-Pipeline direkt nach Event-CRUD triggern.
-
-*Heute habe ich...*
-
-- Done: Analyse von `backend/scripts/testRag.js` und `backend/data/mockEvents.json`.
-- Next: Chat-Response auf echte Mongo-Event-IDs umstellen.
-- Blocker: Ohne gültige API-Keys/DB-Zugriff nur eingeschränkte Laufzeittests möglich.
+- [x] Postman-Tests für automatische Vektor-Erstellung bei Event-Erstellung (CRUD), Erstellung eines Basis-Frontends für Events-CRUD.
+- [x] Erstellung den MongoDB Atlas und für alle dies einrichten.
 
 ### Arvin
 
