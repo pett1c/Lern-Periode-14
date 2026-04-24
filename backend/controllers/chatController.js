@@ -115,7 +115,15 @@ const handleChatQuery = asyncHandler(async (req, res) => {
       },
     });
   } catch (error) {
-    if (error instanceof ApiError && error.code === 'CHAT_UNAVAILABLE') {
+    // Fall back for missing/invalid Pinecone or OpenRouter config and transient provider errors.
+    if (
+      (error instanceof ApiError && error.code === 'CHAT_UNAVAILABLE') ||
+      (typeof error?.message === 'string' &&
+        (error.message.includes('Pinecone') ||
+          error.message.includes('OpenRouter') ||
+          error.message.includes('api.pinecone.io') ||
+          error.message.includes('API key')))
+    ) {
       const fallback = await localFallbackAnswer(query);
       return sendSuccess(res, {
         message: 'Chat is running in fallback mode.',

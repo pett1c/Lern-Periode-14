@@ -40,6 +40,11 @@ function getPineconeIndex() {
  */
 async function upsertEventVector(event) {
   try {
+    const index = getPineconeIndex();
+    if (!index) {
+      return;
+    }
+
     const ticketsInfo = (event.ticketTypes && event.ticketTypes.length > 0)
       ? event.ticketTypes.map(t => `${t.name} ($${t.price})`).join(', ')
       : 'N/A';
