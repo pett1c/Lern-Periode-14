@@ -8,12 +8,14 @@ const { registerSchema, loginSchema } = require('../validators/authSchemas');
 const { ApiError } = require('../utils/apiError');
 
 const router = express.Router();
-const features = getFeatureFlags();
 
-function ensureFeatureEnabled(isEnabled, featureName) {
+function ensureFeatureEnabled(featureKey, featureName) {
   return (_req, _res, next) => {
-    if (!isEnabled) {
-      return next(new ApiError(503, 'FEATURE_DISABLED', `${featureName} OAuth is not configured.`));
+    const features = getFeatureFlags();
+    if (!features[featureKey]) {
+      return next(
+        new ApiError(503, 'FEATURE_DISABLED', `${featureName} OAuth is currently disabled. Use local auth for now.`)
+      );
     }
     return next();
   };
@@ -25,23 +27,23 @@ router.get('/me', protect, getMe);
 
 router.get(
   '/google',
-  ensureFeatureEnabled(features.googleAuthEnabled, 'Google'),
+  ensureFeatureEnabled('googleAuthEnabled', 'Google'),
   passport.authenticate('google', { session: false, scope: ['profile', 'email'] })
 );
 router.get(
   '/google/callback',
-  ensureFeatureEnabled(features.googleAuthEnabled, 'Google'),
+  ensureFeatureEnabled('googleAuthEnabled', 'Google'),
   passport.authenticate('google', { session: false, failureRedirect: '/api/auth/oauth-failure' }),
   handleOAuthCallback
 );
 router.get(
   '/github',
-  ensureFeatureEnabled(features.githubAuthEnabled, 'GitHub'),
+  ensureFeatureEnabled('githubAuthEnabled', 'GitHub'),
   passport.authenticate('github', { session: false, scope: ['user:email'] })
 );
 router.get(
   '/github/callback',
-  ensureFeatureEnabled(features.githubAuthEnabled, 'GitHub'),
+  ensureFeatureEnabled('githubAuthEnabled', 'GitHub'),
   passport.authenticate('github', { session: false, failureRedirect: '/api/auth/oauth-failure' }),
   handleOAuthCallback
 );
