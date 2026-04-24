@@ -237,7 +237,616 @@
     "location": "Kyoto, Japan",
     "ticketTypes": [
       { "name": "full retreat package", "price": 850.00, "capacity": 80, "bookedCount": 0 },
-      { "name": "day pass", "price": 120.00, "capacity": 40, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_21",
+    "title": "Global AI Summit 2026",
+    "description": "Join the brightest minds in artificial intelligence for a three-day conference. Discover the latest breakthroughs in machine learning and neural networks.",
+    "date": "2026-03-12",
+    "genre": "technology",
+    "location": "San Francisco, USA",
+    "ticketTypes": [
+      { "name": "Early Bird", "price": 499.00, "capacity": 500, "bookedCount": 0 },
+      { "name": "Standard", "price": 799.00, "capacity": 1500, "bookedCount": 0 },
+      { "name": "VIP", "price": 1499.00, "capacity": 200, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_22",
+    "title": "Neon Nights: Underground Cyber Rave",
+    "description": "Immerse yourself in a dystopian soundscape with top underground DJs. Experience mind-bending visuals and pounding bass until dawn.",
+    "date": "2026-05-22",
+    "genre": "music",
+    "location": "Berlin, Germany",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 45.00, "capacity": 1000, "bookedCount": 0 },
+      { "name": "VIP Access", "price": 120.00, "capacity": 150, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_23",
+    "title": "The Great European Food Festival",
+    "description": "Taste culinary masterpieces from over 50 Michelin-starred chefs. From street food to fine dining, this is a gastronomic journey like no other.",
+    "date": "2026-07-18",
+    "genre": "food",
+    "location": "Paris, France",
+    "ticketTypes": [
+      { "name": "Tasting Pass", "price": 85.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "VIP Chef's Table", "price": 450.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_24",
+    "title": "World Championship Esports Finals",
+    "description": "Watch the best teams battle for a $10 million prize pool in a stadium filled with roaring fans. Witness epic plays and unforgettable moments.",
+    "date": "2026-11-05",
+    "genre": "esports",
+    "location": "Seoul, South Korea",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 60.00, "capacity": 15000, "bookedCount": 0 },
+      { "name": "Premium View", "price": 150.00, "capacity": 3000, "bookedCount": 0 },
+      { "name": "Backstage Pass", "price": 500.00, "capacity": 200, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_25",
+    "title": "Startup Founders Masterclass",
+    "description": "Learn the secrets of scaling your business from unicorn founders and top-tier venture capitalists. Network with driven entrepreneurs and pitch your ideas.",
+    "date": "2026-02-19",
+    "genre": "business",
+    "location": "London, UK",
+    "ticketTypes": [
+      { "name": "Standard", "price": 299.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "Executive", "price": 899.00, "capacity": 100, "bookedCount": 0 },
+      { "name": "Meet & Greet", "price": 1500.00, "capacity": 20, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_26",
+    "title": "Phantom of the Opera: Holographic Revival",
+    "description": "Experience the classic musical reimagined with state-of-the-art holographic technology. A breathtaking theatrical event that bridges the past and the future.",
+    "date": "2026-09-14",
+    "genre": "theater",
+    "location": "New York, USA",
+    "ticketTypes": [
+      { "name": "Balcony", "price": 95.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "Orchestra", "price": 250.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "VIP Box", "price": 800.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_27",
+    "title": "Quantum Computing Expo",
+    "description": "Explore the commercial applications of quantum supremacy. Featuring keynote speeches from industry leaders and hands-on demonstrations.",
+    "date": "2026-04-08",
+    "genre": "technology",
+    "location": "Tokyo, Japan",
+    "ticketTypes": [
+      { "name": "1-Day Pass", "price": 150.00, "capacity": 3000, "bookedCount": 0 },
+      { "name": "3-Day Pass", "price": 350.00, "capacity": 1500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_28",
+    "title": "Mars Colony VR Experience",
+    "description": "Step into a fully immersive virtual reality simulation of the first human settlement on Mars. A mind-blowing adventure for tech enthusiasts and space lovers.",
+    "date": "2026-12-01",
+    "genre": "entertainment",
+    "location": "Dubai, UAE",
+    "ticketTypes": [
+      { "name": "Standard Entry", "price": 40.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "Premium VR Package", "price": 120.00, "capacity": 200, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_29",
+    "title": "Indie Rock Open Air",
+    "description": "A weekend of raw energy, guitars, and unforgettable live performances by the hottest indie rock bands. Camp under the stars and enjoy the vibrant festival atmosphere.",
+    "date": "2026-08-15",
+    "genre": "music",
+    "location": "Austin, USA",
+    "ticketTypes": [
+      { "name": "Weekend Pass", "price": 180.00, "capacity": 10000, "bookedCount": 0 },
+      { "name": "VIP Camping", "price": 450.00, "capacity": 1000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_30",
+    "title": "Future of Architecture Biennale",
+    "description": "Discover revolutionary building designs and sustainable urban planning concepts. A must-visit exhibition for professionals and design enthusiasts.",
+    "date": "2026-06-10",
+    "genre": "art",
+    "location": "Venice, Italy",
+    "ticketTypes": [
+      { "name": "Standard Admission", "price": 55.00, "capacity": 5000, "bookedCount": 0 },
+      { "name": "Guided Tour", "price": 120.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_31",
+    "title": "Zero Gravity Basketball Exhibition",
+    "description": "Witness athletes defying physics in a spectacular zero-gravity arena. Fast-paced action and jaw-dropping dunks guaranteed.",
+    "date": "2027-02-20",
+    "genre": "sports",
+    "location": "Shanghai, China",
+    "ticketTypes": [
+      { "name": "Upper Tier", "price": 45.00, "capacity": 8000, "bookedCount": 0 },
+      { "name": "Courtside", "price": 300.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_32",
+    "title": "International Coffee Brewers Championship",
+    "description": "Watch top baristas from around the globe compete for the ultimate brewing title. Enjoy unlimited tastings of rare and exotic coffee blends.",
+    "date": "2027-03-15",
+    "genre": "food",
+    "location": "Melbourne, Australia",
+    "ticketTypes": [
+      { "name": "Tasting Ticket", "price": 65.00, "capacity": 1200, "bookedCount": 0 },
+      { "name": "VIP Judge Panel", "price": 250.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_33",
+    "title": "Cyberpunk Art Gallery Opening",
+    "description": "An exclusive showcase of futuristic digital and physical art pieces by renowned cyberpunk artists. Network with creators and collectors in an immersive environment.",
+    "date": "2027-05-08",
+    "genre": "art",
+    "location": "Los Angeles, USA",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 30.00, "capacity": 600, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_34",
+    "title": "Blockchain & Web3 Summit",
+    "description": "Dive deep into the decentralized web, crypto trends, and smart contract innovations. Connect with developers and investors shaping the future of finance.",
+    "date": "2027-09-22",
+    "genre": "business",
+    "location": "Singapore, Singapore",
+    "ticketTypes": [
+      { "name": "Early Bird", "price": 399.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "Standard", "price": 699.00, "capacity": 1200, "bookedCount": 0 },
+      { "name": "VIP Access", "price": 1299.00, "capacity": 300, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_35",
+    "title": "Kids' Science Discovery Day",
+    "description": "Interactive exhibits, explosive chemistry shows, and hands-on robotics workshops. A perfect family weekend to inspire the next generation of scientists.",
+    "date": "2027-04-10",
+    "genre": "family",
+    "location": "Chicago, USA",
+    "ticketTypes": [
+      { "name": "Child Ticket", "price": 15.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "Adult Ticket", "price": 25.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "Family Pass", "price": 70.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_36",
+    "title": "Galactic Symphony Orchestra",
+    "description": "A breathtaking orchestral performance of iconic sci-fi movie soundtracks under a starlit dome. Let the music transport you to another galaxy.",
+    "date": "2027-11-18",
+    "genre": "music",
+    "location": "Vienna, Austria",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 85.00, "capacity": 1200, "bookedCount": 0 },
+      { "name": "Premium Balcony", "price": 180.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "VIP Lounge", "price": 400.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_37",
+    "title": "Extreme Mountain Biking Invitational",
+    "description": "The world's most daring riders tackle an unforgiving downhill course. High-adrenaline action and spectacular stunts set against a stunning alpine backdrop.",
+    "date": "2027-07-03",
+    "genre": "sports",
+    "location": "Whistler, Canada",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 35.00, "capacity": 5000, "bookedCount": 0 },
+      { "name": "VIP Viewing Deck", "price": 150.00, "capacity": 300, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_38",
+    "title": "Vegan Gastronomy Masterclass",
+    "description": "Learn advanced plant-based cooking techniques from award-winning vegan chefs. Elevate your culinary skills and taste innovative dishes.",
+    "date": "2026-10-12",
+    "genre": "food",
+    "location": "Barcelona, Spain",
+    "ticketTypes": [
+      { "name": "Standard Class", "price": 150.00, "capacity": 60, "bookedCount": 0 },
+      { "name": "Premium Masterclass", "price": 300.00, "capacity": 20, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_39",
+    "title": "Retro Arcade Tournament",
+    "description": "Compete in classic 80s and 90s arcade games for cash prizes and the ultimate high-score glory. Featuring vintage cabinets and a nostalgic atmosphere.",
+    "date": "2026-01-28",
+    "genre": "esports",
+    "location": "Tokyo, Japan",
+    "ticketTypes": [
+      { "name": "Competitor Pass", "price": 50.00, "capacity": 200, "bookedCount": 0 },
+      { "name": "Spectator", "price": 15.00, "capacity": 800, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_40",
+    "title": "Immersive Shakespeare Festival",
+    "description": "Walk through a living Elizabethan village and interact with actors performing classic scenes. A unique and engaging way to experience the Bard's work.",
+    "date": "2026-08-05",
+    "genre": "theater",
+    "location": "Stratford-upon-Avon, UK",
+    "ticketTypes": [
+      { "name": "Day Pass", "price": 45.00, "capacity": 1500, "bookedCount": 0 },
+      { "name": "Weekend Pass", "price": 100.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_41",
+    "title": "Renewable Energy Innovations Expo",
+    "description": "Discover the latest tech in solar, wind, and fusion energy. Connect with industry pioneers and explore green solutions for a sustainable future.",
+    "date": "2027-01-14",
+    "genre": "technology",
+    "location": "Copenhagen, Denmark",
+    "ticketTypes": [
+      { "name": "Standard Pass", "price": 120.00, "capacity": 2500, "bookedCount": 0 },
+      { "name": "Industry Professional", "price": 300.00, "capacity": 1000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_42",
+    "title": "Global Yoga Peace Gathering",
+    "description": "Join thousands of yogis in a massive open-air session dedicated to global harmony. Includes guided meditations and holistic wellness workshops.",
+    "date": "2026-06-21",
+    "genre": "health",
+    "location": "Rishikesh, India",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 25.00, "capacity": 10000, "bookedCount": 0 },
+      { "name": "VIP Wellness Package", "price": 150.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_43",
+    "title": "Deep Space Telescope Unveiling",
+    "description": "Be among the first to see the inaugural images from the new orbital telescope. An awe-inspiring presentation by leading astronomers and astrophysicists.",
+    "date": "2027-10-09",
+    "genre": "science",
+    "location": "Houston, USA",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 40.00, "capacity": 1200, "bookedCount": 0 },
+      { "name": "VIP Reception", "price": 250.00, "capacity": 150, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_44",
+    "title": "Street Dance World Battles",
+    "description": "Crews from all over the world face off in epic breakdance and hip-hop battles. High energy, incredible moves, and a live DJ set.",
+    "date": "2026-11-20",
+    "genre": "entertainment",
+    "location": "New York, USA",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 55.00, "capacity": 3000, "bookedCount": 0 },
+      { "name": "VIP Floor", "price": 180.00, "capacity": 400, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_45",
+    "title": "AI-Generated Film Festival",
+    "description": "Watch short films entirely written, directed, and animated by artificial intelligence. Participate in Q&A sessions with the prompt engineers behind the art.",
+    "date": "2027-08-12",
+    "genre": "art",
+    "location": "Toronto, Canada",
+    "ticketTypes": [
+      { "name": "Screening Pass", "price": 30.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "All-Access Pass", "price": 90.00, "capacity": 200, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_46",
+    "title": "Luxury Car Showcase 2027",
+    "description": "Experience the pinnacle of automotive engineering with exclusive previews of next-gen hypercars. Test drive simulators and VIP networking events included.",
+    "date": "2027-04-25",
+    "genre": "automotive",
+    "location": "Monaco, Monaco",
+    "ticketTypes": [
+      { "name": "Standard Entry", "price": 250.00, "capacity": 1500, "bookedCount": 0 },
+      { "name": "VIP Preview", "price": 1200.00, "capacity": 300, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_47",
+    "title": "Underground Comedy Club Special",
+    "description": "A hilarious night featuring rising stars and surprise drop-ins by famous comedians. Uncensored, raw, and absolutely side-splitting.",
+    "date": "2026-02-14",
+    "genre": "entertainment",
+    "location": "London, UK",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 25.00, "capacity": 300, "bookedCount": 0 },
+      { "name": "Front Row", "price": 60.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_48",
+    "title": "Bio-Hacking and Longevity Summit",
+    "description": "Explore cutting-edge science on extending human lifespan and optimizing physical performance. Hear from leading geneticists and wellness experts.",
+    "date": "2027-12-05",
+    "genre": "health",
+    "location": "Geneva, Switzerland",
+    "ticketTypes": [
+      { "name": "Standard", "price": 500.00, "capacity": 1000, "bookedCount": 0 },
+      { "name": "Premium", "price": 950.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "VIP Dinner", "price": 2500.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_49",
+    "title": "Acoustic Sunset Concert",
+    "description": "Relax on the beach and enjoy soul-soothing acoustic performances by renowned singer-songwriters. The perfect way to end your weekend.",
+    "date": "2026-09-03",
+    "genre": "music",
+    "location": "Malibu, USA",
+    "ticketTypes": [
+      { "name": "Beach Blanket Spot", "price": 40.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "VIP Cabana", "price": 350.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_50",
+    "title": "Global Supply Chain Tech Forum",
+    "description": "Discuss the future of logistics, drone deliveries, and AI-driven inventory management. Essential for professionals looking to stay ahead of industry trends.",
+    "date": "2026-05-18",
+    "genre": "business",
+    "location": "Frankfurt, Germany",
+    "ticketTypes": [
+      { "name": "Standard Pass", "price": 450.00, "capacity": 1500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_51",
+    "title": "Neon Cyber City Marathon",
+    "description": "A night-time marathon through a glowing, futuristic cityscape with immersive light projections. Celebrate at the massive finish-line party.",
+    "date": "2027-11-06",
+    "genre": "sports",
+    "location": "Tokyo, Japan",
+    "ticketTypes": [
+      { "name": "Runner Registration", "price": 120.00, "capacity": 20000, "bookedCount": 0 },
+      { "name": "Spectator Pass", "price": 20.00, "capacity": 50000, "bookedCount": 0 },
+      { "name": "VIP Party Access", "price": 250.00, "capacity": 1000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_52",
+    "title": "Interactive Magic Spectacular",
+    "description": "A mind-bending magic show where the audience controls the illusions via smartphone app. Experience magic redefined for the digital age.",
+    "date": "2026-07-29",
+    "genre": "theater",
+    "location": "Las Vegas, USA",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 75.00, "capacity": 1500, "bookedCount": 0 },
+      { "name": "Premium View", "price": 150.00, "capacity": 500, "bookedCount": 0 },
+      { "name": "VIP Meet & Greet", "price": 300.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_53",
+    "title": "Urban Farming Workshop",
+    "description": "Learn how to grow your own food in small city spaces using hydroponics and vertical farming. Hands-on activities and starter kits included.",
+    "date": "2027-03-22",
+    "genre": "education",
+    "location": "Amsterdam, Netherlands",
+    "ticketTypes": [
+      { "name": "Workshop Pass", "price": 80.00, "capacity": 100, "bookedCount": 0 },
+      { "name": "Premium Pass with Kit", "price": 150.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_54",
+    "title": "Next-Gen Console Reveal",
+    "description": "Be the first to witness the unveiling of the most powerful gaming console ever created. Exclusive gameplay trailers and developer interviews.",
+    "date": "2027-06-15",
+    "genre": "technology",
+    "location": "Los Angeles, USA",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 60.00, "capacity": 5000, "bookedCount": 0 },
+      { "name": "VIP Seating", "price": 250.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_55",
+    "title": "Jazz & Wine Tasting Evening",
+    "description": "Enjoy smooth jazz performances paired with exquisite wine tastings from local vineyards. A sophisticated evening of culture and flavor.",
+    "date": "2026-10-24",
+    "genre": "music",
+    "location": "Cape Town, South Africa",
+    "ticketTypes": [
+      { "name": "Standard Tasting", "price": 90.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "Premium Tasting", "price": 180.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_56",
+    "title": "International Drone Racing Cup",
+    "description": "High-speed FPV drone racing through a complex, neon-lit obstacle course. Feel the adrenaline as pilots maneuver at impossible speeds.",
+    "date": "2026-04-17",
+    "genre": "esports",
+    "location": "Seoul, South Korea",
+    "ticketTypes": [
+      { "name": "Grandstand", "price": 40.00, "capacity": 8000, "bookedCount": 0 },
+      { "name": "Pit Pass", "price": 150.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_57",
+    "title": "Women in Leadership Summit",
+    "description": "Inspiring keynotes, panel discussions, and networking opportunities for female professionals. Empowering the next generation of women leaders.",
+    "date": "2027-08-28",
+    "genre": "business",
+    "location": "Sydney, Australia",
+    "ticketTypes": [
+      { "name": "Standard Ticket", "price": 350.00, "capacity": 1200, "bookedCount": 0 },
+      { "name": "VIP Access", "price": 800.00, "capacity": 200, "bookedCount": 0 },
+      { "name": "Virtual Pass", "price": 99.00, "capacity": 5000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_58",
+    "title": "Holographic Pet Show",
+    "description": "A fun and quirky exhibition featuring the latest in AI-driven holographic pets. Watch virtual dogs and cats perform amazing tricks.",
+    "date": "2026-12-12",
+    "genre": "family",
+    "location": "Seattle, USA",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 25.00, "capacity": 3000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_59",
+    "title": "Modern Art Auction Gala",
+    "description": "Bid on exclusive contemporary pieces while enjoying champagne and hors d'oeuvres. A glamorous night for art collectors and enthusiasts.",
+    "date": "2027-02-11",
+    "genre": "art",
+    "location": "New York, USA",
+    "ticketTypes": [
+      { "name": "Gala Entry", "price": 500.00, "capacity": 400, "bookedCount": 0 },
+      { "name": "VIP Bidders Circle", "price": 2500.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_60",
+    "title": "Extreme Survival Masterclass",
+    "description": "Learn wilderness survival skills from former special forces operators. A grueling but rewarding weekend of building fires, foraging, and navigation.",
+    "date": "2026-09-19",
+    "genre": "sports",
+    "location": "Patagonia, Argentina",
+    "ticketTypes": [
+      { "name": "Standard Participant", "price": 850.00, "capacity": 50, "bookedCount": 0 },
+      { "name": "Premium 1-on-1", "price": 3000.00, "capacity": 5, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_61",
+    "title": "Sci-Fi Writers Convention",
+    "description": "Meet your favorite science fiction authors, attend writing workshops, and participate in world-building panels. A haven for creative minds.",
+    "date": "2027-05-21",
+    "genre": "education",
+    "location": "London, UK",
+    "ticketTypes": [
+      { "name": "Weekend Pass", "price": 120.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "VIP Author Dinner", "price": 400.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_62",
+    "title": "Gastronomic Insect Tasting",
+    "description": "Explore the future of sustainable protein with a gourmet menu featuring edible insects. A unique culinary adventure for the brave foodie.",
+    "date": "2026-03-05",
+    "genre": "food",
+    "location": "Bangkok, Thailand",
+    "ticketTypes": [
+      { "name": "Tasting Menu", "price": 150.00, "capacity": 100, "bookedCount": 0 },
+      { "name": "VIP Pairing", "price": 250.00, "capacity": 30, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_63",
+    "title": "Virtual Reality Escape Room",
+    "description": "Team up with friends to solve intricate puzzles in a fully immersive VR environment. Can you escape the haunted space station in time?",
+    "date": "2027-01-08",
+    "genre": "entertainment",
+    "location": "Berlin, Germany",
+    "ticketTypes": [
+      { "name": "Team Ticket (up to 4)", "price": 180.00, "capacity": 200, "bookedCount": 0 },
+      { "name": "Solo Player", "price": 50.00, "capacity": 100, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_64",
+    "title": "Indie Game Developers Showcase",
+    "description": "Play unreleased indie games and chat directly with the creators. Discover the hidden gems that will dominate the gaming world next year.",
+    "date": "2026-11-14",
+    "genre": "technology",
+    "location": "Stockholm, Sweden",
+    "ticketTypes": [
+      { "name": "Standard Pass", "price": 45.00, "capacity": 3000, "bookedCount": 0 },
+      { "name": "Developer Pass", "price": 120.00, "capacity": 500, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_65",
+    "title": "Classical Ballet Gala",
+    "description": "A mesmerizing performance featuring principal dancers from the world's top ballet companies. A night of elegance, grace, and breathtaking artistry.",
+    "date": "2027-09-30",
+    "genre": "theater",
+    "location": "Moscow, Russia",
+    "ticketTypes": [
+      { "name": "Balcony", "price": 80.00, "capacity": 1000, "bookedCount": 0 },
+      { "name": "Stalls", "price": 180.00, "capacity": 500, "bookedCount": 0 },
+      { "name": "VIP Box", "price": 600.00, "capacity": 50, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_66",
+    "title": "Tech Startup Pitch Night",
+    "description": "Watch early-stage startups pitch their innovative ideas to a panel of angel investors. Network with founders and discover the next big thing.",
+    "date": "2026-08-22",
+    "genre": "business",
+    "location": "Tel Aviv, Israel",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 40.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "Investor Pass", "price": 300.00, "capacity": 150, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_67",
+    "title": "Desert Music & Arts Festival",
+    "description": "A multi-day festival featuring massive art installations and electronic music in the heart of the desert. An unforgettable community experience.",
+    "date": "2027-04-16",
+    "genre": "music",
+    "location": "Nevada, USA",
+    "ticketTypes": [
+      { "name": "General Admission", "price": 450.00, "capacity": 60000, "bookedCount": 0 },
+      { "name": "VIP Oasis", "price": 1200.00, "capacity": 5000, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_68",
+    "title": "Global E-Commerce Summit",
+    "description": "Strategies and insights for dominating the digital marketplace. Learn about AI personalization, logistics, and consumer behavior trends.",
+    "date": "2026-06-04",
+    "genre": "business",
+    "location": "Shanghai, China",
+    "ticketTypes": [
+      { "name": "Standard Pass", "price": 599.00, "capacity": 2000, "bookedCount": 0 },
+      { "name": "Executive Pass", "price": 1499.00, "capacity": 400, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_69",
+    "title": "Underwater Photography Workshop",
+    "description": "Learn how to capture stunning marine life images from professional underwater photographers. Includes guided dives and editing sessions.",
+    "date": "2027-12-10",
+    "genre": "art",
+    "location": "Cairns, Australia",
+    "ticketTypes": [
+      { "name": "Workshop Pass", "price": 600.00, "capacity": 30, "bookedCount": 0 },
+      { "name": "Premium Equipment Rental", "price": 250.00, "capacity": 15, "bookedCount": 0 }
+    ]
+  },
+  {
+    "id": "event_70",
+    "title": "Mind-Reading AI Demonstration",
+    "description": "A controversial but fascinating showcase of brain-computer interfaces capable of translating thoughts into text. Witness the bleeding edge of neuroscience.",
+    "date": "2026-01-20",
+    "genre": "science",
+    "location": "Boston, USA",
+    "ticketTypes": [
+      { "name": "Standard Seating", "price": 65.00, "capacity": 800, "bookedCount": 0 },
+      { "name": "Front Row", "price": 150.00, "capacity": 100, "bookedCount": 0 },
+      { "name": "VIP Meet & Greet", "price": 400.00, "capacity": 30, "bookedCount": 0 }
     ]
   }
 ]
