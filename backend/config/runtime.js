@@ -2,6 +2,16 @@ function getFeatureFlags() {
   return {
     chatEnabled: Boolean(process.env.OPENROUTER_API_KEY && process.env.PINECONE_API_KEY),
     vectorEnabled: Boolean(process.env.PINECONE_API_KEY),
+    googleAuthEnabled: Boolean(
+      process.env.GOOGLE_CLIENT_ID &&
+      process.env.GOOGLE_CLIENT_SECRET &&
+      process.env.GOOGLE_CALLBACK_URL
+    ),
+    githubAuthEnabled: Boolean(
+      process.env.GITHUB_CLIENT_ID &&
+      process.env.GITHUB_CLIENT_SECRET &&
+      process.env.GITHUB_CALLBACK_URL
+    ),
   };
 }
 
@@ -22,6 +32,12 @@ function validateRuntimeConfig() {
   }
   if (!process.env.PINECONE_API_KEY) {
     warnings.push('PINECONE_API_KEY missing: vector sync and semantic chat retrieval are disabled.');
+  }
+  if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET || !process.env.GOOGLE_CALLBACK_URL) {
+    warnings.push('Google OAuth missing config: /api/auth/google is disabled.');
+  }
+  if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET || !process.env.GITHUB_CALLBACK_URL) {
+    warnings.push('GitHub OAuth missing config: /api/auth/github is disabled.');
   }
 
   return { warnings, features: getFeatureFlags() };

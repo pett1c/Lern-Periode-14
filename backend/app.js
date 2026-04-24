@@ -9,12 +9,15 @@ const chatRoutes = require('./routes/chat');
 const { ApiError } = require('./utils/apiError');
 const { errorHandler } = require('./middleware/errorHandler');
 const mongoose = require('mongoose');
+const { passport, configurePassport } = require('./config/passport');
 const { getFeatureFlags } = require('./config/runtime');
 
 const app = express();
+configurePassport();
 
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
 
 app.get('/', (_req, res) => {
   res.status(200).json({
@@ -38,6 +41,8 @@ app.get('/api/health', (_req, res) => {
         db: dbReady ? 'up' : 'down',
         vector: features.vectorEnabled ? 'up' : 'degraded',
         chat: features.chatEnabled ? 'up' : 'degraded',
+        oauthGoogle: features.googleAuthEnabled ? 'up' : 'degraded',
+        oauthGithub: features.githubAuthEnabled ? 'up' : 'degraded',
       },
     },
   });

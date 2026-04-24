@@ -8,6 +8,11 @@ export default function LoginPage() {
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [socialInfo, setSocialInfo] = useState('');
+
+  function onSocialLoginClick() {
+    setSocialInfo('Google und GitHub Login kommt bald (coming soon).');
+  }
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -45,9 +50,10 @@ export default function LoginPage() {
         <button className="btn btn-red btn-full btn-lg" type="submit" disabled={loading}>Anmelden</button>
         <div className="or-line"><span>ODER</span></div>
         <div className="oauth-row">
-          <button className="btn btn-ghost btn-full" type="button">Google</button>
-          <button className="btn btn-ghost btn-full" type="button">GitHub</button>
+          <button className="btn btn-ghost btn-full" type="button" onClick={onSocialLoginClick}>Google</button>
+          <button className="btn btn-ghost btn-full" type="button" onClick={onSocialLoginClick}>GitHub</button>
         </div>
+        {socialInfo ? <p className="small">{socialInfo}</p> : null}
       </form>
     </main>
   );
