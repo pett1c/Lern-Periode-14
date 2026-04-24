@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 import TicketCard from '../components/TicketCard';
 import { cancelTicket, getMyTickets } from '../api/ticketApi';
 
@@ -29,20 +30,27 @@ export default function MyTicketsPage() {
   return (
     <main className="page-shell">
       <Navbar />
-      <section className="content">
-        <div className="ev-row">
-          <h1>Meine Tickets</h1>
-          <span className="pill p-red">{tickets.length} Tickets</span>
-        </div>
-        <div className="toggle">
-          <button className={`btn btn-sm ${!showPast ? 'btn-red' : 'btn-ghost'}`} type="button" onClick={() => setShowPast(false)}>Bevorstehend</button>
-          <button className={`btn btn-sm ${showPast ? 'btn-red' : 'btn-ghost'}`} type="button" onClick={() => setShowPast(true)}>Vergangen</button>
-        </div>
-        {error ? <p className="err">{error}</p> : null}
-        <div className="tickets-list">
-          {filtered.map((ticket) => <TicketCard key={ticket._id} ticket={ticket} onCancel={onCancel} />)}
-        </div>
-      </section>
+      <div className="layout-with-sidebar">
+        <Sidebar />
+        <section className="content-fluid">
+          <div className="dashboard-header" style={{ marginBottom: '24px' }}>
+            <h1 style={{ fontSize: '2.5rem', fontFamily: '"Playfair Display", serif', margin: 0 }}>My Tickets</h1>
+            <span className="pill p-red" style={{ marginLeft: '16px' }}>{tickets.length} Tickets</span>
+          </div>
+          
+          <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
+            <button className={`btn btn-sm ${!showPast ? 'btn-red' : 'btn-ghost'}`} type="button" onClick={() => setShowPast(false)}>Upcoming</button>
+            <button className={`btn btn-sm ${showPast ? 'btn-red' : 'btn-ghost'}`} type="button" onClick={() => setShowPast(true)}>Past</button>
+          </div>
+          
+          {error ? <p className="err">{error}</p> : null}
+          <div className="tickets-list" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {filtered.map((ticket) => <TicketCard key={ticket._id} ticket={ticket} onCancel={onCancel} />)}
+            {filtered.length === 0 && <p style={{ color: 'var(--ink-light)', padding: '40px 0' }}>No tickets found.</p>}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
+

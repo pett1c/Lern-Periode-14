@@ -42,6 +42,7 @@ const createEvent = asyncHandler(async (req, res) => {
   const event = await Event.create({
     title: body.title,
     description: body.description,
+    genre: body.genre || 'Other',
     date: new Date(body.date),
     location: body.location,
     organizer: organizerId,
@@ -130,6 +131,9 @@ const updateEvent = asyncHandler(async (req, res) => {
   }
   if (updates.description !== undefined) {
     event.description = updates.description;
+  }
+  if (updates.genre !== undefined) {
+    event.genre = updates.genre;
   }
   if (updates.date !== undefined) {
     event.date = new Date(updates.date);

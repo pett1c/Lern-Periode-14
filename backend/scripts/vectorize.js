@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { generateEmbedding } = require('../services/llmService');
 const { Pinecone } = require('@pinecone-database/pinecone');
-const fs = require('fs');
-const path = require('path');
+const mongoose = require('mongoose');
+const Event = require('../models/Event');
 
 // Initialize Pinecone Client
 const pinecone = new Pinecone({
@@ -13,40 +13,43 @@ async function vectorizeData() {
   try {
     console.log('Starting vectorization process...');
 
-    // 1. Read mock data
-    const dataPath = path.join(__dirname, '../data/mockEvents.json');
-    const rawData = fs.readFileSync(dataPath, 'utf8');
-    const events = JSON.parse(rawData);
+    // 1. Connect to MongoDB
+    if (!process.env.MONGODB_URI) {
+      throw new Error('MONGODB_URI is not set');
+    }
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log('Connected to MongoDB.');
 
-    // 2. Access the target index
+    // 2. Fetch events from database
+    const events = await Event.find();
+    console.log(`Fetched ${events.length} events from MongoDB.`);
+
+    // 3. Access the target index
     const indexName = process.env.PINECONE_INDEX || 'eventify-indexed';
     const index = pinecone.index(indexName);
 
-    console.log(`Processing ${events.length} events for index: ${indexName}`);
+    console.log(`Processing events for index: ${indexName}`);
 
-    // 3. Prepare vectors for Pinecone
+    // 4. Prepare vectors for Pinecone
     const vectorsToUpsert = [];
 
     for (const event of events) {
-      // Build string of ticket types
       const ticketsInfo = event.ticketTypes
         ? event.ticketTypes.map(t => `${t.name} ($${t.price})`).join(', ')
         : 'N/A';
 
-      // Construct a string combining relevant fields for semantic search
       const textToEmbed = `Title: ${event.title}. Genre: ${event.genre}. Location: ${event.location || 'Unknown'}. Date: ${event.date}. Description: ${event.description}. Tickets available: ${ticketsInfo}.`;
       
       console.log(`Generating embedding for event: ${event.title}`);
       
-      // Generate the 1536-dimensional array
       const embedding = await generateEmbedding(textToEmbed);
       if (!Array.isArray(embedding) || embedding.length === 0) {
         console.error(`❌ Invalid embedding for ${event.title}. Skipping...`);
-        continue; // Пропускаем битую запись
+        continue; 
       }
 
       vectorsToUpsert.push({
-        id: String(event.id),
+        id: String(event._id),
         values: embedding,
         metadata: {
           title: String(event.title),
@@ -55,24 +58,31 @@ async function vectorizeData() {
           date: String(event.date),
           description: String(event.description),
           tickets: String(ticketsInfo),
-          text: textToEmbed 
+          text: textToEmbed,
+          eventId: String(event._id)
         }
       });
     }
 
-    // 4. Upsert vectors to Pinecone
-    // Note: In production with many records, batch these upserts!
+    // 5. Upsert vectors to Pinecone
     console.log(`Upserting ${vectorsToUpsert.length} vectors to Pinecone...`);
-    await index.upsert({
-      records: vectorsToUpsert
-    });
-
-    console.log('✅ Vectorization complete! Data is ready for RAG.');
+    
+    if (vectorsToUpsert.length > 0) {
+        // Explicitly using the records wrapper which is required by some SDK versions
+        await index.upsert({
+            records: vectorsToUpsert
+        });
+        console.log('✅ Vectorization complete! Data is ready for RAG.');
+    } else {
+        console.warn('⚠️ No vectors to upsert.');
+    }
+    
+    process.exit(0);
 
   } catch (error) {
     console.error('❌ Error during vectorization:', error);
+    process.exit(1);
   }
 }
 
-// Run the script
 vectorizeData();

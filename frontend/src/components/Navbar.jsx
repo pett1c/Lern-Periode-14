@@ -14,12 +14,12 @@ export default function Navbar() {
     <>
       <header className={`wf-nav ${user?.role === 'admin' ? 'wf-nav-admin' : ''}`}>
         <Link to="/dashboard" className="wf-logo">
-          Event<em>App</em>
+          event<em>ify</em>
         </Link>
         <nav className="nav-links">
           <NavLink className="pill p-ghost" to="/dashboard">Dashboard</NavLink>
           {user?.role === 'user' ? <NavLink className="pill p-ghost" to="/tickets">Tickets</NavLink> : null}
-          <NavLink className="pill p-red" to="/chat">AI Assistent</NavLink>
+          <NavLink className="ai-btn" style={{ margin: 0, padding: '6px 12px', fontSize: '0.9rem' }} to="/chat"><span className="sparkle">✦</span> AI Assistant</NavLink>
           {(user?.role === 'organizer' || user?.role === 'admin') && (
             <NavLink className="pill p-ghost" to="/events/create">+ Event</NavLink>
           )}

@@ -43,6 +43,11 @@ const eventSchema = new mongoose.Schema(
       minlength: 10,
       maxlength: 2000,
     },
+    genre: {
+      type: String,
+      trim: true,
+      default: 'Other',
+    },
     date: {
       type: Date,
       required: true,

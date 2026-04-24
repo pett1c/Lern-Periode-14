@@ -33,9 +33,10 @@ Your tasks:
 1. Answer the user's question clearly and concisely based ONLY on the provided context.
 2. If the context does not contain enough information to answer the question, state that you don't know based on the current data.
 3. Be friendly and helpful.
+4. **IMPORTANT**: When you mention or list an event, you MUST include a clickable link to it. Use the format: **[Event Title](/events/EVENT_ID)**. The EVENT_ID will be provided in the context metadata for each event.
 
 How events should be listed a.k.a your schema:
-・[Title] — on [Month] [Day], [Year] in [City], [Country]
+・**[Title](/events/EVENT_ID)** — on [Month] [Day], [Year] in [City], [Country]
 [Description...]
 The following types of tickets are available:
 – [TicketType1]: $[price]
@@ -87,7 +88,7 @@ async function generateRagResponse(context, userQuery) {
     const prompt = `Context:\n${context}\n\nUser Question: ${userQuery}`;
 
     const completion = await client.chat.completions.create({
-      model: 'arcee-ai/trinity-large-preview:free',
+      model: 'inclusionai/ling-2.6-1t:free',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: prompt }
