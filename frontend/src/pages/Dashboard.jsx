@@ -10,9 +10,24 @@ export default function DashboardPage() {
   const navigate = useNavigate();
   const [events, setEvents] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [bookingMessage, setBookingMessage] = useState('');
+
+  async function loadEvents() {
+    setLoading(true);
+    setError('');
+    try {
+      const loaded = await getEvents();
+      setEvents(loaded);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    getEvents().then(setEvents).catch((err) => setError(err.message));
+    loadEvents();
   }, []);
 
   const totalTicketsSold = events.reduce((acc, ev) => acc + (ev.ticketTypes?.reduce((sum, t) => sum + (t.bookedCount || 0), 0) || 0), 0);

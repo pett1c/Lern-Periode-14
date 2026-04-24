@@ -1,6 +1,18 @@
 const { ZodError } = require('zod');
 
 function errorHandler(error, _req, res, _next) {
+  if (error && error.message === 'CORS_NOT_ALLOWED') {
+    return res.status(403).json({
+      success: false,
+      message: 'CORS origin is not allowed.',
+      data: null,
+      error: {
+        code: 'CORS_FORBIDDEN',
+        details: [{ path: 'origin', message: 'Request origin is not in CORS allowlist.' }],
+      },
+    });
+  }
+
   if (error && error.name === 'ValidationError') {
     return res.status(400).json({
       success: false,

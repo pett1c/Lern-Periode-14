@@ -13,7 +13,7 @@ import AdminPage from './pages/Admin.jsx';
 
 function GuardedRoute({ children, roles }) {
   const { user, booting, isAuthenticated } = useAuth();
-  if (booting) return <div className="page-shell">Loading...</div>;
+  if (booting) return <div className="page-shell route-state">Session wird geladen...</div>;
   if (!isAuthenticated) return <Navigate to="/login" replace />;
   if (roles && !roles.includes(user.role)) return <Navigate to="/dashboard" replace />;
   return children;
@@ -21,7 +21,7 @@ function GuardedRoute({ children, roles }) {
 
 function PublicOnlyRoute({ children }) {
   const { isAuthenticated, booting } = useAuth();
-  if (booting) return <div className="page-shell">Loading...</div>;
+  if (booting) return <div className="page-shell route-state">Session wird geladen...</div>;
   if (isAuthenticated) return <Navigate to="/dashboard" replace />;
   return children;
 }
