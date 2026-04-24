@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
 const ticketRoutes = require('./routes/tickets');
@@ -15,7 +17,38 @@ const { getFeatureFlags } = require('./config/runtime');
 const app = express();
 configurePassport();
 
-app.use(cors());
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://localhost:5174')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: Number(process.env.AUTH_RATE_LIMIT_MAX || 120),
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message: 'Too many authentication requests. Please retry later.',
+    data: null,
+    error: {
+      code: 'RATE_LIMITED',
+      details: [{ path: 'auth', message: 'Request limit exceeded.' }],
+    },
+  },
+});
+
+app.use(helmet());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('CORS_NOT_ALLOWED'));
+    },
+  })
+);
 app.use(express.json());
 app.use(passport.initialize());
 
@@ -48,6 +81,7 @@ app.get('/api/health', (_req, res) => {
   });
 });
 
+app.use('/api/auth', authLimiter);
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);

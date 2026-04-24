@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import EventCard from '../components/EventCard';
+import AsyncState from '../components/AsyncState';
 import { getEvents } from '../api/eventApi';
 import { bookTicket } from '../api/ticketApi';
 import { useAuth } from '../context/AuthContext';
@@ -9,17 +10,33 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const [events, setEvents] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [bookingMessage, setBookingMessage] = useState('');
+
+  async function loadEvents() {
+    setLoading(true);
+    setError('');
+    try {
+      const loaded = await getEvents();
+      setEvents(loaded);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    getEvents().then(setEvents).catch((err) => setError(err.message));
+    loadEvents();
   }, []);
 
   async function onBook(event) {
+    setBookingMessage('');
     try {
       await bookTicket({ eventId: event._id, ticketType: event.ticketTypes?.[0]?.name || 'STANDARD', quantity: 1 });
-      alert('Ticket gebucht.');
+      setBookingMessage('Ticket erfolgreich gebucht.');
     } catch (err) {
-      alert(err.message);
+      setBookingMessage(err.message);
     }
   }
 
@@ -31,7 +48,12 @@ export default function DashboardPage() {
           <h1>Dashboard</h1>
           <p>Hallo {user?.name}</p>
         </div>
-        {error ? <p className="err">{error}</p> : null}
+        {bookingMessage ? <p className="small">{bookingMessage}</p> : null}
+        <AsyncState
+          state={error ? 'error' : loading ? 'loading' : events.length === 0 ? 'empty' : null}
+          message={error || (loading ? 'Events werden geladen...' : 'Noch keine Events vorhanden.')}
+          onRetry={loadEvents}
+        />
         <div className="stat-grid">
           <div className="stat-card"><div className="stat-label">Events Live</div><div className="stat-val">{events.length}</div></div>
           <div className="stat-card"><div className="stat-label">Rolle</div><div className="stat-val">{user?.role}</div></div>

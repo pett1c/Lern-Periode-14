@@ -1,11 +1,12 @@
-# Eventify Backend Smoke (Postman)
+# Eventify Backend Smoke + Runbook
 
 ## Preconditions
 
 - `backend/.env` exists with:
   - `MONGODB_URI`
   - `JWT_SECRET`
-  - `OPENROUTER_API_KEY` (for chat route bootstrapping)
+  - `ENABLE_OAUTH=false` (default for stable local runs)
+  - optional: `OPENROUTER_API_KEY`, `PINECONE_API_KEY`
 - Backend running: `npm run start` in `backend/`
 - Base URL: `http://localhost:5000/api`
 
@@ -50,4 +51,24 @@
 
 ## Notes
 
-- Current local run in this session is blocked until `.env` keys are provided in `backend/.env`.
+- OAuth is intentionally disabled by default (`ENABLE_OAUTH=false`).
+  - `/api/auth/google` and `/api/auth/github` should return `503 FEATURE_DISABLED`.
+  - Frontend social buttons are disabled and show "coming soon".
+
+## Local quality gates
+
+- Backend:
+  - `cd backend`
+  - `npm test`
+- Frontend:
+  - `cd frontend`
+  - `npm run lint`
+  - `npm run build`
+  - `npm test`
+
+## CI expectations
+
+- GitHub Actions workflow runs:
+  - backend install + tests
+  - frontend install + lint + build + tests
+- PR should only be merged when CI is green.
