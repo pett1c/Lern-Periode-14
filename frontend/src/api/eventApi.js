@@ -1,7 +1,8 @@
 import { apiClient } from './client';
 
 export async function getEvents(params = {}) {
-  const { data } = await apiClient.get('/events', { params });
+  const mergedParams = { limit: 1000, ...params };
+  const { data } = await apiClient.get('/events', { params: mergedParams });
   return data.data.events || [];
 }
 

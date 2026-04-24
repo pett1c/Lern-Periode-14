@@ -7,8 +7,18 @@
     "genre": "sports",
     "location": "Milan, Italy",
     "ticketTypes": [
-      { "name": "closing ceremony", "price": 400.00, "capacity": 50000, "bookedCount": 0 },
-      { "name": "standard day pass", "price": 80.00, "capacity": 20000, "bookedCount": 0 }
+      {
+        "name": "closing ceremony",
+        "price": 400,
+        "capacity": 50000,
+        "bookedCount": 4674
+      },
+      {
+        "name": "standard day pass",
+        "price": 80,
+        "capacity": 20000,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -19,9 +29,24 @@
     "genre": "sports",
     "location": "Mexico City, Mexico",
     "ticketTypes": [
-      { "name": "category 1", "price": 250.00, "capacity": 10000, "bookedCount": 0 },
-      { "name": "category 2", "price": 150.00, "capacity": 15000, "bookedCount": 0 },
-      { "name": "category 3", "price": 80.00, "capacity": 30000, "bookedCount": 0 }
+      {
+        "name": "category 1",
+        "price": 250,
+        "capacity": 10000,
+        "bookedCount": 0
+      },
+      {
+        "name": "category 2",
+        "price": 150,
+        "capacity": 15000,
+        "bookedCount": 4447
+      },
+      {
+        "name": "category 3",
+        "price": 80,
+        "capacity": 30000,
+        "bookedCount": 3565
+      }
     ]
   },
   {
@@ -32,8 +57,18 @@
     "genre": "sports",
     "location": "Budapest, Hungary",
     "ticketTypes": [
-      { "name": "general admission", "price": 120.00, "capacity": 45000, "bookedCount": 0 },
-      { "name": "vip hospitality", "price": 850.00, "capacity": 2000, "bookedCount": 0 }
+      {
+        "name": "general admission",
+        "price": 120,
+        "capacity": 45000,
+        "bookedCount": 21295
+      },
+      {
+        "name": "vip hospitality",
+        "price": 850,
+        "capacity": 2000,
+        "bookedCount": 279
+      }
     ]
   },
   {
@@ -44,8 +79,18 @@
     "genre": "sports",
     "location": "Santa Clara, California, USA",
     "ticketTypes": [
-      { "name": "upper deck", "price": 3000.00, "capacity": 30000, "bookedCount": 0 },
-      { "name": "lower bowl", "price": 6500.00, "capacity": 20000, "bookedCount": 0 }
+      {
+        "name": "upper deck",
+        "price": 3000,
+        "capacity": 30000,
+        "bookedCount": 17726
+      },
+      {
+        "name": "lower bowl",
+        "price": 6500,
+        "capacity": 20000,
+        "bookedCount": 12756
+      }
     ]
   },
   {
@@ -56,8 +101,18 @@
     "genre": "entertainment",
     "location": "Los Angeles, California, USA",
     "ticketTypes": [
-      { "name": "industry pass", "price": 1500.00, "capacity": 500, "bookedCount": 0 },
-      { "name": "balcony seating", "price": 350.00, "capacity": 1000, "bookedCount": 0 }
+      {
+        "name": "industry pass",
+        "price": 1500,
+        "capacity": 500,
+        "bookedCount": 219
+      },
+      {
+        "name": "balcony seating",
+        "price": 350,
+        "capacity": 1000,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -68,9 +123,24 @@
     "genre": "technology",
     "location": "Tokyo, Japan",
     "ticketTypes": [
-      { "name": "standard access", "price": 45.00, "capacity": 10000, "bookedCount": 0 },
-      { "name": "all-access pass", "price": 120.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "student discount", "price": 25.00, "capacity": 3000, "bookedCount": 0 }
+      {
+        "name": "standard access",
+        "price": 45,
+        "capacity": 10000,
+        "bookedCount": 0
+      },
+      {
+        "name": "all-access pass",
+        "price": 120,
+        "capacity": 2000,
+        "bookedCount": 0
+      },
+      {
+        "name": "student discount",
+        "price": 25,
+        "capacity": 3000,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -81,8 +151,18 @@
     "genre": "networking",
     "location": "New York, USA",
     "ticketTypes": [
-      { "name": "gala dinner", "price": 5000.00, "capacity": 300, "bookedCount": 0 },
-      { "name": "afterparty only", "price": 500.00, "capacity": 200, "bookedCount": 0 }
+      {
+        "name": "gala dinner",
+        "price": 5000,
+        "capacity": 300,
+        "bookedCount": 108
+      },
+      {
+        "name": "afterparty only",
+        "price": 500,
+        "capacity": 200,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -93,8 +173,18 @@
     "genre": "technology",
     "location": "Berlin, Germany",
     "ticketTypes": [
-      { "name": "participant entry", "price": 15.00, "capacity": 500, "bookedCount": 0 },
-      { "name": "spectator", "price": 5.00, "capacity": 1500, "bookedCount": 0 }
+      {
+        "name": "participant entry",
+        "price": 15,
+        "capacity": 500,
+        "bookedCount": 122
+      },
+      {
+        "name": "spectator",
+        "price": 5,
+        "capacity": 1500,
+        "bookedCount": 677
+      }
     ]
   },
   {
@@ -105,8 +195,18 @@
     "genre": "music",
     "location": "Miami, USA",
     "ticketTypes": [
-      { "name": "3-day wristband", "price": 199.90, "capacity": 5000, "bookedCount": 0 },
-      { "name": "single day", "price": 79.90, "capacity": 8000, "bookedCount": 0 }
+      {
+        "name": "3-day wristband",
+        "price": 199.9,
+        "capacity": 5000,
+        "bookedCount": 2608
+      },
+      {
+        "name": "single day",
+        "price": 79.9,
+        "capacity": 8000,
+        "bookedCount": 7142
+      }
     ]
   },
   {
@@ -117,8 +217,18 @@
     "genre": "education",
     "location": "Atacama Desert, Chile",
     "ticketTypes": [
-      { "name": "telescope spot", "price": 120.00, "capacity": 200, "bookedCount": 0 },
-      { "name": "basic entry", "price": 30.00, "capacity": 800, "bookedCount": 0 }
+      {
+        "name": "telescope spot",
+        "price": 120,
+        "capacity": 200,
+        "bookedCount": 120
+      },
+      {
+        "name": "basic entry",
+        "price": 30,
+        "capacity": 800,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -129,7 +239,12 @@
     "genre": "music",
     "location": "Dubai, UAE",
     "ticketTypes": [
-      { "name": "dome entry", "price": 450.00, "capacity": 800, "bookedCount": 0 }
+      {
+        "name": "dome entry",
+        "price": 450,
+        "capacity": 800,
+        "bookedCount": 544
+      }
     ]
   },
   {
@@ -140,8 +255,18 @@
     "genre": "technology",
     "location": "Geneva, Switzerland",
     "ticketTypes": [
-      { "name": "professional pass", "price": 600.00, "capacity": 1500, "bookedCount": 0 },
-      { "name": "academic pass", "price": 250.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "professional pass",
+        "price": 600,
+        "capacity": 1500,
+        "bookedCount": 0
+      },
+      {
+        "name": "academic pass",
+        "price": 250,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -152,8 +277,18 @@
     "genre": "food",
     "location": "Bordeaux, France",
     "ticketTypes": [
-      { "name": "tasting pass", "price": 65.00, "capacity": 3000, "bookedCount": 0 },
-      { "name": "vip sommelier tour", "price": 220.00, "capacity": 150, "bookedCount": 0 }
+      {
+        "name": "tasting pass",
+        "price": 65,
+        "capacity": 3000,
+        "bookedCount": 0
+      },
+      {
+        "name": "vip sommelier tour",
+        "price": 220,
+        "capacity": 150,
+        "bookedCount": 109
+      }
     ]
   },
   {
@@ -164,8 +299,18 @@
     "genre": "gaming",
     "location": "Seoul, South Korea",
     "ticketTypes": [
-      { "name": "arena admission", "price": 35.00, "capacity": 12000, "bookedCount": 0 },
-      { "name": "premium viewing suite", "price": 150.00, "capacity": 1000, "bookedCount": 0 }
+      {
+        "name": "arena admission",
+        "price": 35,
+        "capacity": 12000,
+        "bookedCount": 0
+      },
+      {
+        "name": "premium viewing suite",
+        "price": 150,
+        "capacity": 1000,
+        "bookedCount": 235
+      }
     ]
   },
   {
@@ -176,8 +321,18 @@
     "genre": "business",
     "location": "London, UK",
     "ticketTypes": [
-      { "name": "investor pass", "price": 1000.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "founder spectator", "price": 150.00, "capacity": 600, "bookedCount": 0 }
+      {
+        "name": "investor pass",
+        "price": 1000,
+        "capacity": 400,
+        "bookedCount": 147
+      },
+      {
+        "name": "founder spectator",
+        "price": 150,
+        "capacity": 600,
+        "bookedCount": 73
+      }
     ]
   },
   {
@@ -188,8 +343,18 @@
     "genre": "entertainment",
     "location": "Tokyo, Japan",
     "ticketTypes": [
-      { "name": "weekend pass", "price": 110.00, "capacity": 20000, "bookedCount": 0 },
-      { "name": "saturday only", "price": 55.00, "capacity": 15000, "bookedCount": 0 }
+      {
+        "name": "weekend pass",
+        "price": 110,
+        "capacity": 20000,
+        "bookedCount": 700
+      },
+      {
+        "name": "saturday only",
+        "price": 55,
+        "capacity": 15000,
+        "bookedCount": 2796
+      }
     ]
   },
   {
@@ -200,8 +365,18 @@
     "genre": "fashion",
     "location": "Paris, France",
     "ticketTypes": [
-      { "name": "front row", "price": 1200.00, "capacity": 200, "bookedCount": 0 },
-      { "name": "general seating", "price": 300.00, "capacity": 1200, "bookedCount": 0 }
+      {
+        "name": "front row",
+        "price": 1200,
+        "capacity": 200,
+        "bookedCount": 108
+      },
+      {
+        "name": "general seating",
+        "price": 300,
+        "capacity": 1200,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -212,8 +387,18 @@
     "genre": "sports",
     "location": "Sydney, Australia",
     "ticketTypes": [
-      { "name": "grandstand", "price": 60.00, "capacity": 15000, "bookedCount": 0 },
-      { "name": "trackside luxury", "price": 350.00, "capacity": 800, "bookedCount": 0 }
+      {
+        "name": "grandstand",
+        "price": 60,
+        "capacity": 15000,
+        "bookedCount": 10161
+      },
+      {
+        "name": "trackside luxury",
+        "price": 350,
+        "capacity": 800,
+        "bookedCount": 715
+      }
     ]
   },
   {
@@ -224,8 +409,18 @@
     "genre": "science",
     "location": "Monterey, USA",
     "ticketTypes": [
-      { "name": "general admission", "price": 40.00, "capacity": 1000, "bookedCount": 0 },
-      { "name": "student ticket", "price": 15.00, "capacity": 300, "bookedCount": 0 }
+      {
+        "name": "general admission",
+        "price": 40,
+        "capacity": 1000,
+        "bookedCount": 0
+      },
+      {
+        "name": "student ticket",
+        "price": 15,
+        "capacity": 300,
+        "bookedCount": 84
+      }
     ]
   },
   {
@@ -236,7 +431,18 @@
     "genre": "health",
     "location": "Kyoto, Japan",
     "ticketTypes": [
-      { "name": "full retreat package", "price": 850.00, "capacity": 80, "bookedCount": 0 },
+      {
+        "name": "full retreat package",
+        "price": 850,
+        "capacity": 80,
+        "bookedCount": 0
+      },
+      {
+        "name": "day pass",
+        "price": 120,
+        "capacity": 40,
+        "bookedCount": 33
+      }
     ]
   },
   {
@@ -247,9 +453,24 @@
     "genre": "technology",
     "location": "San Francisco, USA",
     "ticketTypes": [
-      { "name": "Early Bird", "price": 499.00, "capacity": 500, "bookedCount": 0 },
-      { "name": "Standard", "price": 799.00, "capacity": 1500, "bookedCount": 0 },
-      { "name": "VIP", "price": 1499.00, "capacity": 200, "bookedCount": 0 }
+      {
+        "name": "Early Bird",
+        "price": 499,
+        "capacity": 500,
+        "bookedCount": 0
+      },
+      {
+        "name": "Standard",
+        "price": 799,
+        "capacity": 1500,
+        "bookedCount": 950
+      },
+      {
+        "name": "VIP",
+        "price": 1499,
+        "capacity": 200,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -260,8 +481,18 @@
     "genre": "music",
     "location": "Berlin, Germany",
     "ticketTypes": [
-      { "name": "General Admission", "price": 45.00, "capacity": 1000, "bookedCount": 0 },
-      { "name": "VIP Access", "price": 120.00, "capacity": 150, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 45,
+        "capacity": 1000,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Access",
+        "price": 120,
+        "capacity": 150,
+        "bookedCount": 41
+      }
     ]
   },
   {
@@ -272,8 +503,18 @@
     "genre": "food",
     "location": "Paris, France",
     "ticketTypes": [
-      { "name": "Tasting Pass", "price": 85.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "VIP Chef's Table", "price": 450.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Tasting Pass",
+        "price": 85,
+        "capacity": 2000,
+        "bookedCount": 742
+      },
+      {
+        "name": "VIP Chef's Table",
+        "price": 450,
+        "capacity": 100,
+        "bookedCount": 73
+      }
     ]
   },
   {
@@ -284,9 +525,24 @@
     "genre": "esports",
     "location": "Seoul, South Korea",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 60.00, "capacity": 15000, "bookedCount": 0 },
-      { "name": "Premium View", "price": 150.00, "capacity": 3000, "bookedCount": 0 },
-      { "name": "Backstage Pass", "price": 500.00, "capacity": 200, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 60,
+        "capacity": 15000,
+        "bookedCount": 861
+      },
+      {
+        "name": "Premium View",
+        "price": 150,
+        "capacity": 3000,
+        "bookedCount": 2023
+      },
+      {
+        "name": "Backstage Pass",
+        "price": 500,
+        "capacity": 200,
+        "bookedCount": 155
+      }
     ]
   },
   {
@@ -297,9 +553,24 @@
     "genre": "business",
     "location": "London, UK",
     "ticketTypes": [
-      { "name": "Standard", "price": 299.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "Executive", "price": 899.00, "capacity": 100, "bookedCount": 0 },
-      { "name": "Meet & Greet", "price": 1500.00, "capacity": 20, "bookedCount": 0 }
+      {
+        "name": "Standard",
+        "price": 299,
+        "capacity": 400,
+        "bookedCount": 0
+      },
+      {
+        "name": "Executive",
+        "price": 899,
+        "capacity": 100,
+        "bookedCount": 0
+      },
+      {
+        "name": "Meet & Greet",
+        "price": 1500,
+        "capacity": 20,
+        "bookedCount": 14
+      }
     ]
   },
   {
@@ -310,9 +581,24 @@
     "genre": "theater",
     "location": "New York, USA",
     "ticketTypes": [
-      { "name": "Balcony", "price": 95.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "Orchestra", "price": 250.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "VIP Box", "price": 800.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Balcony",
+        "price": 95,
+        "capacity": 800,
+        "bookedCount": 439
+      },
+      {
+        "name": "Orchestra",
+        "price": 250,
+        "capacity": 400,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Box",
+        "price": 800,
+        "capacity": 50,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -323,8 +609,18 @@
     "genre": "technology",
     "location": "Tokyo, Japan",
     "ticketTypes": [
-      { "name": "1-Day Pass", "price": 150.00, "capacity": 3000, "bookedCount": 0 },
-      { "name": "3-Day Pass", "price": 350.00, "capacity": 1500, "bookedCount": 0 }
+      {
+        "name": "1-Day Pass",
+        "price": 150,
+        "capacity": 3000,
+        "bookedCount": 0
+      },
+      {
+        "name": "3-Day Pass",
+        "price": 350,
+        "capacity": 1500,
+        "bookedCount": 898
+      }
     ]
   },
   {
@@ -335,8 +631,18 @@
     "genre": "entertainment",
     "location": "Dubai, UAE",
     "ticketTypes": [
-      { "name": "Standard Entry", "price": 40.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "Premium VR Package", "price": 120.00, "capacity": 200, "bookedCount": 0 }
+      {
+        "name": "Standard Entry",
+        "price": 40,
+        "capacity": 800,
+        "bookedCount": 598
+      },
+      {
+        "name": "Premium VR Package",
+        "price": 120,
+        "capacity": 200,
+        "bookedCount": 52
+      }
     ]
   },
   {
@@ -347,8 +653,18 @@
     "genre": "music",
     "location": "Austin, USA",
     "ticketTypes": [
-      { "name": "Weekend Pass", "price": 180.00, "capacity": 10000, "bookedCount": 0 },
-      { "name": "VIP Camping", "price": 450.00, "capacity": 1000, "bookedCount": 0 }
+      {
+        "name": "Weekend Pass",
+        "price": 180,
+        "capacity": 10000,
+        "bookedCount": 8317
+      },
+      {
+        "name": "VIP Camping",
+        "price": 450,
+        "capacity": 1000,
+        "bookedCount": 600
+      }
     ]
   },
   {
@@ -359,8 +675,18 @@
     "genre": "art",
     "location": "Venice, Italy",
     "ticketTypes": [
-      { "name": "Standard Admission", "price": 55.00, "capacity": 5000, "bookedCount": 0 },
-      { "name": "Guided Tour", "price": 120.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Standard Admission",
+        "price": 55,
+        "capacity": 5000,
+        "bookedCount": 4055
+      },
+      {
+        "name": "Guided Tour",
+        "price": 120,
+        "capacity": 500,
+        "bookedCount": 30
+      }
     ]
   },
   {
@@ -371,8 +697,18 @@
     "genre": "sports",
     "location": "Shanghai, China",
     "ticketTypes": [
-      { "name": "Upper Tier", "price": 45.00, "capacity": 8000, "bookedCount": 0 },
-      { "name": "Courtside", "price": 300.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Upper Tier",
+        "price": 45,
+        "capacity": 8000,
+        "bookedCount": 0
+      },
+      {
+        "name": "Courtside",
+        "price": 300,
+        "capacity": 500,
+        "bookedCount": 220
+      }
     ]
   },
   {
@@ -383,8 +719,18 @@
     "genre": "food",
     "location": "Melbourne, Australia",
     "ticketTypes": [
-      { "name": "Tasting Ticket", "price": 65.00, "capacity": 1200, "bookedCount": 0 },
-      { "name": "VIP Judge Panel", "price": 250.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Tasting Ticket",
+        "price": 65,
+        "capacity": 1200,
+        "bookedCount": 104
+      },
+      {
+        "name": "VIP Judge Panel",
+        "price": 250,
+        "capacity": 50,
+        "bookedCount": 39
+      }
     ]
   },
   {
@@ -395,7 +741,12 @@
     "genre": "art",
     "location": "Los Angeles, USA",
     "ticketTypes": [
-      { "name": "General Admission", "price": 30.00, "capacity": 600, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 30,
+        "capacity": 600,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -406,9 +757,24 @@
     "genre": "business",
     "location": "Singapore, Singapore",
     "ticketTypes": [
-      { "name": "Early Bird", "price": 399.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "Standard", "price": 699.00, "capacity": 1200, "bookedCount": 0 },
-      { "name": "VIP Access", "price": 1299.00, "capacity": 300, "bookedCount": 0 }
+      {
+        "name": "Early Bird",
+        "price": 399,
+        "capacity": 800,
+        "bookedCount": 0
+      },
+      {
+        "name": "Standard",
+        "price": 699,
+        "capacity": 1200,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Access",
+        "price": 1299,
+        "capacity": 300,
+        "bookedCount": 222
+      }
     ]
   },
   {
@@ -419,9 +785,24 @@
     "genre": "family",
     "location": "Chicago, USA",
     "ticketTypes": [
-      { "name": "Child Ticket", "price": 15.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "Adult Ticket", "price": 25.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "Family Pass", "price": 70.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Child Ticket",
+        "price": 15,
+        "capacity": 2000,
+        "bookedCount": 291
+      },
+      {
+        "name": "Adult Ticket",
+        "price": 25,
+        "capacity": 2000,
+        "bookedCount": 0
+      },
+      {
+        "name": "Family Pass",
+        "price": 70,
+        "capacity": 500,
+        "bookedCount": 235
+      }
     ]
   },
   {
@@ -432,9 +813,24 @@
     "genre": "music",
     "location": "Vienna, Austria",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 85.00, "capacity": 1200, "bookedCount": 0 },
-      { "name": "Premium Balcony", "price": 180.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "VIP Lounge", "price": 400.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 85,
+        "capacity": 1200,
+        "bookedCount": 787
+      },
+      {
+        "name": "Premium Balcony",
+        "price": 180,
+        "capacity": 400,
+        "bookedCount": 286
+      },
+      {
+        "name": "VIP Lounge",
+        "price": 400,
+        "capacity": 100,
+        "bookedCount": 83
+      }
     ]
   },
   {
@@ -445,8 +841,18 @@
     "genre": "sports",
     "location": "Whistler, Canada",
     "ticketTypes": [
-      { "name": "General Admission", "price": 35.00, "capacity": 5000, "bookedCount": 0 },
-      { "name": "VIP Viewing Deck", "price": 150.00, "capacity": 300, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 35,
+        "capacity": 5000,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Viewing Deck",
+        "price": 150,
+        "capacity": 300,
+        "bookedCount": 60
+      }
     ]
   },
   {
@@ -457,8 +863,18 @@
     "genre": "food",
     "location": "Barcelona, Spain",
     "ticketTypes": [
-      { "name": "Standard Class", "price": 150.00, "capacity": 60, "bookedCount": 0 },
-      { "name": "Premium Masterclass", "price": 300.00, "capacity": 20, "bookedCount": 0 }
+      {
+        "name": "Standard Class",
+        "price": 150,
+        "capacity": 60,
+        "bookedCount": 28
+      },
+      {
+        "name": "Premium Masterclass",
+        "price": 300,
+        "capacity": 20,
+        "bookedCount": 17
+      }
     ]
   },
   {
@@ -469,8 +885,18 @@
     "genre": "esports",
     "location": "Tokyo, Japan",
     "ticketTypes": [
-      { "name": "Competitor Pass", "price": 50.00, "capacity": 200, "bookedCount": 0 },
-      { "name": "Spectator", "price": 15.00, "capacity": 800, "bookedCount": 0 }
+      {
+        "name": "Competitor Pass",
+        "price": 50,
+        "capacity": 200,
+        "bookedCount": 0
+      },
+      {
+        "name": "Spectator",
+        "price": 15,
+        "capacity": 800,
+        "bookedCount": 354
+      }
     ]
   },
   {
@@ -481,8 +907,18 @@
     "genre": "theater",
     "location": "Stratford-upon-Avon, UK",
     "ticketTypes": [
-      { "name": "Day Pass", "price": 45.00, "capacity": 1500, "bookedCount": 0 },
-      { "name": "Weekend Pass", "price": 100.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Day Pass",
+        "price": 45,
+        "capacity": 1500,
+        "bookedCount": 0
+      },
+      {
+        "name": "Weekend Pass",
+        "price": 100,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -493,8 +929,18 @@
     "genre": "technology",
     "location": "Copenhagen, Denmark",
     "ticketTypes": [
-      { "name": "Standard Pass", "price": 120.00, "capacity": 2500, "bookedCount": 0 },
-      { "name": "Industry Professional", "price": 300.00, "capacity": 1000, "bookedCount": 0 }
+      {
+        "name": "Standard Pass",
+        "price": 120,
+        "capacity": 2500,
+        "bookedCount": 115
+      },
+      {
+        "name": "Industry Professional",
+        "price": 300,
+        "capacity": 1000,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -505,8 +951,18 @@
     "genre": "health",
     "location": "Rishikesh, India",
     "ticketTypes": [
-      { "name": "General Admission", "price": 25.00, "capacity": 10000, "bookedCount": 0 },
-      { "name": "VIP Wellness Package", "price": 150.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 25,
+        "capacity": 10000,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Wellness Package",
+        "price": 150,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -517,8 +973,18 @@
     "genre": "science",
     "location": "Houston, USA",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 40.00, "capacity": 1200, "bookedCount": 0 },
-      { "name": "VIP Reception", "price": 250.00, "capacity": 150, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 40,
+        "capacity": 1200,
+        "bookedCount": 991
+      },
+      {
+        "name": "VIP Reception",
+        "price": 250,
+        "capacity": 150,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -529,8 +995,18 @@
     "genre": "entertainment",
     "location": "New York, USA",
     "ticketTypes": [
-      { "name": "General Admission", "price": 55.00, "capacity": 3000, "bookedCount": 0 },
-      { "name": "VIP Floor", "price": 180.00, "capacity": 400, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 55,
+        "capacity": 3000,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Floor",
+        "price": 180,
+        "capacity": 400,
+        "bookedCount": 37
+      }
     ]
   },
   {
@@ -541,8 +1017,18 @@
     "genre": "art",
     "location": "Toronto, Canada",
     "ticketTypes": [
-      { "name": "Screening Pass", "price": 30.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "All-Access Pass", "price": 90.00, "capacity": 200, "bookedCount": 0 }
+      {
+        "name": "Screening Pass",
+        "price": 30,
+        "capacity": 800,
+        "bookedCount": 0
+      },
+      {
+        "name": "All-Access Pass",
+        "price": 90,
+        "capacity": 200,
+        "bookedCount": 77
+      }
     ]
   },
   {
@@ -553,8 +1039,18 @@
     "genre": "automotive",
     "location": "Monaco, Monaco",
     "ticketTypes": [
-      { "name": "Standard Entry", "price": 250.00, "capacity": 1500, "bookedCount": 0 },
-      { "name": "VIP Preview", "price": 1200.00, "capacity": 300, "bookedCount": 0 }
+      {
+        "name": "Standard Entry",
+        "price": 250,
+        "capacity": 1500,
+        "bookedCount": 264
+      },
+      {
+        "name": "VIP Preview",
+        "price": 1200,
+        "capacity": 300,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -565,8 +1061,18 @@
     "genre": "entertainment",
     "location": "London, UK",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 25.00, "capacity": 300, "bookedCount": 0 },
-      { "name": "Front Row", "price": 60.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 25,
+        "capacity": 300,
+        "bookedCount": 92
+      },
+      {
+        "name": "Front Row",
+        "price": 60,
+        "capacity": 50,
+        "bookedCount": 16
+      }
     ]
   },
   {
@@ -577,9 +1083,24 @@
     "genre": "health",
     "location": "Geneva, Switzerland",
     "ticketTypes": [
-      { "name": "Standard", "price": 500.00, "capacity": 1000, "bookedCount": 0 },
-      { "name": "Premium", "price": 950.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "VIP Dinner", "price": 2500.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Standard",
+        "price": 500,
+        "capacity": 1000,
+        "bookedCount": 522
+      },
+      {
+        "name": "Premium",
+        "price": 950,
+        "capacity": 400,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Dinner",
+        "price": 2500,
+        "capacity": 100,
+        "bookedCount": 86
+      }
     ]
   },
   {
@@ -590,8 +1111,18 @@
     "genre": "music",
     "location": "Malibu, USA",
     "ticketTypes": [
-      { "name": "Beach Blanket Spot", "price": 40.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "VIP Cabana", "price": 350.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Beach Blanket Spot",
+        "price": 40,
+        "capacity": 2000,
+        "bookedCount": 1341
+      },
+      {
+        "name": "VIP Cabana",
+        "price": 350,
+        "capacity": 50,
+        "bookedCount": 27
+      }
     ]
   },
   {
@@ -602,7 +1133,12 @@
     "genre": "business",
     "location": "Frankfurt, Germany",
     "ticketTypes": [
-      { "name": "Standard Pass", "price": 450.00, "capacity": 1500, "bookedCount": 0 }
+      {
+        "name": "Standard Pass",
+        "price": 450,
+        "capacity": 1500,
+        "bookedCount": 855
+      }
     ]
   },
   {
@@ -613,9 +1149,24 @@
     "genre": "sports",
     "location": "Tokyo, Japan",
     "ticketTypes": [
-      { "name": "Runner Registration", "price": 120.00, "capacity": 20000, "bookedCount": 0 },
-      { "name": "Spectator Pass", "price": 20.00, "capacity": 50000, "bookedCount": 0 },
-      { "name": "VIP Party Access", "price": 250.00, "capacity": 1000, "bookedCount": 0 }
+      {
+        "name": "Runner Registration",
+        "price": 120,
+        "capacity": 20000,
+        "bookedCount": 0
+      },
+      {
+        "name": "Spectator Pass",
+        "price": 20,
+        "capacity": 50000,
+        "bookedCount": 37589
+      },
+      {
+        "name": "VIP Party Access",
+        "price": 250,
+        "capacity": 1000,
+        "bookedCount": 692
+      }
     ]
   },
   {
@@ -626,9 +1177,24 @@
     "genre": "theater",
     "location": "Las Vegas, USA",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 75.00, "capacity": 1500, "bookedCount": 0 },
-      { "name": "Premium View", "price": 150.00, "capacity": 500, "bookedCount": 0 },
-      { "name": "VIP Meet & Greet", "price": 300.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 75,
+        "capacity": 1500,
+        "bookedCount": 0
+      },
+      {
+        "name": "Premium View",
+        "price": 150,
+        "capacity": 500,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Meet & Greet",
+        "price": 300,
+        "capacity": 50,
+        "bookedCount": 11
+      }
     ]
   },
   {
@@ -639,8 +1205,18 @@
     "genre": "education",
     "location": "Amsterdam, Netherlands",
     "ticketTypes": [
-      { "name": "Workshop Pass", "price": 80.00, "capacity": 100, "bookedCount": 0 },
-      { "name": "Premium Pass with Kit", "price": 150.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Workshop Pass",
+        "price": 80,
+        "capacity": 100,
+        "bookedCount": 14
+      },
+      {
+        "name": "Premium Pass with Kit",
+        "price": 150,
+        "capacity": 50,
+        "bookedCount": 6
+      }
     ]
   },
   {
@@ -651,8 +1227,18 @@
     "genre": "technology",
     "location": "Los Angeles, USA",
     "ticketTypes": [
-      { "name": "General Admission", "price": 60.00, "capacity": 5000, "bookedCount": 0 },
-      { "name": "VIP Seating", "price": 250.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 60,
+        "capacity": 5000,
+        "bookedCount": 51
+      },
+      {
+        "name": "VIP Seating",
+        "price": 250,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -663,8 +1249,18 @@
     "genre": "music",
     "location": "Cape Town, South Africa",
     "ticketTypes": [
-      { "name": "Standard Tasting", "price": 90.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "Premium Tasting", "price": 180.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Standard Tasting",
+        "price": 90,
+        "capacity": 400,
+        "bookedCount": 224
+      },
+      {
+        "name": "Premium Tasting",
+        "price": 180,
+        "capacity": 100,
+        "bookedCount": 17
+      }
     ]
   },
   {
@@ -675,8 +1271,18 @@
     "genre": "esports",
     "location": "Seoul, South Korea",
     "ticketTypes": [
-      { "name": "Grandstand", "price": 40.00, "capacity": 8000, "bookedCount": 0 },
-      { "name": "Pit Pass", "price": 150.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Grandstand",
+        "price": 40,
+        "capacity": 8000,
+        "bookedCount": 493
+      },
+      {
+        "name": "Pit Pass",
+        "price": 150,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -687,9 +1293,24 @@
     "genre": "business",
     "location": "Sydney, Australia",
     "ticketTypes": [
-      { "name": "Standard Ticket", "price": 350.00, "capacity": 1200, "bookedCount": 0 },
-      { "name": "VIP Access", "price": 800.00, "capacity": 200, "bookedCount": 0 },
-      { "name": "Virtual Pass", "price": 99.00, "capacity": 5000, "bookedCount": 0 }
+      {
+        "name": "Standard Ticket",
+        "price": 350,
+        "capacity": 1200,
+        "bookedCount": 0
+      },
+      {
+        "name": "VIP Access",
+        "price": 800,
+        "capacity": 200,
+        "bookedCount": 158
+      },
+      {
+        "name": "Virtual Pass",
+        "price": 99,
+        "capacity": 5000,
+        "bookedCount": 3244
+      }
     ]
   },
   {
@@ -700,7 +1321,12 @@
     "genre": "family",
     "location": "Seattle, USA",
     "ticketTypes": [
-      { "name": "General Admission", "price": 25.00, "capacity": 3000, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 25,
+        "capacity": 3000,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -711,8 +1337,18 @@
     "genre": "art",
     "location": "New York, USA",
     "ticketTypes": [
-      { "name": "Gala Entry", "price": 500.00, "capacity": 400, "bookedCount": 0 },
-      { "name": "VIP Bidders Circle", "price": 2500.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Gala Entry",
+        "price": 500,
+        "capacity": 400,
+        "bookedCount": 124
+      },
+      {
+        "name": "VIP Bidders Circle",
+        "price": 2500,
+        "capacity": 50,
+        "bookedCount": 15
+      }
     ]
   },
   {
@@ -723,8 +1359,18 @@
     "genre": "sports",
     "location": "Patagonia, Argentina",
     "ticketTypes": [
-      { "name": "Standard Participant", "price": 850.00, "capacity": 50, "bookedCount": 0 },
-      { "name": "Premium 1-on-1", "price": 3000.00, "capacity": 5, "bookedCount": 0 }
+      {
+        "name": "Standard Participant",
+        "price": 850,
+        "capacity": 50,
+        "bookedCount": 23
+      },
+      {
+        "name": "Premium 1-on-1",
+        "price": 3000,
+        "capacity": 5,
+        "bookedCount": 3
+      }
     ]
   },
   {
@@ -735,8 +1381,18 @@
     "genre": "education",
     "location": "London, UK",
     "ticketTypes": [
-      { "name": "Weekend Pass", "price": 120.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "VIP Author Dinner", "price": 400.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Weekend Pass",
+        "price": 120,
+        "capacity": 2000,
+        "bookedCount": 871
+      },
+      {
+        "name": "VIP Author Dinner",
+        "price": 400,
+        "capacity": 100,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -747,8 +1403,18 @@
     "genre": "food",
     "location": "Bangkok, Thailand",
     "ticketTypes": [
-      { "name": "Tasting Menu", "price": 150.00, "capacity": 100, "bookedCount": 0 },
-      { "name": "VIP Pairing", "price": 250.00, "capacity": 30, "bookedCount": 0 }
+      {
+        "name": "Tasting Menu",
+        "price": 150,
+        "capacity": 100,
+        "bookedCount": 66
+      },
+      {
+        "name": "VIP Pairing",
+        "price": 250,
+        "capacity": 30,
+        "bookedCount": 24
+      }
     ]
   },
   {
@@ -759,8 +1425,18 @@
     "genre": "entertainment",
     "location": "Berlin, Germany",
     "ticketTypes": [
-      { "name": "Team Ticket (up to 4)", "price": 180.00, "capacity": 200, "bookedCount": 0 },
-      { "name": "Solo Player", "price": 50.00, "capacity": 100, "bookedCount": 0 }
+      {
+        "name": "Team Ticket (up to 4)",
+        "price": 180,
+        "capacity": 200,
+        "bookedCount": 179
+      },
+      {
+        "name": "Solo Player",
+        "price": 50,
+        "capacity": 100,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -771,8 +1447,18 @@
     "genre": "technology",
     "location": "Stockholm, Sweden",
     "ticketTypes": [
-      { "name": "Standard Pass", "price": 45.00, "capacity": 3000, "bookedCount": 0 },
-      { "name": "Developer Pass", "price": 120.00, "capacity": 500, "bookedCount": 0 }
+      {
+        "name": "Standard Pass",
+        "price": 45,
+        "capacity": 3000,
+        "bookedCount": 2002
+      },
+      {
+        "name": "Developer Pass",
+        "price": 120,
+        "capacity": 500,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -783,9 +1469,24 @@
     "genre": "theater",
     "location": "Moscow, Russia",
     "ticketTypes": [
-      { "name": "Balcony", "price": 80.00, "capacity": 1000, "bookedCount": 0 },
-      { "name": "Stalls", "price": 180.00, "capacity": 500, "bookedCount": 0 },
-      { "name": "VIP Box", "price": 600.00, "capacity": 50, "bookedCount": 0 }
+      {
+        "name": "Balcony",
+        "price": 80,
+        "capacity": 1000,
+        "bookedCount": 699
+      },
+      {
+        "name": "Stalls",
+        "price": 180,
+        "capacity": 500,
+        "bookedCount": 331
+      },
+      {
+        "name": "VIP Box",
+        "price": 600,
+        "capacity": 50,
+        "bookedCount": 0
+      }
     ]
   },
   {
@@ -796,8 +1497,18 @@
     "genre": "business",
     "location": "Tel Aviv, Israel",
     "ticketTypes": [
-      { "name": "General Admission", "price": 40.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "Investor Pass", "price": 300.00, "capacity": 150, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 40,
+        "capacity": 800,
+        "bookedCount": 395
+      },
+      {
+        "name": "Investor Pass",
+        "price": 300,
+        "capacity": 150,
+        "bookedCount": 86
+      }
     ]
   },
   {
@@ -808,8 +1519,18 @@
     "genre": "music",
     "location": "Nevada, USA",
     "ticketTypes": [
-      { "name": "General Admission", "price": 450.00, "capacity": 60000, "bookedCount": 0 },
-      { "name": "VIP Oasis", "price": 1200.00, "capacity": 5000, "bookedCount": 0 }
+      {
+        "name": "General Admission",
+        "price": 450,
+        "capacity": 60000,
+        "bookedCount": 50378
+      },
+      {
+        "name": "VIP Oasis",
+        "price": 1200,
+        "capacity": 5000,
+        "bookedCount": 219
+      }
     ]
   },
   {
@@ -820,8 +1541,18 @@
     "genre": "business",
     "location": "Shanghai, China",
     "ticketTypes": [
-      { "name": "Standard Pass", "price": 599.00, "capacity": 2000, "bookedCount": 0 },
-      { "name": "Executive Pass", "price": 1499.00, "capacity": 400, "bookedCount": 0 }
+      {
+        "name": "Standard Pass",
+        "price": 599,
+        "capacity": 2000,
+        "bookedCount": 0
+      },
+      {
+        "name": "Executive Pass",
+        "price": 1499,
+        "capacity": 400,
+        "bookedCount": 5
+      }
     ]
   },
   {
@@ -832,8 +1563,18 @@
     "genre": "art",
     "location": "Cairns, Australia",
     "ticketTypes": [
-      { "name": "Workshop Pass", "price": 600.00, "capacity": 30, "bookedCount": 0 },
-      { "name": "Premium Equipment Rental", "price": 250.00, "capacity": 15, "bookedCount": 0 }
+      {
+        "name": "Workshop Pass",
+        "price": 600,
+        "capacity": 30,
+        "bookedCount": 11
+      },
+      {
+        "name": "Premium Equipment Rental",
+        "price": 250,
+        "capacity": 15,
+        "bookedCount": 12
+      }
     ]
   },
   {
@@ -844,9 +1585,24 @@
     "genre": "science",
     "location": "Boston, USA",
     "ticketTypes": [
-      { "name": "Standard Seating", "price": 65.00, "capacity": 800, "bookedCount": 0 },
-      { "name": "Front Row", "price": 150.00, "capacity": 100, "bookedCount": 0 },
-      { "name": "VIP Meet & Greet", "price": 400.00, "capacity": 30, "bookedCount": 0 }
+      {
+        "name": "Standard Seating",
+        "price": 65,
+        "capacity": 800,
+        "bookedCount": 306
+      },
+      {
+        "name": "Front Row",
+        "price": 150,
+        "capacity": 100,
+        "bookedCount": 60
+      },
+      {
+        "name": "VIP Meet & Greet",
+        "price": 400,
+        "capacity": 30,
+        "bookedCount": 20
+      }
     ]
   }
 ]

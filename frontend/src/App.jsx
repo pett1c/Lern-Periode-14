@@ -4,6 +4,7 @@ import { useAuth } from './context/AuthContext';
 import LoginPage from './pages/Login.jsx';
 import RegisterPage from './pages/Register.jsx';
 import DashboardPage from './pages/Dashboard.jsx';
+import EventsPage from './pages/Events.jsx';
 import EventDetailPage from './pages/EventDetail.jsx';
 import CreateEventPage from './pages/CreateEvent.jsx';
 import MyTicketsPage from './pages/MyTickets.jsx';
@@ -32,6 +33,7 @@ export default function App() {
       <Route path="/login" element={<PublicOnlyRoute><LoginPage /></PublicOnlyRoute>} />
       <Route path="/register" element={<PublicOnlyRoute><RegisterPage /></PublicOnlyRoute>} />
       <Route path="/dashboard" element={<GuardedRoute><DashboardPage /></GuardedRoute>} />
+      <Route path="/events" element={<GuardedRoute><EventsPage /></GuardedRoute>} />
       <Route path="/events/:id" element={<GuardedRoute><EventDetailPage /></GuardedRoute>} />
       <Route
         path="/events/create"

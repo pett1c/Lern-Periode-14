@@ -44,9 +44,10 @@ const handleChatQuery = asyncHandler(async (req, res) => {
     searchResults.matches.forEach((match) => {
       const title = match.metadata?.title || 'Unknown event';
       const text = match.metadata?.text || null;
+      const eventId = match.id;
       if (text) {
         sources.push(title);
-        contextString += `---\nEvent Details:\n${text}\n`;
+        contextString += `---\nEvent Details (ID: ${eventId}):\n${text}\n`;
       }
     });
   } else {
