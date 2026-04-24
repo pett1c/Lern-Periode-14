@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      required: false,
       minlength: 8,
       select: false,
     },
@@ -28,6 +28,23 @@ const userSchema = new mongoose.Schema(
       enum: ['user', 'organizer', 'admin'],
       default: 'user',
       index: true,
+    },
+    provider: {
+      type: String,
+      enum: ['local', 'google', 'github'],
+      default: 'local',
+      index: true,
+    },
+    providerId: {
+      type: String,
+      default: null,
+      index: true,
+      sparse: true,
+    },
+    avatarUrl: {
+      type: String,
+      default: '',
+      trim: true,
     },
   },
   { timestamps: true }
@@ -38,11 +55,18 @@ userSchema.pre('save', async function preSave() {
     return;
   }
 
+  if (!this.password) {
+    return;
+  }
+
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
 
 userSchema.methods.comparePassword = async function comparePassword(plainPassword) {
+  if (!this.password) {
+    return false;
+  }
   return bcrypt.compare(plainPassword, this.password);
 };
 
